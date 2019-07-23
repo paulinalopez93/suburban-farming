@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_113804) do
+ActiveRecord::Schema.define(version: 2019_07_22_181014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.date "date"
+    t.boolean "paid"
+    t.integer "total_price"
+    t.string "city"
+    t.string "street"
+    t.string "street_number"
+    t.string "zip_code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "product_orders", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "price"
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_product_orders_on_order_id"
+    t.index ["product_id"], name: "index_product_orders_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "price"
+    t.text "details"
+    t.string "photo"
+    t.string "category"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating_stars"
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,15 +70,14 @@ ActiveRecord::Schema.define(version: 2019_07_22_113804) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "phone number"
-    t.boolean "supplier", default: false
-    t.string "city"
-    t.string "street"
-    t.integer "street number"
-    t.string "ZIP code"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "users"
+  add_foreign_key "product_orders", "orders"
+  add_foreign_key "product_orders", "products"
+  add_foreign_key "products", "users"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
