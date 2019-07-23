@@ -1,0 +1,13 @@
+// This is where we will be editing the shopping in our browsing page but the controller is products and the controller method is index
+.shop-container {
+  width: 100%;
+  padding: $padding-standard-y $padding-standard-y;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}

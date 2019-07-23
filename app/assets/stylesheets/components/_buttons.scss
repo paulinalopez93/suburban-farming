@@ -13,5 +13,10 @@ $button-x-padding: 32px;
 // Try to do two-three button classes
 .btn-hero {
  background: $primary;
+}
 
+.btn-plusminus {
+  background: $primary;
+  color: white;
+  border-radius: $border-radius-sm;
 }

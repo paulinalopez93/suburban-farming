@@ -1,1 +1,20 @@
 // this is for card-products and for any type of card that we want to have vertical
+.card-vertical {
+  background-image: image-url("tomatoes.jpeg");
+  width: 16vw;
+  border-radius: $border-radius;
+  height: 21vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info-container {
+  color: $white;
+  flex-grow: 1;
+}
+
+.product-info-btn {
+  display: flex;
+  justify-content: center;
+}
+
