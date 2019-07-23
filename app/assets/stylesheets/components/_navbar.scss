@@ -2,9 +2,19 @@
   position: fixed;
   width: 100%;
   display: flex;
+  justify-content: space-around;
 }
 
 .nav-link {
-  color: black;
+  display: block;
+  color: $black;
   text-decoration: none;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.links-container {
+  display: flex;
 }

@@ -1,2 +1,15 @@
 // Specific CSS for your home-page
 
+.tagline-secondary-container {
+  padding: $padding-standard-y $padding-standard-x;
+}
+
+.steps-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.steps-container img {
+  width: 100%;
+}
