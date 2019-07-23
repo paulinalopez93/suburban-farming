@@ -2,6 +2,7 @@
 .card-vertical {
   padding: 16px;
   background-image: $linear-gradient, image-url("tomatoes.jpeg");
+  background-size: auto 100%;
   background-repeat: no-repeat;
   width: 16vw;
   border-radius: $border-radius;

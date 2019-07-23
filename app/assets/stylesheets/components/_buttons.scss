@@ -16,7 +16,11 @@ $button-x-padding: 32px;
 }
 
 .btn-plusminus {
+  display: flex;
+  justify-content: space-between;
   background: $primary;
   color: white;
+  width: 90px;
+  padding: 8px 16px;
   border-radius: $border-radius-sm;
 }
