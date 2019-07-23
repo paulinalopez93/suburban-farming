@@ -1,4 +1,6 @@
-puts 'Creating restaurants...'
+puts 'Creating products...'
+
+#vegetables
 
 Product.create(name: "Tomato", price: 5, details: "A delicious red tomato", category: "vegetable")
 
@@ -20,6 +22,8 @@ Product.create(name: "Asparagus", price: 5, details: "Yummy Asparagus", category
 
 Product.create(name: "Green beans", price: 5, details: "Tiny green beans", category: "vegetable")
 
+#fruits
+
 Product.create(name: "Bananas", price: 5, details: "A delicious yellow banana", category: "fruit")
 
 Product.create(name: "Apples", price: 5, details: "A delicious red apple", category: "fruit")
@@ -39,5 +43,24 @@ Product.create(name: "Blueberries", price: 5, details: "The best berries! Bluebe
 Product.create(name: "Peaches", price: 5, details: "A delicious peach", category: "fruit")
 
 Product.create(name: "Pineapple", price: 5, details: "A delicious pineapple", category: "fruit")
+
+#eggs
+Product.create(name: "Brown eggs", price: 5, details: "Brown eggs from chickens", category: "eggs")
+
+Product.create(name: "White eggs", price: 5, details: "White eggs from chickens", category: "eggs")
+
+#wine
+Product.create(name: "White wine", price: 5, details: "Deliciuos white wine", category: "wine")
+
+Product.create(name: "Red wine", price: 5, details: "Deliciuos red wine", category: "wine")
+
+#herbs
+Product.create(name: "Parsley", price: 5, details: "Deliciuos parsley", category: "herbs")
+
+Product.create(name: "Mint", price: 5, details: "Minty mint", category: "herbs")
+
+Product.create(name: "Basil", price: 5, details: "Perfect basil", category: "herbs")
+
+Product.create(name: "Sage", price: 5, details: "Lucky sage", category: "herbs")
 
 puts 'Finished!'
