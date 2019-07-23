@@ -28,10 +28,10 @@ $p-color: $dark-gray;
 
 // Text fonts
 
-$header-font: 'open sans', sans-serif;
-$h2-font: 'open sans', sans-serif;
-$h3-font: 'open sans', sans-serif;
-$p-font: 'open sans', sans-serif; // For buttons and paragraphs
+$header-font: $body-font;
+$h2-font: $body-font;
+$h3-font: $body-font;
+$p-font: $body-font; // For buttons and paragraphs
 
 
 // Text fonts sizes
@@ -48,6 +48,5 @@ $linear-gradient: linear-gradient(0,0,0,0.5);       // Check if it's fine
 
 
 // Components general
-
-$box-shadow: 10px 5px;// TODO
+$box-shadow: 10px 5px; // TODO
 $padding-standard: 20px;  // use different if weird
