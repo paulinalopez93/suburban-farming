@@ -1,2 +1,27 @@
 // Specific CSS for your home-page
 
+
+// h3 tagline
+
+
+// steps container
+
+.steps-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.steps-container img {
+  width: 100%;
+}
+
+
+// benefits container
+
+.benefits-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
