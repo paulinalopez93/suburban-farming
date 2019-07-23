@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :set_review
+
   def new
     @review = Review.new
   end
@@ -13,5 +15,9 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit(:comment, :rating_stars)
+  end
+  def set_review
+    @review = Review.find(params[:id])
+    #not sure if it should be params[:id] or params[:product_id]
   end
 end
