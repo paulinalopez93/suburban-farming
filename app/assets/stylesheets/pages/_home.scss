@@ -23,6 +23,7 @@
 .steps-container img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 .step-info-container {
   padding: $padding-standard-y $padding-standard-x;

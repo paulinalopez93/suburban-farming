@@ -2,7 +2,7 @@
 
 // Colors
 
-$primary: red;
+$primary: #FF8170;
 $dark-gray: #555555;
 $medium-gray: #888888;
 $light-gray: #EEEEEE;
@@ -44,7 +44,7 @@ $p-font-size: 16px; // For buttons and paragraphs
 
 // Images
 
-$linear-gradient: linear-gradient(0,0,0,0.5);       // Check if it's fine
+$linear-gradient: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0));
 
 
 // Components general
