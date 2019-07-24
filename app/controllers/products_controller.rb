@@ -1,25 +1,25 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+
   def index
     @products = Product.all
     @categories = Product.categories.keys
     @order = 0
     if user_signed_in?
       if current_user.orders.any?
-        @order = current_user.orders.where(paid: false).last
+        @order = current_user.orders.where(status: "pending").last
       else
         @order = Order.create(user_id: current_user.id)
       end
     else
-      @order = Order.create(user_id: 1)
+      @order = Order.create()
     end
     @products.each do |product|
       product_order = ProductOrder.new
       product_order.product = product
       product_order.order = @order
       product_order.save
-      puts product_order
     end
   end
 
@@ -39,10 +39,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def add
-    product.quantity = +1
-    create_new_order
-  end
+  # def add
+  #   product.quantity = +1
+  #   create_new_order
+  # end
 
   def edit
   end
@@ -61,13 +61,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  # def create_new_order
-  #   teddy = Teddy.find(params[:teddy_id])
-  # order  = Order.create!(teddy_sku: teddy.sku, amount: teddy.price, state: 'pending', user: current_user)
-
-  # redirect_to new_order_payment_path(order)
-  # end
 
   def product_params
     params.require(:product).permit(:price, :details, :photo, :category)
