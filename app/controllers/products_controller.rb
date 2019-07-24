@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+
   def index
     @products = Product.all
     @categories = Product.categories.keys
@@ -61,13 +62,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  # def create_new_order
-  #   teddy = Teddy.find(params[:teddy_id])
-  # order  = Order.create!(teddy_sku: teddy.sku, amount: teddy.price, state: 'pending', user: current_user)
-
-  # redirect_to new_order_payment_path(order)
-  # end
 
   def product_params
     params.require(:product).permit(:price, :details, :photo, :category)

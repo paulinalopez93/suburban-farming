@@ -4,15 +4,15 @@ class PaymentsController < ApplicationController
   def new
   end
 
-  # def create
-  #   customer = Stripe::Customer.create(
-  #     source: params[:stripeToken],
-  #     email: params[:stripeEmail]
-  #   )
-  #   charge = Stripe::Charge.create(
-  #     customer: customer.id
-  #   )
-  # end
+  def create
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email: params[:stripeEmail]
+    )
+    charge = Stripe::Charge.create(
+      customer: customer.id
+    )
+  end
 
   private
 
