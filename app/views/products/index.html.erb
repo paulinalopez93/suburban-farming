@@ -1,67 +1,37 @@
 <div class="shop-container">
   <div class="sidebar-container">
-    <h2 class="p-big-black">Fruits</h2>
-    <h2 class="p-big-black">Vegetables</h2>
-    <h2 class="p-big-black">Eggs</h2>
-    <h2 class="p-big-black">Wine</h2>
+    <% @categories.each do |category| %>
+    <h2 class="p-big-black"><%= category %></h2>
+    <% end %>
   </div>
 
   <div class="categories-container">
+    <% @categories.each do |category| %>
     <div class="category-container">
-      <h2 class="h3-category">Fruits</h2>
+      <h2 class="h3-category"><%= category %></h2>
       <div class="cards-container">
+
+        <% @products.where(category: category).each do |product| %>
         <div class="card-vertical">
           <div class="product-info-container">
             <div class="product-description">
-              <p class="p-white">Pau's Apples</p>
-              <div class="product-info-price p-white"><p>Amount: <%= humanized_money_with_symbol(product.price) %></p></div>
+              <p class="p-white"><%= product.name %></p>
+              <div class="product-info-price p-white"><%= humanized_money_with_symbol(product.price) %></div>
             </div>
             <div class="product-info-btn">
-              <a href="#" class="btn-plusminus">
-                <div class="btn-plusminus-minus link-big-white">-</div>
-                <div class="btn-plusminus-amount link-big-white">0</div>
-                <div class="btn-plusminus-plus link-big-white">+</div>
-              </a>
+              <div class="btn-plusminus">
+                <%= link_to "-", remove_from_cart_path(product.id), class: "btn-plusminus-minus link-big-white", remote: true %>
+                <div class="btn-plusminus-amount link-big-white"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
+                <%= link_to "+", remove_from_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
+              </div>
             </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
-
-    <div class="category-container">
-      <h2 class="h3-category">Vegetables</h2>
-      <div class="cards-container">
-        <div class="card-vertical">
-          <div class="product-info-container">
-            <div class="product-description">
-              <p class="p-white">Simon's cabbage</p>
-              <div class="product-info-price p-white">100 E</div>
-            </div>
-            <div class="product-info-btn">
-              <a href="#" class="btn-plusminus">
-                 <div class="btn-plusminus-minus link-big-white">-</div>
-                <div class="btn-plusminus-amount link-big-white">0</div>
-                <div class="btn-plusminus-plus link-big-white">+</div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="category-container">
-      <h2 class="h3-category">Eggs</h2>
-      <div class="cards-container">
-
-      </div>
-    </div>
-
-    <div class="category-container">
-      <h2 class="h3-category">Wine</h2>
-      <div class="cards-container">
-
-      </div>
-    </div>
+    <% end %>
   </div>
+
 </div>
 

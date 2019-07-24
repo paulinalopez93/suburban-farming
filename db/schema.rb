@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_102118) do
+ActiveRecord::Schema.define(version: 2019_07_24_123016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
     t.date "date"
-    t.boolean "paid"
+    t.boolean "paid", default: false
     t.integer "total_price"
     t.string "city"
     t.string "street"
