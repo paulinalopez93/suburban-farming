@@ -26,6 +26,10 @@ class OrdersController < ApplicationController
     @order.destroy
   end
 
+  def add_to_cart
+
+  end
+
   private
 
   def order_params
