@@ -6,14 +6,16 @@
     <h2 class="p-big-black">Wine</h2>
   </div>
 
+  <% @products.each do |product| %>
   <div class="categories-container">
     <div class="category-container">
-      <h2 class="h3-category">Fruits</h2>
+      <h2 class="h3-category"><%= product.category %></h2>
       <div class="cards-container">
-        <div class="card-vertical">
+        <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
+         url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
           <div class="product-info-container">
             <div class="product-description">
-              <p class="p-white">Pau's Apples</p>
+              <p class="p-white"><%= product.name %></p>
               <div class="product-info-price p-white"><p>Amount: <%= humanized_money_with_symbol(product.price) %></p></div>
             </div>
             <div class="product-info-btn">
@@ -26,6 +28,7 @@
           </div>
         </div>
       </div>
+    <% end %>
     </div>
 
     <div class="category-container">

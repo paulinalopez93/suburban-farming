@@ -5,7 +5,7 @@
   <div class="hero-container">
     <h1>Turning food waste into healthy dinners</h1>
     <div class="search-hero">
-      <a href="" class="btn-hero link-big-white">DISCOVER</a>
+      <%= link_to "DISCOVER", products_path, class: 'btn-hero link-big-white' %>
     </div>
   </div>
 </div>
@@ -65,7 +65,7 @@
   </div>
 </div>
 <!-- Sign in Modal -->
-<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade right" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,14 +92,17 @@
           </div>
         <% end %>
       </div>
-<!-- Sign up Modal -->
+
       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Modal2">
+        Sign up
+        </button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
+<!-- Sign up Modal -->
 <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -140,3 +143,12 @@
     </div>
   </div>
 </div>
+
+<% if params[:signed_in] == 'false' %>
+  <script>
+    window.addEventListener('load', (event) => {
+      const button = document.getElementById('sign-in-button');
+      button.click();
+    });
+  </script>
+<% end %>
