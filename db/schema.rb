@@ -25,7 +25,11 @@ ActiveRecord::Schema.define(version: 2019_07_24_133205) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "status", default: "pending"
+=======
+    t.string "status"
+>>>>>>> 6db8eba68175bf6b62dc48825dda6be2a8e77207
     t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
