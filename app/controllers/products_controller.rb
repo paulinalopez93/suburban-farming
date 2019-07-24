@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
     @products = Product.all
@@ -9,12 +9,11 @@ class ProductsController < ApplicationController
       if current_user.orders.any?
         @order = current_user.orders.where(paid: false).last
       else
-        @order = Order.new(user_id: current_user.id)
+        @order = Order.create(user_id: current_user.id)
       end
     else
-      @order = Order.new(user_id: 1)
+      @order = Order.create(user_id: 1)
     end
-    raise
     @products.each do |product|
       product_order = ProductOrder.new
       product_order.product = product

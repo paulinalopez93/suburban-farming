@@ -1,4 +1,5 @@
 puts 'Cleaning database...'
+ProductOrder.destroy_all
 Product.destroy_all
 User.destroy_all
 

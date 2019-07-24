@@ -4,14 +4,14 @@
     <h2 class="p-big-black"><%= category %></h2>
     <% end %>
   </div>
-<%= @order %>
+
   <div class="categories-container">
     <% @categories.each do |category| %>
     <div class="category-container">
       <h2 class="h3-category"><%= category %></h2>
       <div class="cards-container">
-        <% @products.each do |product| %>
-        <% if product.category == category %>
+
+        <% @products.where(category: category).each do |product| %>
         <div class="card-vertical">
           <div class="product-info-container">
             <div class="product-description">
@@ -19,24 +19,19 @@
               <div class="product-info-price p-white"><%= product.price %></div>
             </div>
             <div class="product-info-btn">
-
-              <% @order.product_orders.each do |product_order| %>
-              <%= product_order.quantity %>
-              <% if product_order.product == product %>
-              <a href="#" class="btn-plusminus">
-                <div class="btn-plusminus-minus link-big-white">-</div>
-                <div class="btn-plusminus-amount link-big-white"><%= product_order.quantity %></div>
-              <% end %>
-              <% end %>
-              </a>
+              <div class="btn-plusminus">
+                <%= link_to "-", remove_from_cart_path(product.id), class: "btn-plusminus-minus link-big-white", remote: true %>
+                <div class="btn-plusminus-amount link-big-white"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
+                <%= link_to "+", remove_from_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
+              </div>
             </div>
           </div>
         </div>
         <% end %>
-        <% end %>
       </div>
-      <% end %>
-
     </div>
+    <% end %>
   </div>
+
+</div>
 
