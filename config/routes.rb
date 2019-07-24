@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'profile'
   get '/payment', to: 'orders#payment', as: 'payment'
   resources :orders, except: [:index] do
+    resources :payment, only: [:new, :create]
   get 'orders/:product_id', to: 'orders#add_to_cart', as: 'add_to_cart'
   resources :products do
     resources :reviews, only: [:create, :new]
