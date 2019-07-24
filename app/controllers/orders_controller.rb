@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_product, only: [ :add_to_cart, :remove_from_cart ]
+  before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart ]
   def show
     @order = Order.find(params[:id])
   end
@@ -30,11 +32,21 @@ class OrdersController < ApplicationController
   end
 
   def add_to_cart
-    @order = Order.all
+    raise
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+  end
+
+  def remove_from_cart
   end
 
   private
 
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
   def order_params
     params.require(:order).permit(:city, :street, :street_number, :zip_code)
   end
