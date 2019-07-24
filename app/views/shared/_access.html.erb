@@ -1,0 +1,79 @@
+<!-- Sign in Modal -->
+<div class="modal fade right" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= simple_form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, as: :boolean %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Modal2" data-dismiss="modal">
+        Sign up
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sign up Modal -->
+<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SIGN UP</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= simple_form_for(:user, as: :user, url: registration_path(:user)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+        <% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
