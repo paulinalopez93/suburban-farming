@@ -5,6 +5,7 @@
     <% end %>
   </div>
 
+  <% @products.each do |product| %>
   <div class="categories-container">
     <% @categories.each do |category| %>
     <div class="category-container">
@@ -12,7 +13,8 @@
       <div class="cards-container">
 
         <% @products.where(category: category).each do |product| %>
-        <div class="card-vertical">
+        <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
+         url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
           <div class="product-info-container">
             <div class="product-description">
               <p class="p-white"><%= product.name %></p>
