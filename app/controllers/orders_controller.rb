@@ -26,8 +26,11 @@ class OrdersController < ApplicationController
     @order.destroy
   end
 
-  def add_to_cart
+  def payment
+  end
 
+  def add_to_cart
+    @order = Order.all
   end
 
   private
