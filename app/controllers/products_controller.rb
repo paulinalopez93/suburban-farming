@@ -39,10 +39,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def add
-    product.quantity = +1
-    create_new_order
-  end
+  # def add
+  #   product.quantity = +1
+  #   create_new_order
+  # end
 
   def edit
   end

@@ -1,16 +1,17 @@
 class OrdersController < ApplicationController
+
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.where(status: 'paid').find(params[:id])
   end
 
-  def create
-    @order = Order.new(params[:order])
-    if @order.save
-      create_new_order
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @order = Order.new(params[:order])
+  #   if @order.save
+  #     create_new_order
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def new
     @order = Order.new
@@ -37,13 +38,17 @@ class OrdersController < ApplicationController
     @order = Order.all
   end
 
+  # def checkout
+  #   @order = Order.find(params[:id])
+  # end
+
   private
 
-   def create_new_order
-    product = Product.find(params[:product_id])
-    order = Order.create!(amount: product.price, state: 'pending', user: current_user)
-    redirect_to new_order_payment_path(order)
-  end
+  #  def create_new_order
+  #   product = Product.find(params[:product_id])
+  #   order = Order.create!(amount: product.price, state: 'pending', user: current_user)
+  #   redirect_to new_order_payment_path(order)
+  # end
 
   def order_params
     params.require(:order).permit(:city, :street, :street_number, :zip_code)
