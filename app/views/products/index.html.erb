@@ -5,25 +5,26 @@
     <% end %>
   </div>
 
-  <% @products.each do |product| %>
   <div class="categories-container">
     <% @categories.each do |category| %>
+
     <div class="category-container">
       <h2 class="h3-category"><%= category %></h2>
-      <div class="cards-container">
 
+      <div class="cards-container">
         <% @products.where(category: category).each do |product| %>
         <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
          url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
           <div class="product-info-container">
             <div class="product-description">
               <p class="p-white"><%= product.name %></p>
-              <div class="product-info-price p-white"><%= humanized_money_with_symbol(product.price) %></div>
+              <div class="product-info-price p-white"><%= humanized_money_with_symbol(product.price) %>
+              </div>
             </div>
             <div class="product-info-btn">
               <div class="btn-plusminus">
                 <%= link_to "-", remove_from_cart_path(product.id), class: "btn-plusminus-minus link-big-white", remote: true %>
-                <div class="btn-plusminus-amount link-big-white"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
+                <div class="btn-plusminus-amount link-big-white"><%= @order.product_orders.find_by(product_id: product.id)%></div>
                 <%= link_to "+", remove_from_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
               </div>
             </div>
@@ -31,7 +32,9 @@
         </div>
         <% end %>
       </div>
+
     </div>
+
     <% end %>
   </div>
 
