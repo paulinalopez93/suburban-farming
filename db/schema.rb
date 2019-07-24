@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_125450) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
