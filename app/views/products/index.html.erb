@@ -25,7 +25,7 @@
               <div class="btn-plusminus">
                 <%= link_to "-", remove_from_cart_path(product.id), class: "btn-plusminus-minus link-big-white", remote: true %>
                 <div class="btn-plusminus-amount link-big-white"><%= @order.product_orders.find_by(product: product).quantity %></div>
-                <%= link_to "+", remove_from_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
+                <%= link_to "+", add_to_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
               </div>
             </div>
           </div>
