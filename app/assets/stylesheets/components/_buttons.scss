@@ -11,9 +11,7 @@ $button-x-padding: 32px;
 
 
 // Try to do two-three button classes
-.btn-hero {
- background: $primary;
-}
+
 
 // plus-minus button
 // responsiveness: to change the size
@@ -23,7 +21,6 @@ $button-x-padding: 32px;
   display: flex;
   justify-content: space-between;
   background: $primary;
-  color: white;
   width: 100%;
   padding: 8px 16px;
   border-radius: $border-radius-sm;

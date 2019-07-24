@@ -1,10 +1,14 @@
 
   <div class="navbar-container">
     <div class="brand-container">
-        <a class="brand nav-link" href="">Suburban</a>
+        <a class="brand nav-link link-white" href="">SUBURBAN</a>
     </div>
     <div class="links-container">
-      <a class="nav-link" href="">Log In</a>
-      <a class="nav-link" href="">Sign in</a>
+      <% if user_signed_in? %>
+      <a class="nav-link link-white" href="">CART</a>
+      <% else %>
+      <a class="nav-link link-white" href="">LOG IN</a>
+      <a class="nav-link link-white" href="">SIGN IN</a>
+      <% end %>
     </div>
   </div>

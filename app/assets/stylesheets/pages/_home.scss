@@ -6,7 +6,7 @@
 .tagline-secondary-container {
   display: flex;
   justify-content: center;
-  padding: $padding-standard-y $padding-standard-x;
+  padding: $padding-big-y $padding-standard-x;
 }
 
 
@@ -34,6 +34,6 @@
 .benefits-container {
   width: 100%;
   display: flex;
-  padding: $padding-standard-y $padding-standard-x;
+  padding: $padding-big-y $padding-standard-x;
   justify-content: space-between;
 }

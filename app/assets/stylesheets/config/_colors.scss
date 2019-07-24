@@ -17,30 +17,6 @@ $border-radius-lg: 6px;
 $border-radius-sm: 2px;
 
 
-// Text colors
-
-$h1-color: $white;
-$h2-color: $black;
-$h3-color: $black;
-$button-color: $white;
-$p-color: $dark-gray;
-
-
-// Text fonts
-
-$header-font: $body-font;
-$h2-font: $body-font;
-$h3-font: $body-font;
-$p-font: $body-font; // For buttons and paragraphs
-
-
-// Text fonts sizes
-
-$header-font-size: 67px;
-$h2-font-size: 40px;
-$h3-font-size: 32px;
-$p-font-size: 16px; // For buttons and paragraphs
-
 
 // Images
 
@@ -48,28 +24,8 @@ $linear-gradient: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0));
 
 
 // Components general
-$box-shadow: 10px 5px; // TODO
+$box-shadow: 10px 5px;
+
 $padding-standard-x: 67px;  // use different if weird, this is kind of page margin
 $padding-standard-y: 32px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Default
- a {
-  color: black;
-  text-decoration:none;
- }
+$padding-big-y: 200px;
