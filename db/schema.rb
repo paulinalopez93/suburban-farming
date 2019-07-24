@@ -26,7 +26,11 @@ ActiveRecord::Schema.define(version: 2019_07_24_133205) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.string "status", default: "pending"
+=======
+    t.string "status"
+>>>>>>> 6db8eba68175bf6b62dc48825dda6be2a8e77207
 =======
     t.string "status"
 >>>>>>> 6db8eba68175bf6b62dc48825dda6be2a8e77207
