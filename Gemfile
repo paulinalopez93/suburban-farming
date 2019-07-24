@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 # Added gems
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 gem 'money-rails'
 
 group :development do
@@ -29,5 +31,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', groups: [:development, :test]
 end
