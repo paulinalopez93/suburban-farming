@@ -64,3 +64,12 @@
     </div>
   </div>
 </div>
+
+<% if params[:signed_in] == 'false' %>
+  <script>
+    window.addEventListener('load', (event) => {
+      const button = document.getElementById('sign-in-button');
+      button.click();
+    });
+  </script>
+<% end %>
