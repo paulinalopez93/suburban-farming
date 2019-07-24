@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(params[:order])
-    @order.save
+    if @order.save
+      create_new_order
+    else
+      render :new
+    end
   end
 
   def new
@@ -34,6 +38,12 @@ class OrdersController < ApplicationController
   end
 
   private
+
+   def create_new_order
+    product = Product.find(params[:product_id])
+    order = Order.create!(amount: product.price, state: 'pending', user: current_user)
+    redirect_to new_order_payment_path(order)
+  end
 
   def order_params
     params.require(:order).permit(:city, :street, :street_number, :zip_code)
