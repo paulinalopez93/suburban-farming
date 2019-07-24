@@ -1,2 +1,7 @@
 <h1>Products#show</h1>
-<p>Amount: <%= humanized_money_with_symbol(@product.price) %></p>
+<!-- <p>Amount: <%= humanized_money_with_symbol(@product.price) %></p>
+
+<%= form_tag orders_path# do %>
+  <%= hidden_field_tag #'product_id', @product.id %>
+  <%= submit_tag #'Purchase', class: 'btn-primary' %>
+<%# end %> -->
