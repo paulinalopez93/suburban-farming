@@ -1,12 +1,16 @@
-<div id="info-modal" class="modal fade bd-example-modal-lg" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-  <div class="modal-dialog modal-lg" role="dialog">
+
+<div id="info-modal<%= product.name.gsub(" ","") %>" class="modal fade right" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+  <div class="modal-dialog" role="document">
+
     <div class="modal-content">
       <div class="go-back">
       </div>
       <div class="product-producer-info-scroll">
         <div class="product-page-section">
-          <h3 class="h3-category" id="producer-name">Producer Name</h3>
-          <p id="producer-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptates magni saepe debitis voluptas consequatur incidunt rem, pariatur, fuga, molestiae veniam consequuntur labore commodi magnam a sint eos hic distinctio.</p>
+
+          <h3><%= product.name %></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptates magni saepe debitis voluptas consequatur incidunt rem, pariatur, fuga, molestiae veniam consequuntur labore commodi magnam a sint eos hic distinctio.</p>
+
         </div>
         <h3 class="h3-category" id="producer-location">Location</h3>
         <!-- below we will need to link the mapbox maps for the location of the producers farm -->
