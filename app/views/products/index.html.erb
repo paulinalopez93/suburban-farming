@@ -8,10 +8,8 @@
 
   <div class="categories-container">
     <% @categories.each do |category| %>
-
     <div class="category-container">
       <h2 class="h3-category"><%= category %></h2>
-
       <div class="cards-container">
         <% @products.where(category: category).each_with_index do |product| %>
         <div data-toggle="modal" data-target="#info-modal<%= product.name.gsub(" ","") %>" class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
@@ -27,7 +25,8 @@
             <div class="product-info-btn">
               <div class="btn-plusminus">
                 <%= link_to "-", remove_from_cart_path(@order, product), class: "btn-plusminus-minus link-big-white", remote: true %>
-                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
+                <% product_order = @order.product_orders.find_by(product_id: product.id) %>
+                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= product_order.quantity unless product_order.nil? %></div>
                 <%= link_to "+", add_to_cart_path(@order, product), class: "btn-plusminus-plus link-big-white", remote: true %>
               </div>
             </div>

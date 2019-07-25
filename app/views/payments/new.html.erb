@@ -1,6 +1,34 @@
 <div class='payment-container'>
   <div class='payment-card'>
-    <h1>Payment</h1>
+    <h1>Checkout</h1>
+    <div class='checkout-form'>
+    <form action="/action_page.php">
+    Billing Address: <br> <input type="text" name="fname">
+    </form>
+    </div>
+    <div class='checkout-form'>
+    <form action="/action_page.php">
+    Shipping Address: <br> <input type="text" name="fname">
+    </form>
+    </div>
+
+  <div class='card-fields'>
+    <div class='checkout-form'>
+      <form action="/action_page.php">
+    Card Number: <br> <input type="text" name="fname">
+    </form>
+    </div>
+    <div class='checkout-form'>
+      <form action="/action_page.php">
+    Expiration Date: <br> <input type="text" name="fname">
+    </form>
+    </div>
+    <div class='checkout-form'>
+      <form action="/action_page.php">
+    CVV: <br> <input type="text" name="fname">
+    </form>
+    </div>
+  </div>
 
     <%= form_tag order_payments_path(@order) do %>
       <article>
@@ -18,6 +46,7 @@
         data-amount="<%= @order.price_cents %>"
         data-currency="EUR"></script>
     <% end %>
-    <p><%= link_to 'Proceed', root_path %></p>
+    <p><%= link_to 'Go back home', root_path %></p>
+
   </div>
 </div>
