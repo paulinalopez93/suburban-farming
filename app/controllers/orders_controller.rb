@@ -31,7 +31,10 @@ class OrdersController < ApplicationController
 
   def add_to_cart
 
-    @order = current_user.orders.where(status: "pending").last
+    if @order = current_user.orders.where(status: "pending").last.any?
+      @order = current_user.orders.where(status: "pending").last
+    else
+
     @product_order = @order.product_orders.find_by(product_id: @product.id)
     @product_order.quantity = @product_order.quantity + 1
     @product_order.save
