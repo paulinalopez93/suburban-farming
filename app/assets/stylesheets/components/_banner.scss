@@ -1,11 +1,11 @@
-.banner-container {
-  background-image: $linear-gradient, image-url("leaves.png");
-  background-size: cover;
-  padding: $padding-standard-x;
-  height: 80vh;
-  display:flex;
-  align-items: center;
-}
+// .banner-container {
+//   background-size: cover;
+//   padding: $padding-standard-x;
+//   height: 80vh;
+//   display:flex;
+//   align-items: center;
+//   overflow: hidden;
+// }
 
 .hero-container {
 
@@ -32,4 +32,42 @@ h1 {
   align-items: center;
   border-radius: $border-radius;
   justify-content: center;
+}
+header {
+  position: relative;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .banner-container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
