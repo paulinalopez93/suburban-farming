@@ -1,7 +1,7 @@
-<h1>Order</h1>
+<h2>Sumarry</h2>
 <ul>
   <li>Status: <%= @order.status %></li>
   <li>Item: <%= @order.id %></li>
   <li>Amount: <%= humanized_money_with_symbol(@order.price_cents) %></li>
 <ul>
-<%= link_to "pay", order_payments_path(@order), method: :post %>
+<%= link_to "Chekout", order_payments_path(@order), method: :post %>
