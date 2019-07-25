@@ -1,7 +1,21 @@
 .modal-content {
   display: flex;
+  overflow-wrap: normal;
+}
+.items-container {
+  width: 20vw;
+}
+.purchase-info-container {
+  width: 40vw;
 }
 .product_order_container {
   display: flex;
+}
+.btn-cart-container {
+  height: 30px;
+}
+.cart-info-container {
+  display: flex;
+  justify-content: space-between;
 }
 
