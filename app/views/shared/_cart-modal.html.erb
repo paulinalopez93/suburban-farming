@@ -1,7 +1,14 @@
-<div class="modal fade bd-example-modal-lg" id="ModalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg " role="dialog">
+
+
+
+
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="ModalCart"  data-spy="scroll" data-target="#myScrollspy" data-offset="20"  role="document" data-target="bd-example-modal-lg" aria-hidden="true">
+  <div class=" modal-dialog modal-lg ">
     <div class="modal-content">
-      <div class="row">
+
         <div class="items-container">
           <h3 class="h3-category">Your items</h3>
           <div class="cart-items-container">
@@ -18,9 +25,9 @@
                     <p class="p-black"><%= product_order.product.price %></p>
                   </div>
                   <div class="btn-cart-container">
-                    <%= link_to "-", root_path, class: :"link-white", remote: true %>
+                    <%= link_to "-", root_path, class: "link-white", remote: true %>
                     <%= product_order.quantity %>
-                    <%= link_to "+", root_path, class: :"link-white", remote: true %>
+                    <%= link_to "+", root_path, class: "link-white", remote: true %>
                   </div>
                 </div>
               </div>
@@ -37,20 +44,23 @@
           <div class="cart-info">
             <div class="cart-info-container">
               <p class="p-big-black">Grocery Items</p>
+              <p class="p-big-black">34 E</p>
             </div>
             <div class="cart-info-container">
               <p class="p-big-black">Delivery</p>
+              <p class="p-big-black">5 E</p>
             </div>
             <div class="cart-info-container">
               <p class="p-big-black-bold">Total</p>
+              <p class="p-big-black-bold">39 E</p>
             </div>
           </div>
+        <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
         </div>
 
-        <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
 
 
       </div>
     </div>
-  </div>
+
 </div>

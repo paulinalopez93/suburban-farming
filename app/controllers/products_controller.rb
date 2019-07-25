@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
     unless @order.user_id
       @products.each do |product|
-        unless @order.product_orders.where(product_id: product.id)
+        unless @order.product_orders.where(product_id: product.id).any?
           product_order = ProductOrder.new
           product_order.product = product
           product_order.order = @order

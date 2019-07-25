@@ -1,14 +1,17 @@
 
 <!-- Don't want to see CSS in views!!!!!!!!!!! -->
-
-<div class="banner-container">
-  <div class="hero-container">
-    <h1>Turning food waste into healthy dinners</h1>
-    <div class="search-hero">
-      <%= link_to "DISCOVER", browse_path(@order.id), class: 'btn-hero link-white' %>
+<header>
+  <%= video_tag "backgroundvideo", autoplay: :autoplay, loop: :loop, muted: :muted, playsinline: :playsinline %>
+    <div class="hero-container d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-center">
+        <h1 class="display-3">Turning food waste into healthy dinners</h1>
+        <div class="search-hero text-center">
+          <%= link_to "DISCOVER", browse_path(@order.id), class: 'btn-hero link-white' %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</header>
 
 <div class="tagline-secondary-container">
   <h2>Discover what suburban gardens have to offer</h2>
@@ -73,3 +76,16 @@
     });
   </script>
 <% end %>
+
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
