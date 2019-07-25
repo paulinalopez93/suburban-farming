@@ -1,9 +1,5 @@
-console.log("yes")
-console.log("<%= current_user %>");
-console.log("<%= current_user.orders.where(status: "pending").last %>");
-console.log("<%= current_user.orders.where(status: "pending").last.product_orders.where(product_id: @product.id).last.quantity %>");
 
-let quantity = document.getElementById('product-quantity');
-console.log(quantity.innerHTML);
-quantity.innerHTML = "<%= @product_order.quantity %>";
+
+document.getElementById('product-quantity-<%= @product.id %>').innerHTML = "<%= @product_order.quantity %>";
+
 
