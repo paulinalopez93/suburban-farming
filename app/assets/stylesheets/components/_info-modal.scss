@@ -17,9 +17,13 @@ padding: 60px;
 
 }
 
-#producer-info {
+.producer-info {
+  display: block;
   text-align: -webkit-left;
-  padding: 15px;
+  width: 25%;
+  height: 100%;
+  padding-right: 50px;
+
 }
 
 #producer-location {
