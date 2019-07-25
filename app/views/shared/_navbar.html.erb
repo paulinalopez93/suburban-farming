@@ -4,10 +4,10 @@
   </div>
   <div class="links-container">
     <% if user_signed_in? %>
-    <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#ModalCart" id='cart-button'>CART</button>
     <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
 
     <% else %>
+    <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#ModalCart" id='cart-button'>CART</button>
     <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
     SIGN IN
     </button>
