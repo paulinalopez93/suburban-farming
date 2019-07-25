@@ -25,7 +25,8 @@
             <div class="product-info-btn">
               <div class="btn-plusminus">
                 <%= link_to "-", remove_from_cart_path(@order, product), class: "btn-plusminus-minus link-big-white", remote: true %>
-                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
+                <% product_order = @order.product_orders.find_by(product_id: product.id) %>
+                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= product_order.quantity unless product_order.nil? %></div>
                 <%= link_to "+", add_to_cart_path(@order, product), class: "btn-plusminus-plus link-big-white", remote: true %>
               </div>
             </div>
