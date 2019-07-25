@@ -11,15 +11,21 @@ class ProductsController < ApplicationController
         @order = current_user.orders.where(status: "pending").last
       else
         @order = Order.create(user_id: current_user.id)
+        @products.each do |product|
+          product_order = ProductOrder.new
+          product_order.product = product
+          product_order.order = @order
+          product_order.save
+        end
       end
     else
       @order = Order.create()
-    end
-    @products.each do |product|
-      product_order = ProductOrder.new
-      product_order.product = product
-      product_order.order = @order
-      product_order.save
+      @products.each do |product|
+        product_order = ProductOrder.new
+        product_order.product = product
+        product_order.order = @order
+        product_order.save
+      end
     end
   end
 

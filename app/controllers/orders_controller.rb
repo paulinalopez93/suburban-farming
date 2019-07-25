@@ -30,10 +30,15 @@ class OrdersController < ApplicationController
   end
 
   def add_to_cart
-    raise
+
+    @order = current_user.orders.where(status: "pending").last
+    @product_order = @order.product_orders.where(product_id: @product.id).last
+    @product_order.quantity = @product_order.quantity + 1
+    @product_order.save
+
       respond_to do |format|
         format.html { redirect_to products_path }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
+        format.js
       end
   end
 
@@ -45,7 +50,6 @@ class OrdersController < ApplicationController
   # end
 
   private
-
 
   def set_product
     @product = Product.find(params[:product_id])
