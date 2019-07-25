@@ -40,11 +40,8 @@
 
 
            <%#= link_to order_payments_path(@order) do %>
-           <% if user_signed_in? %>
            <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
-          <% else %>
-            <%= link_to "CHECKOUT", new_user_registration_path(@order.id), class: "btn-primary link-big-white" %>
-          <% end %>
+
           <%# end %>
         <%# else %>
           <!--  "There are no orders!" -->
