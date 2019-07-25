@@ -7,14 +7,6 @@ class OrdersController < ApplicationController
     @order = current_user.orders.where(status: 'paid').find(params[:id])
   end
 
-  # def create
-  #   @order = Order.new(params[:order])
-  #   if @order.save
-  #     create_new_order
-  #   else
-  #     render :new
-  #   end
-  # end
 
   def new
     @order = Order.new
@@ -58,13 +50,6 @@ class OrdersController < ApplicationController
   # end
 
   private
-
-
-  #  def create_new_order
-  #   product = Product.find(params[:product_id])
-  #   order = Order.create!(amount: product.price, state: 'pending', user: current_user)
-  #   redirect_to new_order_payment_path(order)
-  # end
 
   def set_product
     @product = Product.find(params[:product_id])
