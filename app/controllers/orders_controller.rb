@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
     @order = current_user.orders.where(status: 'paid').find(params[:id])
   end
 
-
   def new
     @order = Order.new
   end
