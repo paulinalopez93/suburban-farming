@@ -2,6 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
-    @order = Order.create()
+    if user_signed_in?
+      @order = current_user.orders.where(status: "pending").last
+    else
+      @order = Order.create()
+    end
   end
 end

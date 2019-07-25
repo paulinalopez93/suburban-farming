@@ -12,6 +12,7 @@
 }
 
 .product-info-container {
+  width: 100%;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -24,6 +25,8 @@
 }
 
 .product-info-btn {
+  width: 100%;
+  padding: 10px 0px;
   display: flex;
   justify-content: center;
 }
