@@ -3,7 +3,11 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      @order = current_user.orders.where(status: "pending").last
+      if current_user.orders.where(status: "pending").last
+        @order = current_user.orders.where(status: "pending").last
+      else
+        @order = Order.create()
+      end
     else
       @order = Order.create()
     end
