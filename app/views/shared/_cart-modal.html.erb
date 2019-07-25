@@ -1,52 +1,53 @@
 <div class="modal fade right" id="ModalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <!-- <%# if @order.present? %> -->
-        <div class="items-container">
-          <h3 class="h3-category">Your items</h3>
-          <div class="items-cards-container">
-            <div class="card-horizontal">
-              <div class="card-horizontal-img">
-              </div>
-              <div class="card-horizontal-details">
-                <div class="horizontal-products">
-                  <p>Adels tomatoes</p>
-                  <p>Total $6</p>
+      <div class="row">
+        <!-- <%# if @order.present? %> -->
+        <div class="col-12 col-sm-6">
+          <div class="items-container">
+            <h3 class="h3-category">Your items</h3>
+            <div class="items-cards-container">
+              <div class="card-horizontal">
+                <div class="card-horizontal-img">
                 </div>
-                <div class="horizontal-add">
-                  <div></div>
-                  <div><p> - </p></div>
-                  <div><p> 2 </p></div>
-                  <div><p> + </p></div>
+                <div class="card-horizontal-details">
+                  <div class="horizontal-products">
+                    <p>Adels tomatoes</p>
+                    <p>Total $6</p>
+                  </div>
+                  <div class="horizontal-add">
+                    <div></div>
+                    <div><p> - </p></div>
+                    <div><p> 2 </p></div>
+                    <div><p> + </p></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
-        <div class="purchase-info-container">
-          <h3 class="h3-category">Summary</h3>
-          <div class="cart-info">
-            <div class="cart-info-container">
-              <p class="p-big-black">Grocery Items</p>
-            </div>
-            <div class="cart-info-container">
-              <p class="p-big-black">Delivery</p>
-            </div>
-            <div class="cart-info-container">
-              <p class="p-big-black-bold">Total</p>
+        <div class="col-12 col-sm-6">
+          <div class="purchase-info-container">
+            <h3 class="h3-category">Summary</h3>
+            <div class="cart-info">
+              <div class="cart-info-container">
+                <p class="p-big-black">Grocery Items</p>
+              </div>
+              <div class="cart-info-container">
+                <p class="p-big-black">Delivery</p>
+              </div>
+              <div class="cart-info-container">
+                <p class="p-big-black-bold">Total</p>
+              </div>
             </div>
           </div>
 
-
-           <%#= link_to order_payments_path(@order) do %>
            <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
 
-          <%# end %>
-        <%# else %>
-          <!--  "There are no orders!" -->
-        <%# end %>
 
+          <%# end %>
+        </div>
       </div>
     </div>
   </div>
