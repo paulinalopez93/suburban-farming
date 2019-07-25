@@ -1,17 +1,21 @@
 .payment-container{
   display: flex;
   justify-content: center;
+
 }
 .payment-card{
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  // box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:flex-start;
   margin-top: 70px;
   padding: 18px;
+  width: 1200px;
   h1 {
     color: black;
     font-size: 40px;
+    margin-left: 18px;
+
   }
   a {
     font-size: 16px;
@@ -20,11 +24,34 @@
     border: 1px white solid;
     padding: 8px;
     margin-top: 6px;
+    margin-left: 18px;
   }
+}
+.checkout-form{
+  display:flex;
+  flex-direction: column;
+}
+.card-fields{
+  display: flex;
+  justify-content: space-between;
+   input[type=text]{
+    width:200px;
+   }
 }
 .stripe-button-el {
   margin-bottom: 20px;
 }
 .payment-card a {
   border-radius: 10px;
+}
+input[type=text]{
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 400px;
+}
+form{
+  margin: 20px;
+}
+.stripe-button-el span{
+  background: #F6613F;
 }
