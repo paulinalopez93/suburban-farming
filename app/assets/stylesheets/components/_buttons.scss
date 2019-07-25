@@ -31,3 +31,10 @@ $button-x-padding: 32px;
   top: 0;
   right: 0;
  }
+.btn-primary {
+  height: 50px;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
