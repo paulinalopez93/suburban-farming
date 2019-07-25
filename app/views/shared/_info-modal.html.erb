@@ -1,20 +1,24 @@
+
 <div id="info-modal<%= product.name.gsub(" ","") %>" class="modal fade right" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
   <div class="modal-dialog" role="document">
+
     <div class="modal-content">
       <div class="go-back">
       </div>
       <div class="product-producer-info-scroll">
         <div class="product-page-section">
+
           <h3><%= product.name %></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptates magni saepe debitis voluptas consequatur incidunt rem, pariatur, fuga, molestiae veniam consequuntur labore commodi magnam a sint eos hic distinctio.</p>
+
         </div>
-        <h3>Location</h3>
+        <h3 class="h3-category" id="producer-location">Location</h3>
         <!-- below we will need to link the mapbox maps for the location of the producers farm -->
         <div class="card-map"></div>
       </div>
       <div class="product-info">
         <div class="product-modal-title">
-          <h3>"Alfredo Perez" <br> "Apples" </h3>
+          <h3 class="h3-category" >"Alfredo Perez" <br> "Apples" </h3>
           <div class="product-page-price">
             <h4 class="product-page-price-label">price</h4>
             <h4>$2</h4>
@@ -26,6 +30,17 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+ -->
 

@@ -1,4 +1,27 @@
 #info-modal {
 opacity: 1;
 filter: alpha(opacity=100);
+padding: 60px;
+}
+
+.modal-dialog {
+  padding: 10px;
+}
+
+.modal-content {
+  margin-left: 50px;
+}
+
+#producer-name {
+  text-align: center;
+
+}
+
+#producer-info {
+  text-align: -webkit-left;
+  padding: 15px;
+}
+
+#producer-location {
+  text-align: center;
 }
