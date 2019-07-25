@@ -30,13 +30,13 @@ class OrdersController < ApplicationController
   end
 
   def add_to_cart
-    # @product_order = @order.product_orders.find_by(product_id: @product.id)
-    # @product_order.quantity = @product_order.quantity + 1
-    # @product_order.save
-    # @order.save
+    @product_order = @order.product_orders.find_by(product_id: @product.id)
+    @product_order.quantity = @product_order.quantity + 1
+    @product_order.save
+    @order.save
 
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to browse_path(@order) }
       format.js
     end
   end
@@ -51,7 +51,7 @@ class OrdersController < ApplicationController
     @order.save
 
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to browse_path(@order) }
       format.js
     end
   end
@@ -68,7 +68,7 @@ class OrdersController < ApplicationController
   end
 
   def set_order
-    @order = Order.find(params[:order_id])
+    @order = Order.find(params[:id])
   end
 
   def create_new_order
