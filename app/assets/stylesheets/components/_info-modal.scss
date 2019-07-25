@@ -2,6 +2,7 @@
 opacity: 1;
 filter: alpha(opacity=100);
 padding: 60px;
+display: flex-end;
 }
 
 .modal-dialog {
@@ -10,10 +11,24 @@ padding: 60px;
 
 .modal-content {
   margin-left: 50px;
+  display: inline-block;
+}
+
+.about-producer {
+  padding: 15px;
+}
+
+.product-page-section {
+  padding: 15px;
 }
 
 #producer-name {
   text-align: center;
+
+}
+
+img {
+  padding: 15px;
 
 }
 
@@ -27,5 +42,22 @@ padding: 60px;
 }
 
 #producer-location {
-  text-align: center;
+  text-align: left;
+  padding-left: 15px;
+
+}
+
+.product-modal-title {
+  display: flex;
+  border-left: 3px solid $primary;
+  padding: 13px;
+  padding-left: 15px;
+  margin-left: 513px;
+}
+
+.product-info {
+  text-align: right;
+  margin-right: 100px;
+  justify-content: flex-end;
+  flex-direction: center;
 }
