@@ -1,4 +1,6 @@
 console.log("<%= @product %>");
+console.log("<%= @product_order.product.name %>");
+
 
 document.getElementById('product-quantity-<%= @product.id %>').innerHTML = "<%= @product_order.quantity %>";
 

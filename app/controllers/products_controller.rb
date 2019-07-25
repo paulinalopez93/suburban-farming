@@ -9,10 +9,12 @@ class ProductsController < ApplicationController
 
     unless @order.user_id
       @products.each do |product|
-        product_order = ProductOrder.new
-        product_order.product = product
-        product_order.order = @order
-        product_order.save
+        unless @order.product_orders.where(product_id: product.id)
+          product_order = ProductOrder.new
+          product_order.product = product
+          product_order.order = @order
+          product_order.save
+        end
       end
     end
   end
