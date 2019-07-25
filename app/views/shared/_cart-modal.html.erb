@@ -1,54 +1,55 @@
-<div class="modal fade right" id="ModalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="ModalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg " role="dialog">
     <div class="modal-content">
       <div class="row">
-        <!-- <%# if @order.present? %> -->
-        <div class="col-12 col-sm-6">
-          <div class="items-container">
-            <h3 class="h3-category">Your items</h3>
-            <div class="items-cards-container">
-              <div class="card-horizontal">
-                <div class="card-horizontal-img">
+        <div class="items-container">
+          <h3 class="h3-category">Your items</h3>
+          <div class="cart-items-container">
+            <% @order.product_orders.where.not(quantity: 0).each do |product_order| %>
+
+            <div class="card-horizontal">
+              <div class="product-order-container">
+                <div class="product-image">
+                  <%= cl_image_tag(product_order.product.photo) %>
                 </div>
-                <div class="card-horizontal-details">
-                  <div class="horizontal-products">
-                    <p>Adels tomatoes</p>
-                    <p>Total $6</p>
+                <div class="product-order-info-container">
+                  <div class="product-cart-details">
+                    <p class="p-black-bold"><%= product_order.product.name %></p>
+                    <p class="p-black"><%= product_order.product.price %></p>
                   </div>
-                  <div class="horizontal-add">
-                    <div></div>
-                    <div><p> - </p></div>
-                    <div><p> 2 </p></div>
-                    <div><p> + </p></div>
+                  <div class="btn-cart-container">
+                    <%= link_to "-", root_path, class: :"link-white", remote: true %>
+                    <%= product_order.quantity %>
+                    <%= link_to "+", root_path, class: :"link-white", remote: true %>
                   </div>
                 </div>
               </div>
             </div>
+
+            <% end %>
           </div>
-          </div>
-
-        <div class="col-12 col-sm-6">
-          <div class="purchase-info-container">
-            <h3 class="h3-category">Summary</h3>
-            <div class="cart-info">
-              <div class="cart-info-container">
-                <p class="p-big-black">Grocery Items</p>
-              </div>
-              <div class="cart-info-container">
-                <p class="p-big-black">Delivery</p>
-              </div>
-              <div class="cart-info-container">
-                <p class="p-big-black-bold">Total</p>
-              </div>
-            </div>
-          </div>
-
-
-           <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
-
-
-          <%# end %>
         </div>
+
+
+
+        <div class="purchase-info-container">
+          <h3 class="h3-category">Summary</h3>
+          <div class="cart-info">
+            <div class="cart-info-container">
+              <p class="p-big-black">Grocery Items</p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black">Delivery</p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black-bold">Total</p>
+            </div>
+          </div>
+        </div>
+
+        <%= link_to "CHECKOUT", new_order_payment_path(@order.id), class: "btn-primary link-big-white" %>
+
+
       </div>
     </div>
   </div>

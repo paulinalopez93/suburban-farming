@@ -1,17 +1,19 @@
 // this is for the card basket and whatever else we need to use a horizontal for
-
 .card-horizontal {
   display: flex;
-  background: rgb(235, 235, 235)
+  width: 100%;
+  background-color: $light-gray;
+  border-radius: $border-radius;
 }
-
-.horizontal-add {
+.product-order-container {
   display: flex;
 }
-
-.card-horizontal-img {
-  background-image: url("https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
-  width: 25vh;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+.product-image {
+  width: 89px;
+  height: 89px;
+  overflow: hidden;
+}
+.product-image img {
+  height: 100%;
+  object-fit: cover;
 }
