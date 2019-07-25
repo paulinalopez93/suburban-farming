@@ -1,30 +1,37 @@
 <div class="modal fade right" id="ModalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-
-      <div class="items-container">
-        <h3 class="h3-category">Your items</h3>
-        <div class="items-cards-container">
-          <div class="card-horizontal">blaa</div>
-          <div class="card-horizontal">blaa</div>
-          <div class="card-horizontal">blaa</div>
-        </div>
-      </div>
-
-      <div class="purchase-info-container">
-        <h3 class="h3-category">Summary</h3>
-        <div class="cart-info">
-          <div class="cart-info-container">
-            <p class="p-big-black">Grocery Items</p>
-          </div>
-          <div class="cart-info-container">
-            <p class="p-big-black">Delivery</p>
-          </div>
-          <div class="cart-info-container">
-            <p class="p-big-black-bold">Total</p>
+      <%# if @order.present? %>
+        <div class="items-container">
+          <h3 class="h3-category">Your items</h3>
+          <div class="items-cards-container">
+            <div class="card-horizontal">blaa</div>
+            <div class="card-horizontal">blaa</div>
+            <div class="card-horizontal">blaa</div>
           </div>
         </div>
-        <a href="#" class="btn-primary link-big-white">CHECKOUT</a>
+
+        <div class="purchase-info-container">
+          <h3 class="h3-category">Summary</h3>
+          <div class="cart-info">
+            <div class="cart-info-container">
+              <p class="p-big-black">Grocery Items</p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black">Delivery</p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black-bold">Total</p>
+            </div>
+          </div>
+
+           <%#= link_to order_payments_path(@order) do %>
+          <button class="btn-primary link-big-white">CHECKOUT</button>
+          <%# end %>
+        <%# else %>
+          <!--  "There are no orders!" -->
+        <%# end %>
+
       </div>
     </div>
   </div>
