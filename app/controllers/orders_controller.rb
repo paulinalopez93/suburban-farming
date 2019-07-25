@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
 
   before_action :set_product, only: [ :add_to_cart, :remove_from_cart ]
+  before_action :set_order, only: [ :add_to_cart, :remove_from_cart ]
   before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart ]
 
   def show
     @order = current_user.orders.where(status: 'paid').find(params[:id])
   end
-
 
   def new
     @order = Order.new
@@ -30,15 +30,13 @@ class OrdersController < ApplicationController
   end
 
   def add_to_cart
-
-    @order = current_user.orders.where(status: "pending").last
     @product_order = @order.product_orders.find_by(product_id: @product.id)
     @product_order.quantity = @product_order.quantity + 1
     @product_order.save
     @order.save
 
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to browse_path(@order) }
       format.js
     end
   end
@@ -53,7 +51,7 @@ class OrdersController < ApplicationController
     @order.save
 
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to browse_path(@order) }
       format.js
     end
   end
@@ -67,6 +65,10 @@ class OrdersController < ApplicationController
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 
   def create_new_order

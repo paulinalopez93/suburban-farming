@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   resources :orders, except: [:index, :new, :create] do
     resources :payments, only: [:new, :create]
   end
-  get 'orders/add/:product_id', to: 'orders#add_to_cart', as: 'add_to_cart'
-  get 'orders/remove/:product_id', to: 'orders#remove_from_cart', as: 'remove_from_cart'
-  resources :products do
+  get 'orders/:id/add/:product_id', to: 'orders#add_to_cart', as: 'add_to_cart'
+  get 'orders/:id/remove/:product_id', to: 'orders#remove_from_cart', as: 'remove_from_cart'
+  resources :products, except: [:index, :show, :edit, :update, :destroy ] do
     resources :reviews, only: [:create, :new ]
   end
+  get "products/:order_id", to: "products#index", as: "browse"
 end
