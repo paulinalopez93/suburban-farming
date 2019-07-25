@@ -35,14 +35,27 @@ class OrdersController < ApplicationController
     @product_order = @order.product_orders.find_by(product_id: @product.id)
     @product_order.quantity = @product_order.quantity + 1
     @product_order.save
+    @order.save
 
-      respond_to do |format|
-        format.html { redirect_to products_path }
-        format.js
-      end
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.js
+    end
   end
 
   def remove_from_cart
+    @order = current_user.orders.where(status: "pending").last
+    @product_order = @order.product_orders.find_by(product_id: @product.id)
+    if @product_order.quantity > 0
+      @product_order.quantity = @product_order.quantity - 1
+    end
+    @product_order.save
+    @order.save
+
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.js
+    end
   end
 
   # def checkout
@@ -55,7 +68,7 @@ class OrdersController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 
-   def create_new_order
+  def create_new_order
     product = Product.find(params[:product_id])
     order = Order.create!(amount: product.price, state: 'pending', user: current_user)
     redirect_to new_order_payment_path(order)
