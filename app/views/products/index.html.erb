@@ -1,4 +1,4 @@
-<%= render 'shared/cart-modal' %>
+
 <div class="shop-container">
   <div class="sidebar-container">
     <% @categories.each do |category| %>
@@ -16,6 +16,11 @@
         <% @products.where(category: category).each do |product| %>
         <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
          url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
+          <div class="modal-info-btn">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">
+              i
+            </button>
+          </div>
           <div class="product-info-container">
             <div class="product-description">
               <p class="p-white"><%= product.name %></p>
@@ -25,7 +30,7 @@
             <div class="product-info-btn">
               <div class="btn-plusminus">
                 <%= link_to "-", remove_from_cart_path(product.id), class: "btn-plusminus-minus link-big-white", remote: true %>
-                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= @order.product_orders.where(product_id: product.id).last.quantity %></div>
+                <div class="btn-plusminus-amount link-big-white" id="product-quantity-<%= product.id %>"><%= @order.product_orders.find_by(product_id: product.id).quantity %></div>
                 <%= link_to "+", add_to_cart_path(product.id), class: "btn-plusminus-plus link-big-white", remote: true %>
               </div>
             </div>

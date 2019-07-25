@@ -5,9 +5,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @categories = Product.categories.keys
-    @order = 0
     if user_signed_in?
-      if current_user.orders.any?
+      if current_user.orders.where(status: "pending").any?
         @order = current_user.orders.where(status: "pending").last
       else
         @order = Order.create(user_id: current_user.id)
