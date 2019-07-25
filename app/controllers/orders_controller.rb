@@ -58,6 +58,7 @@ class OrdersController < ApplicationController
     end
   end
 
+
   # def checkout
   #   @order = Order.find(params[:id])
   # end
