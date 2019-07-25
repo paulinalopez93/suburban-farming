@@ -1,3 +1,4 @@
+
 <div class="shop-container">
   <div class="sidebar-container">
     <% @categories.each do |category| %>
@@ -15,6 +16,11 @@
         <% @products.where(category: category).each do |product| %>
         <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
          url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
+          <div class="modal-info-btn">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info-modal">
+              i
+            </button>
+          </div>
           <div class="product-info-container">
             <div class="product-description">
               <p class="p-white"><%= product.name %></p>
