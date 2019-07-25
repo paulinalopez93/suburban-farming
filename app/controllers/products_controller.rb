@@ -1,24 +1,13 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_order
 
   def index
     @products = Product.all
     @categories = Product.categories.keys
-    if user_signed_in?
-      if current_user.orders.where(status: "pending").any?
-        @order = current_user.orders.where(status: "pending").last
-      else
-        @order = Order.create(user_id: current_user.id)
-        @products.each do |product|
-          product_order = ProductOrder.new
-          product_order.product = product
-          product_order.order = @order
-          product_order.save
-        end
-      end
-    else
-      @order = Order.create()
+
+    unless @order.user_id
       @products.each do |product|
         product_order = ProductOrder.new
         product_order.product = product
@@ -31,41 +20,14 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def new
-    @product = Product.new
-  end
 
-  def create
-    @product = Product.new(product_params)
-    if @product.save
-      redirect_to product_path(@product)
-    else
-      render :new
-    end
-  end
 
-  # def add
-  #   product.quantity = +1
-  #   create_new_order
-  # end
-
-  def edit
-  end
-
-  def update
-    if @product.update(product_params)
-      redirect_to product_path(@product)
-    else
-      render :new
-    end
-  end
-
-  def destroy
-    @product.destroy
-    redirect_to products_path
-  end
 
   private
+
+  def set_order
+    @order = Order.find(params[:order_id])
+  end
 
   def product_params
     params.require(:product).permit(:price, :details, :photo, :category)

@@ -1,7 +1,5 @@
-console.log("Order id:");
-console.log("<%= @order.id %>");
-console.log("User id:");
-console.log("<%= @order.user_id %>");
+console.log("<%= @product %>");
+
 document.getElementById('product-quantity-<%= @product.id %>').innerHTML = "<%= @product_order.quantity %>";
 
 
