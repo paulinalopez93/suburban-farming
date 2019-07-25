@@ -2,7 +2,11 @@
   position: fixed;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 55px;
+  padding-right: 55px;
+  background-color: white;
+  opacity: 0.3;
 }
 
 .nav-link {
