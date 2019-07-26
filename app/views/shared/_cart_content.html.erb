@@ -1,0 +1,48 @@
+<div class="items-container">
+          <h3 class="h3-category">Your items</h3>
+          <div class="cart-items-container">
+            <% order.product_orders.where.not(quantity: 0).each do |product_order| %>
+
+            <div class="card-horizontal">
+              <div class="product-order-container">
+                <div class="product-image">
+                  <%= cl_image_tag(product_order.product.photo) %>
+                </div>
+                <div class="product-order-info-container">
+                  <div class="product-cart-details">
+                    <p class="p-black-bold"><%= product_order.product.name %></p>
+                    <p class="p-black"><%= humanized_money_with_symbol(product_order.product.price) %></p>
+                  </div>
+                  <div class="btn-cart-container">
+                    <%= link_to "-", root_path, class: "link-white", remote: true %>
+                    <%= product_order.quantity %>
+                    <%= link_to "+", root_path, class: "link-white", remote: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <% end %>
+          </div>
+        </div>
+
+
+
+        <div class="purchase-info-container">
+          <h3 class="h3-category">Summary</h3>
+          <div class="cart-info">
+            <div class="cart-info-container">
+              <p class="p-big-black">Grocery Items</p>
+              <p class="p-big-black"><%= humanized_money_with_symbol(order.price_cents) %></p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black">Delivery</p>
+              <p class="p-big-black"><%= currency_symbol %>4</p>
+            </div>
+            <div class="cart-info-container">
+              <p class="p-big-black-bold">Total</p>
+              <p class="p-big-black-bold"><%= currency_symbol %>38</p>
+            </div>
+          </div>
+          <%= link_to "CHECKOUT", new_order_payment_path(order.id), class: "btn-primary link-big-white" %>
+        </div>

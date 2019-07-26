@@ -1,11 +1,16 @@
+.cart-container {
+  display: flex;
+}
 .modal-content {
   display: flex;
   overflow-wrap: normal;
+  padding: $padding-standard-y $padding-standard-x;
 }
 .items-container {
-  width: 20vw;
+  width: 60vw;
 }
 .purchase-info-container {
+  margin-left: $padding-standard-x;
   width: 40vw;
 }
 .product_order_container {

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :new ]
   end
   get "products/:order_id", to: "products#index", as: "browse"
+  get "products/:order_id/cart", to: "orders#cart", as: "update_cart"
 end

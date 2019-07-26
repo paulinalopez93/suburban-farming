@@ -7,13 +7,18 @@
   padding-right: 55px;
   background-color: white;
   opacity: 0.3;
+  z-index: 1;
 }
 
 .nav-link {
   display: block;
   color: $black !important;
-}
 
+}
+.nav-link:hover {
+  text-decoration-line: 1px solid $black;
+
+}
 .links-container {
   display: flex;
 }

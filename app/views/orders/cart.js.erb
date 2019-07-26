@@ -1,0 +1,8 @@
+console.log("yayy");
+document.getElementById('cart-open-button').click();
+var refreshCart = (html) => {
+  const content = document.querySelector(".cart-container");
+  content.innerHTML = html;
+}
+
+refreshCart("<%= j render "shared/cart_content", order: @order %>")
