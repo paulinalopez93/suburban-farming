@@ -1,5 +1,6 @@
 // this is for the card basket and whatever else we need to use a horizontal for
 .card-horizontal {
+  padding: 16px 0;
   display: flex;
   width: 400px;
   background-color: $light-gray;
@@ -9,11 +10,28 @@
   display: flex;
 }
 .product-image {
-  width: 89px;
-  height: 89px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
 }
 .product-image img {
   height: 100%;
   object-fit: cover;
+}
+.product-card-details .p-black {
+  margin: 0;
+  padding: 0;
+}
+
+.product-order-container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+.product-image {
+  border-radius: $border-radius;
+}
+.product-order-container .product-image {
+  align-items: center;
+  margin: 0 16px;
 }

@@ -2,16 +2,17 @@
   display: flex;
 }
 .modal-content {
+  width: 800px;
   display: flex;
   overflow-wrap: normal;
   padding: $padding-standard-y $padding-standard-x;
 }
 .items-container {
-  width: 60vw;
+  width: 50vw;
 }
 .purchase-info-container {
   margin-left: $padding-standard-x;
-  width: 40vw;
+  width: 50vw;
 }
 .product_order_container {
   display: flex;

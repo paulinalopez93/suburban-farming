@@ -9,3 +9,16 @@
   top: 10.84%;
   bottom: 75.9%;
 }
+.product-order-container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin: 0 16px;
+}
+.product-image {
+  border-radius: $border-radius;
+}
+.product-order-container .product-image {
+  align-items: center;
+  margin: 0 16px;
+}
