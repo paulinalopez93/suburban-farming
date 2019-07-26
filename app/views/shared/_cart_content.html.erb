@@ -1,9 +1,9 @@
 <div class="items-container">
           <h3 class="h3-category">Your items</h3>
-          <div class="cart-items-container">
+          <div class="cart-items-container card" >
             <% order.product_orders.where.not(quantity: 0).each do |product_order| %>
 
-            <div class="card-horizontal">
+            <div class="card-horizontal cart-product-checkout">
               <div class="product-order-container">
                 <div class="product-image">
                   <%= cl_image_tag(product_order.product.photo) %>
@@ -41,7 +41,7 @@
             </div>
             <div class="cart-info-container">
               <p class="p-big-black-bold">Total</p>
-              <p class="p-big-black-bold"><%= currency_symbol %>38</p>
+              <p class="p-big-black-bold"><%= currency_symbol %></p>
             </div>
           </div>
           <%= link_to "CHECKOUT", new_order_payment_path(order.id), class: "btn-primary link-big-white" %>
