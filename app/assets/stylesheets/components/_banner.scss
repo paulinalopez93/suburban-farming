@@ -38,7 +38,7 @@ h1 {
   border-bottom-left-radius: 0;
 
 }
-header {
+.header {
   position: relative;
   height: 100vh;
   min-height: 25rem;
@@ -46,7 +46,7 @@ header {
   overflow: hidden;
 }
 
-header video {
+.header video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,12 +61,12 @@ header video {
   transform: translateX(-50%) translateY(-50%);
 }
 
-header .banner-container {
+.header .banner-container {
   position: relative;
   z-index: 2;
 }
 
-header .overlay {
+.header .overlay {
   position: absolute;
   top: 0;
   left: 0;
