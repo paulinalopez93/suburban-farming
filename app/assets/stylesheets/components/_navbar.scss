@@ -3,14 +3,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-left: 55px;
-  padding-right: 55px;
-  background-color: white;
-  opacity: 0.3;
+  padding: 0 $padding-standard-x;
   z-index: 1;
+  height: 50px;
+}
+.brand-container {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
+  padding: 0;
   display: block;
   color: $black !important;
 
@@ -22,7 +25,12 @@
 .links-container {
   display: flex;
 }
+.links-container .nav-link {
+  margin-left: $padding-standard-x;
+}
 .link-white{
   background-color: transparent;
   border: none;
+  display: flex;
+  align-items: center;
 }
