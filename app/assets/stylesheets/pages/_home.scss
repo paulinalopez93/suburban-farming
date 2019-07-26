@@ -9,24 +9,24 @@
   padding: $padding-big-y $padding-standard-x;
 }
 
+#tagline-style {
+ padding:  75px;
+}
 
-
-
-
-//benefits container
-
-.benefits-container {
-  width: 100%;
-  display: flex;
-  padding: $padding-big-y $padding-standard-x;
-  justify-content: space-between;
+#step-info {
+  margin-top: 21px;
+}
+.footer {
+  width: 100vw;
+  height: 40vh;
 }
 
 //form actions
 
 .form-actions{
   .btn{
-    background: #FF8170;
+    background-color: $primary;
   }
 }
+
 
