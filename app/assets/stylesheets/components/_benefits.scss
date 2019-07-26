@@ -1,13 +1,16 @@
 // This is where we will have the benefits of what suburban farm does like minimize food waste
 
 #benefit-all {
-  padding: 13px 20px;
+  padding:  $padding-standard-y $padding-standard-x;
+  display: flex;
+  justify-content: space-between;
 }
 
 #tagline-style {
-  padding: 75px;
+ padding:  75px;
 }
 
 #step-info {
   margin-top: 21px;
 }
+
