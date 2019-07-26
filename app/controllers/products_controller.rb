@@ -17,6 +17,11 @@ class ProductsController < ApplicationController
         end
       end
     end
+
+    @order.product_orders.where.not(quantity: 0).each do |product_order|
+      @order.price_cents = @order.price_cents + product_order.price_cents
+      @order.save
+    end
   end
 
   def show

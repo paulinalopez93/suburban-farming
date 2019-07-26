@@ -27,10 +27,13 @@
 }
 
 .product-info-btn {
+  display: none;
   width: 100%;
   padding: 10px 0px;
   display: flex;
   justify-content: center;
 }
-
+.card-vertical:hover + .btn-plusminus, .btn-plusminus:hover {
+  background-color: blue;
+}
 
