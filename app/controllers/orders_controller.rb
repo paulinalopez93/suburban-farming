@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   before_action :set_product, only: [ :add_to_cart, :remove_from_cart ]
   before_action :set_order, only: [ :add_to_cart, :remove_from_cart ]
-  skip_before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart ]
+  skip_before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart, :cart ]
 
   def show
     @order = current_user.orders.where(status: 'paid').find(params[:id])
