@@ -1,7 +1,7 @@
 
 <!-- Don't want to see CSS in views!!!!!!!!!!! -->
 <header>
-  <%= video_tag "backgroundvideo.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, playsinline: :playsinline %>
+  <%= video_tag "suburbanfarm.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, playsinline: :playsinline %>
     <div class="hero-container d-flex h-100 text-center align-items-center">
       <div class="w-100 text-center">
         <h1 class="display-3">Turning food waste into healthy dinners</h1>
@@ -17,9 +17,55 @@
 </div>
 </header>
 
-<div class="tagline-secondary-container">
+<div class="tagline-secondary-container" id="tagline-style">
   <h2>Discover what suburban gardens have to offer</h2>
 </div>
+<div class="benefits-container" id="benefit-all">
+  <div class="benefit-info-container">
+    <img src="#" alt="" class="logo-step">
+    <div class="benefit-text-container">
+      <h5 class="p-big-black">Why Shop Here?</h5>
+      <p>We deliver fresh groceries directly <br>from local producers to your home</p>
+    </div>
+  </div>
+  <div class="benefit-info-container">
+    <img src="#" alt="" class="logo-step">
+    <div class="benefit-text-container">
+      <h5 class="p-big-black">Convenient Delivery</h5>
+      <p>We understand you’re busy. <br>We make it easier by delivering direct to you. <br>From the farmers gate, to your door.</p>
+    </div>
+  </div>
+  <div class="benefit-info-container">
+    <img src="#" alt="" class="logo-step">
+    <div class="benefit-text-container">
+      <h5 class="p-big-black">Support local producers</h5>
+      <p>Trust who you're getting your food <br> from and support your neighbors</p>
+    </div>
+  </div>
+   <div class="benefit-info-container">
+    <img src="#" alt="" class="logo-step">
+    <div class="benefit-text-container" id="">
+      <h5 class="p-big-black">Eco-conscious groceriesr</h5>
+      <p>Cut your carbon footprint and create <br> a self-sustainable community</p>
+    </div>
+  </div>
+</div>
+
+<div class="steps-container" >
+  <div class="step-text-container">
+
+    <div class="step-info-container" id="step-info">
+      <h3 class="h3-category">Delivered to door</h3>
+      <p class="p-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates porro perspiciatis aut, corrupti amet sapiente molestias? Libero, autem quidem aliquid.</p>
+      <a href="#" class="btn-small-cta link-black">DISCOVER</a>
+    </div>
+
+  </div>
+  <div class="steps-image-container">
+    <%= image_tag("farmers.jpg") %>
+  </div>
+</div>
+
 
 <div class="steps-container">
   <div class="stAt retail level, large quantities of food are wasted due to quality standards that over-emphasize appearance.eps-image-container">
@@ -63,7 +109,7 @@
   </div>
 </div>
 
-<div class="benefits-container">
+<!-- <div class="benefits-container">
   <div class="benefit-info-container">
     <img src="#" alt="" class="logo-step">
     <div class="benefit-text-container">
@@ -92,7 +138,7 @@
       <p>Cut your carbon footprint and create <br> a self-sustainable community</p>
     </div>
   </div>
-</div>
+</div> -->
 
 <% if params[:signed_in] == 'false' %>
 <script>
