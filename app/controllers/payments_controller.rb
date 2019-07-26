@@ -2,6 +2,8 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    @user = current_user
+    @order = Order.find(params[:order_id])
   end
 
   def create

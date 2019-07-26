@@ -1,4 +1,33 @@
-<div class='payment-container'>
+<%= form_for(@order, url:  order_payments_path, html: {id: "payment-form"}) do |f| %>
+
+  <fieldset class="credit_card">
+    <div class="payment-errors">
+      <label class="control-label col-sm-2" for="credit-card-number">Credit Card Number
+        <input class="form-control" id="credit-card-number" type="text", data-stripe="number"></input>
+      </label>
+      <label class="control-label col-sm-2" for="securtity-code">Security Code
+        <input class="form-control" id="security-code" type="test" data-stripe="cvc"></input>
+      </label>
+      <label class="control-label col-sm-2">Expiration
+        <%= select_month(Date.today, {add_month_numbers: true},  class: 'form-control', data: {stripe: "exp-month"}) %>
+        <%= select_year(Date.today.year, {start_year: Date.today.year, end_year: Date.today.year + 4}, class: 'form-control', data: {stripe: "exp-year"}) %>
+        <input type="submit" value="Pay Now!"></input>
+      </label>
+    </div>
+  </fieldset>
+<% end %>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+
+
+
+
+
+
+
+
+<!-- <div class='payment-container'>
   <div class='payment-card'>
     <h1>Checkout</h1>
     <div class='checkout-form'>
@@ -30,23 +59,24 @@
     </div>
   </div>
 
-    <%= form_tag order_payments_path(@order) do %>
+    <%#= form_tag order_payments_path(@order) do %>
       <article>
         <label class="amount">
-          <span>Amount: <%= humanized_money_with_symbol(@order.price_cents) %></span>
+          <span>Amount: <%#= humanized_money_with_symbol(@order.price_cents) %></span>
         </label>
       </article>
 
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-key="<%#= Rails.configuration.stripe[:publishable_key] %>"
         data-name="Produce Order"
-        data-email="<%= current_user.email %>"
-        data-description="Order <%= @order.id %>"
-        data-amount="<%= @order.price_cents %>"
+        data-email="<%#= current_user.email %>"
+        data-description="Order <%#= @order.id %>"
+        data-amount="<%#= @order.price_cents %>"
         data-currency="EUR"></script>
-    <% end %>
-    <p><%= link_to 'Go back home', root_path %></p>
+    <#% end %>
+    <p><%#= link_to 'Go back home', root_path %></p>
 
   </div>
 </div>
+ -->

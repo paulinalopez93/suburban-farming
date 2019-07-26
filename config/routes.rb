@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # get '/payment', to: 'orders#payment', as: 'payment'
   # get '/orders/:id/checkout', to: 'orders#checkout', as: 'checkout'
   resources :orders, except: [:index, :new, :create] do
+
+    member do
+      get "payment", to: "orders#payment", as: :create_payment
+    end
     resources :payments, only: [:new, :create]
   end
   get 'orders/:id/add/:product_id', to: 'orders#add_to_cart', as: 'add_to_cart'
