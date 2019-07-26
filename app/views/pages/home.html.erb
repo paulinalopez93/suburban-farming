@@ -1,4 +1,7 @@
 <!-- Don't want to see CSS in views!!!!!!!!!!! -->
+<% content_for :navbar do %>
+  <%= render 'shared/navbar', white: true %>
+<% end %>
 
 <header>
   <%= video_tag "suburbanfarm.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, playsinline: :playsinline %>
@@ -7,8 +10,8 @@
         <h1 class="display-3">Turning food waste into healthy dinners</h1>
       <div class="search-hero input-group">
        <input class="form-control string required" placeholder= "Search" type="text" name="query" id="search_query" />
-       <div class="input-group-append">
         <%= link_to "DISCOVER", browse_path(@order.id), class: 'btn-hero link-white' %>
+       <div class="input-group-append">
         </div>
      </div>
 

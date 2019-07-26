@@ -12,7 +12,7 @@
   <body>
     <div class="browser-container">
     <p class="alert"><%= alert %></p>
-    <%= render 'shared/navbar' %>
+    <%= content_for?(:navbar) ? yield(:navbar) : render('shared/navbar') %>
     <%= render 'shared/flashes' %>
     <%= render 'shared/access'  %>
     <%= render 'shared/cart-modal' %>

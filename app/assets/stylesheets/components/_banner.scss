@@ -8,7 +8,9 @@
 // }
 
 .hero-container {
-
+  position: absolute;
+  top: 80vh;
+  width: 100vw;
 }
 
 h1 {
@@ -19,6 +21,7 @@ h1 {
   display: flex;
   justify-content: center;
   padding-top: 30px;
+  flex-wrap: nowrap;
   width: 40%;
   margin: 0 auto;
   #search_query {
@@ -39,7 +42,7 @@ h1 {
 
 }
 .header {
-  position: relative;
+  position: absolute;
   height: 100vh;
   min-height: 25rem;
   width: 100%;
