@@ -8,8 +8,12 @@
 .nav-link {
   display: block;
   color: $black !important;
-}
 
+}
+.nav-link:hover {
+  text-decoration-line: 1px solid $black;
+
+}
 .links-container {
   display: flex;
 }

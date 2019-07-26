@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
   def add_to_cart
     @product_order = @order.product_orders.find_by(product_id: @product.id)
     @product_order.quantity = @product_order.quantity + 1
+    @product_order.price_cents = @product_order.price_cents + @product.price_cents
     @product_order.save
     @order.save
 
@@ -31,6 +32,14 @@ class OrdersController < ApplicationController
     @product_order.save
     @order.save
 
+    respond_to do |format|
+      format.html { redirect_to browse_path(@order) }
+      format.js
+    end
+  end
+
+  def cart
+    @order = Order.find(params[:order_id])
     respond_to do |format|
       format.html { redirect_to browse_path(@order) }
       format.js
