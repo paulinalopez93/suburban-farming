@@ -6,19 +6,21 @@
   padding: 0 $padding-standard-x;
   z-index: 1;
   height: 50px;
+  opacity: 0;
+  transition: all 3s ease 1s;
 }
-.navbar-white {
-  color: $white !important;
+.navbar-white a {
+  color: $white ;
 }
 .brand-container {
   display: flex;
   align-items: center;
 }
 
-.nav-link {
+.navbar-container .nav-link {
   padding: 0;
   display: block;
-  color: $black !important;
+  color: $black;
 
 }
 .nav-link:hover {
