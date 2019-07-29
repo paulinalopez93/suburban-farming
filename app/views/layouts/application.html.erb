@@ -42,7 +42,11 @@
     <%#= render 'shared/info-modal' %>
 
     <%= yield %>
+
+    <% if controller_name != "payments" %>
     <%= render 'shared/footer' %>
+    <% end %>
+
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
