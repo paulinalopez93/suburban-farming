@@ -6,7 +6,9 @@
 }
 .benefit-text-container {
   margin-top: 16px;
+  text-align: left;
 }
+
 .benefits-container {
   width: 100%;
   display: flex;
@@ -16,3 +18,7 @@
   align-items: flex-start;
 }
 
+.algolia-places {
+  width: 100%;
+  text-align: left;
+}
