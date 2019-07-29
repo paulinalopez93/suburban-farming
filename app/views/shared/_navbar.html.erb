@@ -7,7 +7,7 @@
     <% if user_signed_in? %>
 
     <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
-    <button type="button" class="nav-link link-white" data-toggle="modal" style="display: none;" data-target="#ModalCart" id='cart-open-button'>CART</button>
+    <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-basket_3_xnb6ae") %></button>
     <% if controller_name != "pages" %>
     <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
     <% end %>
@@ -15,7 +15,7 @@
 
     <% else %>
 
-    <button type="button" class="nav-link link-white" data-toggle="modal" style="display: none;" data-target="#ModalCart" id='cart-open-button'>CART</button>
+    <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-basket_3_xnb6ae") %></button>
     <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
     SIGN IN
     </button>
