@@ -9,6 +9,9 @@
 
     <% if controller_name != "pages" %>
     <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
+    <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-basket_3_xnb6ae") %></button>
+    <% unless (controller_name == "pages") || (controller_name == "users") %>
+      <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
     <% else %>
     <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
     <% end %>
@@ -16,7 +19,7 @@
     <% if controller_name != "pages" %>
     <%= link_to cl_image_tag("shopping-basket_3_xnb6ae", class: "basket-img"), update_cart_path(@order), class: "nav-link link-white link-black", id: "cart-button", remote: true %>
     <% end %>
-@@ -17,10 +20,14 @@
+
     <% else %>
 
     <button type="button" class="nav-link link-white link-black" data-toggle="modal" style="opacity:0;" data-target="#ModalCart" id='cart-open-button'></button>
