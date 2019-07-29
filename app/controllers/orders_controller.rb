@@ -5,27 +5,29 @@ class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart, :cart ]
 
   def show
-    @order = current_user.orders.where(status: 'paid').find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def payment
+    customer = Stripe::Customer.create(
+        source: params[:stripeToken],
+        email:  params[:stripeEmail]
+      )
 
-  token = params[:stripeToken]
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @order.total_price.cents,
+      description:  "Order #{@order.id}",
+      currency:     "EUR"
+    )
 
+    @order.update(payment: charge.to_json, status: 'paid', price_cents: @order.total_price)
 
-  charge = Stripe::Charge.create(
-    amount:       @order.price_cents,
-    description:  "Payment for order #{@order.id}",
-    currency:     "eur",
-    source:       token
-  )
+    redirect_to order_path(@order)
 
-  @order.update(payment: charge.to_json, status: 'paid')
-  redirect_to order_path(@order)
-
-  rescue Stripe::CardError => e
-    flash[:alert] = e.message
-    redirect_to new_order_payment_path(@order)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to order_path(@order)
   end
 
   def add_to_cart
