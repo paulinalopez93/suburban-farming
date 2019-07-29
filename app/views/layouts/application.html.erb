@@ -38,8 +38,10 @@
     <%= content_for?(:navbar) ? yield(:navbar) : render('shared/navbar') %>
     <%= render 'shared/flashes' %>
     <%= render 'shared/access'  %>
-    <%= render 'shared/cart-modal' %>
+    <% unless controller_name == "users" %>
+      <%= render 'shared/cart-modal' %>
     <%#= render 'shared/info-modal' %>
+    <% end %>
 
     <%= yield %>
 
