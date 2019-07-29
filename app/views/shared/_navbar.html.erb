@@ -4,22 +4,33 @@
       <%= link_to "SUBURBAN", root_path, class: "nav-link link-white" %>
   </div>
   <div class="links-container">
-    <% if user_signed_in? %>
 
+    <% if user_signed_in? %>
+    <% if controller_name != "pages" %>
     <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
     <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-basket_3_xnb6ae") %></button>
     <% unless (controller_name == "pages") || (controller_name == "users") %>
       <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
+    <% else %>
+    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
+    <% end %>
+    <button type="button" class="nav-link link-whitelink-black " data-toggle="modal" style="opacity:0;" data-target="#ModalCart" id='cart-open-button'></button>
+    <% if controller_name != "pages" %>
+    <%= link_to cl_image_tag("shopping-basket_3_xnb6ae", class: "basket-img"), update_cart_path(@order), class: "nav-link link-white link-black", id: "cart-button", remote: true %>
     <% end %>
 
 
     <% else %>
 
-    <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-basket_3_xnb6ae") %></button>
-    <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
+    <button type="button" class="nav-link link-white link-black" data-toggle="modal" style="opacity:0;" data-target="#ModalCart" id='cart-open-button'></button>
+    <button type="button" class="nav-link link-white
+    <% if controller_name != "pages" %> link-black
+    <% end %>" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
     SIGN IN
     </button>
-    <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal2">
+    <button type="button" class="nav-link link-white <% if controller_name != "pages" %>
+      link-black"
+      <% end %> data-toggle="modal" data-target="#Modal2">
     SIGN UP
     </button>
     <% unless (controller_name == "pages") || (controller_name == "users") %>

@@ -1,9 +1,11 @@
 const stripeFunction = () => {
-var stripe = Stripe('pk_test_JXtDUbkLdGhkhPEba1WpAP1G00w9JNw998');
-var elements = stripe.elements();
+  let testElement = document.querySelector(".payment-card");
+  if (testElement) {
+    var stripe = Stripe('pk_test_JXtDUbkLdGhkhPEba1WpAP1G00w9JNw998');
+    var elements = stripe.elements();
 
-var style = {
-  base: {
+    var style = {
+      base: {
     // Add your base input styles here. For example:
     fontSize: '16px',
     color: "#32325d",
@@ -55,6 +57,7 @@ function stripeTokenHandler(token) {
 
   // Submit the form
   form.submit();
+}
 }
 }
 

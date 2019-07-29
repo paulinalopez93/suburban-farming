@@ -54,7 +54,7 @@
 }
 .link-black {
   font-size: 16px;
-  color: $black;
+  color: $black !important;
   font-family: $body-font;
   text-decoration: none;
 }

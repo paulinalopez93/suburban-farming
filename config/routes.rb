@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/profile', to: 'users#profile', as: 'profile'
+  get '/post', to: 'users#post', as: 'post_produce'
   # get '/payment', to: 'orders#payment', as: 'payment'
   # get '/orders/:id/checkout', to: 'orders#checkout', as: 'checkout'
   resources :orders, except: [:index, :new, :create] do

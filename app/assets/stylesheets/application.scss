@@ -26,8 +26,107 @@
   background: $white;
 }
 .footer-container {
-  height: 40vh;
-  width: 100%;
-  background-color: $light-gray;
+  // height: 40vh;
+  // width: 100%;
+  // background-color: $light-gray;
 }
 
+.h2-tagline {
+  font-size: 50px;
+  color: $black;
+  font-family: $body-font;
+}
+.h3-steps {
+  font-size: 37px;
+  color: $black;
+  font-family: $body-font;
+  font-weight: bold;
+}
+.h3-category {
+  font-size: 28px;
+  color: $black;
+  font-family: $body-font;
+}
+
+
+.p-big-black {
+  font-size: 21px;
+  color: $dark-gray;
+  font-family: $body-font;
+}
+.p-big-black-bold {
+  font-size: 21px;
+  color: $black;
+  font-family: $body-font;
+  font-weight: bold;
+}
+.p-black {
+  font-size: 16px;
+  color: $black;
+  font-family: $body-font;
+}
+.p-black-bold {
+  font-size: 16px;
+  color: $black;
+  font-family: $body-font;
+  font-weight: bold;
+}
+.p-white {
+  font-size: 16px;
+  color: $white;
+  font-family: $body-font;
+  font-style: italic;
+}
+
+
+.link-big-black {
+  font-size: 21px;
+  color: $dark-gray;
+  font-family: $body-font;
+  text-decoration: none;
+}
+.link-black {
+  font-size: 16px;
+  color: $black;
+  font-family: $body-font;
+  text-decoration: none;
+}
+.link-black-bold {
+  font-size: 16px;
+  color: $black;
+  font-family: $body-font;
+  font-weight: bold;
+  text-decoration: none;
+}
+.link-big-white {
+  font-size: 18px;
+  color: $white;
+  font-family: $body-font;
+  text-decoration: none;
+}
+.link-white {
+  font-size: 16px;
+  color: $white;
+  font-family: $body-font;
+  text-decoration: none;
+}
+
+
+.label {
+  font-size: 16px;
+  color: $dark-gray;
+  font-family: $body-font;
+}
+.placeholder {
+  font-size: 21px;
+  color: $light-gray;
+  font-family: $body-font;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
