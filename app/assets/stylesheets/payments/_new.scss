@@ -106,10 +106,12 @@ a {
   width: 100vw;
 
   padding: 10px 12px;
+  margin: 0px 0px 25px 0px;
 
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: white;
+
 
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
@@ -127,4 +129,47 @@ a {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid gray;
+}
 
+.ap-input {
+  width: 380px;
+}
+
+.aloglia-place{
+  width: 400px;
+  }
+
+.checkout-form{
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+#payment-form{
+  width: 400px;
+}
+.payment-page{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.form-row {
+  margin-top: 15px;
+}
+.btn-pay{
+    padding: 0px 28px;
+    display: -webkit-box;
+    display: flex;
+    color: white;
+    margin-left: -10px;
+    z-index: 50;
+    background-color: #F6613F !important;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+}
