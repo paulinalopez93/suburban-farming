@@ -1,48 +1,40 @@
 // Specific CSS for your home-page
 
+.home-page-content {
+  z-index: 500;
+  position: absolute;
+  margin-top: 100vh;
+  background-color: $white;
+}
 
 //tagline
 
+
 .tagline-secondary-container {
+  margin-top: 20vh;
   display: flex;
   justify-content: center;
   padding: $padding-big-y $padding-standard-x;
 }
 
-
-//steps container
-
-.steps-container {
-  width: 100%;
-  height: 50vw;
-  display: grid;
-  grid-template-columns: 50vw 50vw;
-
+#tagline-style {
+ padding:  75px;
 }
 
-.steps-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+#step-info {
+  margin-top: 21px;
 }
-.step-info-container {
-  padding: $padding-standard-y $padding-standard-x;
-}
-
-//benefits container
-
-.benefits-container {
-  width: 100%;
-  display: flex;
-  padding: $padding-big-y $padding-standard-x;
-  justify-content: space-between;
+.footer {
+  width: 100vw;
+  height: 40vh;
 }
 
 //form actions
 
 .form-actions{
   .btn{
-    background: #FF8170;
+    background-color: $primary;
   }
 }
+
 

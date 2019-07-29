@@ -1,17 +1,24 @@
 // This is where we will be editing the shopping in our browsing page but the controller is products and the controller method is index
 .shop-container {
   width: 100%;
-  padding: $padding-standard-y $padding-standard-y;
+  padding: 67px $padding-standard-x;
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 15% 85%;
 }
-
+.category-container {
+  margin: 0;
+  padding-bottom: 120px;
+}
+.sidebar-container {
+  padding-top: 5px;
+}
 .cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 21px;
 }
 
 .cards-container .card-vertical {
   width: auto;
 }
+

@@ -18,5 +18,15 @@
 // Golden scale
 // 5 7 9 12 16 21 28 37 50 67 89 119 159pt
 
+// Application General
 
+.browser-container {
+  z-index: 6;
+  background: $white;
+}
+.footer-container {
+  height: 40vh;
+  width: 100%;
+  background-color: $light-gray;
+}
 

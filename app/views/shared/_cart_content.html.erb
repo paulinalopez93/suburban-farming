@@ -1,9 +1,9 @@
 <div class="items-container">
           <h3 class="h3-category">Your items</h3>
-          <div class="cart-items-container">
+          <div class="cart-items-container card" >
             <% order.product_orders.where.not(quantity: 0).each do |product_order| %>
 
-            <div class="card-horizontal">
+            <div class="card-horizontal cart-product-checkout">
               <div class="product-order-container">
                 <div class="product-image">
                   <%= cl_image_tag(product_order.product.photo) %>
@@ -14,9 +14,9 @@
                     <p class="p-black"><%= humanized_money_with_symbol(product_order.product.price) %></p>
                   </div>
                   <div class="btn-cart-container">
-                    <%= link_to "-", root_path, class: "link-white", remote: true %>
+                    <p class="p-black">Quantity:
                     <%= product_order.quantity %>
-                    <%= link_to "+", root_path, class: "link-white", remote: true %>
+                  </p>
                   </div>
                 </div>
               </div>
@@ -32,16 +32,16 @@
           <h3 class="h3-category">Summary</h3>
           <div class="cart-info">
             <div class="cart-info-container">
-              <p class="p-big-black">Grocery Items</p>
-              <p class="p-big-black"><%= humanized_money_with_symbol(order.price_cents) %></p>
+              <p class="p-black">Grocery Items</p>
+              <p class="p-black"><%= humanized_money_with_symbol(order.price_cents) %></p>
             </div>
             <div class="cart-info-container">
-              <p class="p-big-black">Delivery</p>
-              <p class="p-big-black"><%= currency_symbol %>4</p>
+              <p class="p-black">Delivery</p>
+              <p class="p-black"><%= currency_symbol %>4</p>
             </div>
             <div class="cart-info-container">
-              <p class="p-big-black-bold">Total</p>
-              <p class="p-big-black-bold"><%= currency_symbol %>38</p>
+              <p class="p-black-bold">Total</p>
+              <p class="p-black-bold"><%= currency_symbol %>VERY MUCH:)</p>
             </div>
           </div>
           <%= link_to "CHECKOUT", new_order_payment_path(order.id), class: "btn-primary link-big-white" %>

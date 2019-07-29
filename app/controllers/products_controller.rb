@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
       @order.price_cents = @order.price_cents + product_order.price_cents
       @order.save
     end
+
   end
 
   def show
