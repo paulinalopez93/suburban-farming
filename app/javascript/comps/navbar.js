@@ -11,6 +11,7 @@ const navbarVisible = () => {
       })
     }
   }
+  if (navbar) {
 
   navbarUnvisible();
 
@@ -24,6 +25,7 @@ const navbarVisible = () => {
     }
 
   }, 500);
+}
 }
 
 export { navbarVisible };

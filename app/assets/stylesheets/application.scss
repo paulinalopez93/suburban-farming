@@ -18,15 +18,23 @@
 // Golden scale
 // 5 7 9 12 16 21 28 37 50 67 89 119 159pt
 
-.browser-contaner {
+// Application General
+
+.browser-container {
   z-index: 6;
-  background-color: $white;
+  background: $white;
+}
+.footer-container {
+  height: 40vh;
+  width: 100%;
+  background-color: $light-gray;
 }
 
 .h2-tagline {
   font-size: 50px;
   color: $black;
   font-family: $body-font;
+  letter-spacing: 1px;
 }
 .h3-steps {
   font-size: 37px;
@@ -76,12 +84,14 @@
   color: $dark-gray;
   font-family: $body-font;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 .link-black {
   font-size: 16px;
   color: $black;
   font-family: $body-font;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 .link-black-bold {
   font-size: 16px;
@@ -89,16 +99,19 @@
   font-family: $body-font;
   font-weight: bold;
   text-decoration: none;
+  letter-spacing: 1px;
 }
-.link-big-white {
-  font-size: 18px;
+.link-big-white {;
   font-family: $body-font;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 .link-white {
+
   font-size: 16px;
   font-family: $body-font;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 
 

@@ -6,6 +6,8 @@
   height: 50vh;
   display: grid;
   grid-template-columns: 50vw 50vw;
+  background-color: $light-gray;
+  overflow: hidden;
 
 }
 .steps-image-container {
@@ -14,10 +16,10 @@
 }
 
 .steps-container img {
-  height: 100%;
-  width: 100%;
   object-fit: cover;
   overflow: hidden;
+  width: 100%;
+  min-height: 100%;
 }
 .step-info-container .h3-category {
   padding-bottom: 9px;

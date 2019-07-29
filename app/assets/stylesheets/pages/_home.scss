@@ -1,11 +1,17 @@
 // Specific CSS for your home-page
 
+.home-page-content {
+  z-index: 500;
+  position: absolute;
+  margin-top: 100vh;
+  background-color: $white;
+}
 
 //tagline
 
 
 .tagline-secondary-container {
-  margin-top: 80vh;
+  margin-top: 20vh;
   display: flex;
   justify-content: center;
   padding: $padding-big-y $padding-standard-x;

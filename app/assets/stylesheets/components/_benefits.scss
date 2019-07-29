@@ -10,8 +10,9 @@
 .benefits-container {
   width: 100%;
   display: flex;
-  padding: 0 $padding-standard-x;
+  padding: 20vh $padding-standard-x;
   justify-content: space-between;
-  margin-bottom: $padding-big-y;
+  height: 100vh;
+  align-items: flex-start;
 }
 
