@@ -6,18 +6,17 @@
   padding: 0 $padding-standard-x;
   z-index: 1;
   height: 50px;
-  opacity: 0;
   transition: all 3s ease 1s;
 }
-.navbar-white a {
-  color: $white ;
+.navbar-white .nav-link {
+  opacity: 0;
 }
 .brand-container {
   display: flex;
   align-items: center;
 }
 
-.navbar-container .nav-link {
+.nav-link {
   padding: 0;
   display: block;
   color: $black;

@@ -5,7 +5,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { navbarVisible } from '../comps/navbar';
 import { H1Visible } from '../comps/banner-h1';
 
-H1Visible();
 navbarVisible();
+H1Visible();
 initAutocomplete();
 initMapbox();

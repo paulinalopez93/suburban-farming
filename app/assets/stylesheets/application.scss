@@ -18,7 +18,10 @@
 // Golden scale
 // 5 7 9 12 16 21 28 37 50 67 89 119 159pt
 
-
+.browser-contaner {
+  z-index: 6;
+  background-color: $white;
+}
 
 .h2-tagline {
   font-size: 50px;

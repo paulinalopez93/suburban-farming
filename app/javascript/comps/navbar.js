@@ -1,13 +1,27 @@
 const navbarVisible = () => {
   console.log("navbar function");
-  const navbar = document.querySelector(".navbar-container");
+  const navbar = document.querySelector(".navbar-white");
   const navbarUnvisible = () => {
     navbar.style.opacity = "0";
-
+    navbar.style.color = "white !important";
+    if (navbar) {
+      let navlinks = document.querySelectorAll(".nav-link");
+      navlinks.forEach( (link) => {
+        link.style.color = "white";
+      })
+    }
   }
+
   navbarUnvisible();
+
   setTimeout( function() {
     navbar.style.opacity = "1";
+    if (navbar) {
+      let navlinks = document.querySelectorAll(".nav-link");
+      navlinks.forEach( (link) => {
+        link.style.opacity = "1";
+      })
+    }
 
   }, 500);
 }
