@@ -7,6 +7,11 @@
   z-index: 1;
   height: 50px;
   transition: all 3s ease 1s;
+  transition: opacity 100ms ease-out;
+  background: $white;
+}
+.navbar-white {
+  background: transparent;
 }
 .navbar-white .nav-link {
   opacity: 0;
