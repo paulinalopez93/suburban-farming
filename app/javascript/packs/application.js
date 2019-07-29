@@ -1,4 +1,5 @@
 import "bootstrap";
+import { stripeFunction } from 'components/payments'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { initMapbox } from '../plugins/init_mapbox';
@@ -7,5 +8,6 @@ import { H1Visible } from '../comps/banner-h1';
 
 navbarVisible();
 H1Visible();
-initAutocomplete();
 initMapbox();
+initAutocomplete();
+stripeFunction();
