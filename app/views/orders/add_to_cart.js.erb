@@ -1,4 +1,9 @@
-
 document.getElementById('product-quantity-<%= @product.id %>').innerHTML = "<%= @product_order.quantity %>";
 
+document.getElementById('cart-open-button');
+var refreshCart = (html) => {
+  const content = document.querySelector(".cart-container");
+  content.innerHTML = html;
+}
 
+refreshCart("<%= j render "shared/cart_content", order: @product_order.order %>")

@@ -11,11 +11,16 @@
                 <div class="product-order-info-container">
                   <div class="product-cart-details">
                     <p class="p-black-bold"><%= product_order.product.name %></p>
-                    <p class="p-black"><%= humanized_money_with_symbol(product_order.product.price) %></p>
+                    <p class="p-black cart-product-price"><%= humanized_money_with_symbol(product_order.product.price) %></p>
                   </div>
                   <div class="btn-cart-container">
-                    <p class="p-black">Quantity:
+                    <p class="p-black cart-product-quantity">Quantity:
                     <%= product_order.quantity %>
+                  </p>
+                  </div>
+                  <div class="btn-cart-container">
+                    <p class="p-black cart-product-quantity">Product total:
+                    <%= humanized_money_with_symbol product_order.total_price %>
                   </p>
                   </div>
                 </div>
@@ -33,15 +38,15 @@
           <div class="cart-info">
             <div class="cart-info-container">
               <p class="p-black">Grocery Items</p>
-              <p class="p-black"><%= humanized_money_with_symbol(order.price_cents) %></p>
+              <p class="p-black"><span id="subtotal"><%= humanized_money_with_symbol(order.subtotal_price) %></span></p>
             </div>
             <div class="cart-info-container">
               <p class="p-black">Delivery</p>
-              <p class="p-black"><%= currency_symbol %>4</p>
+              <p class="p-black"><%= humanized_money_with_symbol(order.delivery_price) %></p>
             </div>
             <div class="cart-info-container">
               <p class="p-black-bold">Total</p>
-              <p class="p-black-bold"><%= currency_symbol %>VERY MUCH:)</p>
+              <p class="p-black-bold"><%= humanized_money_with_symbol(order.total_price) %></p>
             </div>
           </div>
           <%= link_to "CHECKOUT", new_order_payment_path(order.id), class: "btn-primary link-big-white" %>

@@ -14,17 +14,18 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @order.price_cents,
+      amount:       @order.total_price,
       description:  "Order #{@order.id}",
       currency:     "EUR"
     )
 
-    @order.update(payment: charge.to_json, status: 'paid')
-    redirect_to order_path(@order)
+    @order.update(payment: charge.to_json, status: 'paid', price_cents: @order.total_price)
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
-      redirect_to new_order_payment_path(@order)
+      redirect_to order_path(@order)
+
+    redirect_to order_path(@order)
   end
 
   private
