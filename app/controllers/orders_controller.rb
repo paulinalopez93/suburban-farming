@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   before_action :set_product, only: [ :add_to_cart, :remove_from_cart ]
-  before_action :set_order, only: [ :add_to_cart, :remove_from_cart ]
+  before_action :set_order, only: [ :add_to_cart, :remove_from_cart, :payment]
   skip_before_action :authenticate_user!, only: [ :add_to_cart, :remove_from_cart, :cart ]
 
   def show
@@ -9,7 +9,23 @@ class OrdersController < ApplicationController
   end
 
   def payment
-    raise
+
+  token = params[:stripeToken]
+
+
+  charge = Stripe::Charge.create(
+    amount:       @order.price_cents,
+    description:  "Payment for order #{@order.id}",
+    currency:     "eur",
+    source:       token
+  )
+
+  @order.update(payment: charge.to_json, status: 'paid')
+  redirect_to order_path(@order)
+
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to new_order_payment_path(@order)
   end
 
   def add_to_cart

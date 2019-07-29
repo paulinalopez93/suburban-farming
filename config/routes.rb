@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :orders, except: [:index, :new, :create] do
 
     member do
-      get "payment", to: "orders#payment", as: :create_payment
+      post "payment", to: "orders#payment", as: :create_payment
     end
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [:new]
   end
   get 'orders/:id/add/:product_id', to: 'orders#add_to_cart', as: 'add_to_cart'
   get 'orders/:id/remove/:product_id', to: 'orders#remove_from_cart', as: 'remove_from_cart'
