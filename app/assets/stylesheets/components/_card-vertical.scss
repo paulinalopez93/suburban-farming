@@ -11,6 +11,16 @@
   justify-content: center;
   position: relative;
   cursor: pointer;
+  &:hover {
+    .product-info-btn{
+      opacity: 1;
+    }
+  }
+}
+
+.product-info-btn{
+  opacity: 0;
+  transition: opacity 250ms ease-out;
 }
 
 .product-info-container {
