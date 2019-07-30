@@ -19,8 +19,9 @@ const initMapbox = () => {
         map = new mapboxgl.Map({
           container: 'map-' + mapElement.dataset.id
         });
+        map.resize();
       })
-    $("#info-modal-" + mapElement.dataset.id).on('hide.bs.modal', function () {
+    $("#info-modal-" + mapElement.dataset.id).on('hidden.bs.modal', function () {
       if (map) {
         map.remove();
       }
