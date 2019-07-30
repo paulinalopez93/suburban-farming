@@ -1,3 +1,4 @@
+<% if  controller_name != "products"%>
 <div class="items-container">
           <h3 class="h3-category">Your items</h3>
           <div class="cart-items-container card" >
@@ -55,3 +56,4 @@
           </div>
           <%= link_to "CHECKOUT", new_order_payment_path(order.id), class: "btn-primary link-big-white" %>
         </div>
+    <% end %>

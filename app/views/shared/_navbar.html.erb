@@ -16,7 +16,7 @@
 
       <% if controller_name == "pages" %>
        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
-      <% else %>
+      <% elsif controller_name != "products" %>
         <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
       <% end %>
 

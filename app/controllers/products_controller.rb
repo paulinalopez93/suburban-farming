@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_order
+  before_action :set_order, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -22,14 +22,24 @@ class ProductsController < ApplicationController
       @order.price_cents = @order.price_cents + product_order.price_cents
       @order.save
     end
-
   end
+
+  def new
+    @product = Product.new
+  end
+
+   def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+    if @product.save
+      redirect_to root_path(flash: "Product made")
+    else
+      render :new
+  end
+end
 
   def show
   end
-
-
-
 
   private
 
@@ -38,7 +48,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:price, :details, :photo, :category)
+    params.require(:product).permit(:user_id, :price, :details, :photo, :category)
   end
 
   def set_product

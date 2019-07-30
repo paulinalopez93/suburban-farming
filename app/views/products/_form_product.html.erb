@@ -1,1 +1,41 @@
+<!-- Produce Form -->
+<div class="profile-container">
+  <div class="produce-form">
+      <div class="produce-form-top">
+        <div class="produce-details">
+          <p class="p-gray">Details</p>
+          <p class="p-black">Produce Name</p>
+          <%= simple_form_for [@user, @product] do |f| %>
+          <% f.input :name %>
+          <p class="p-black">Quantity with units</p>
+          <input type="text" name="pname" id="quantity-form">
+          <select required>
+            <option value="kg">Kilogram</option>
+            <option value="count">Count</option>
+            <option value="bunch">Bunch</option>
+          </select>
+        </div>
+
+        <div class="produce-image-upload">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+        <div class="produce-form-bottom">
+          <div>
+          <p class="p-gray">Category</p>
+          </div>
+        <div class="produce-categories">
+            <button class="stats-container">Fruits</button>
+            <button class="stats-container">Vegetables</button>
+            <button class="stats-container">Eggs</button>
+            <button class="stats-container">Herbs</button>
+            <button class="stats-container">Wine</button>
+        </div>
+
+        </div>
+  </div>
+</div>
 
