@@ -1,4 +1,4 @@
-<div id="info-modal<%= product.name.gsub(" ","") %>" class="modal fade right bd-example-modal-lg" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<div id="info-modal-<%= product.id %>" class="modal fade right bd-example-modal-lg" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
   <div class="modal-dialog modal-dialog modal-lg" role="document">
     <div class="modal-content info-modal">
       <div class="product-producer-info-scroll">
@@ -8,6 +8,7 @@
           <p class="about-producer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, quaerat distinctio. Et dolores adipisci qui placeat sit eligendi veniam facere explicabo non assumenda, necessitatibus nisi aliquid excepturi voluptatibus. Animi, consequatur!</p>
         </div>
 
+   
       </div>
       <div class="product-info">
         <div class="product-modal-title">
@@ -25,9 +26,9 @@
             <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
           </div>
         </div>
-        <div class="section-map">
+            <div class="section-map">
         <h3 class="h3-category" id="producer-location">Location</h3>
-        <div id="map" style=" overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100%; height: 600px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
     </div>

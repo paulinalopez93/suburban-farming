@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: {status: 200} }
+    end
   end
 
   def payment
