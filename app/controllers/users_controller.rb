@@ -6,6 +6,6 @@ class UsersController < ApplicationController
 
   def post
     @user = current_user
-
+    @order = Order.find(3)
   end
 end
