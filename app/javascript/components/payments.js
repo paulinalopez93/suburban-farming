@@ -31,6 +31,8 @@ card.addEventListener('change', function(event) {
 
 
 var form = document.getElementById('payment-form');
+form.dataset.remote = true;
+document.querySelector(".btn-pay").dataset.remote = true;
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -46,6 +48,28 @@ form.addEventListener('submit', function(event) {
   });
 });
 
+const clickButton = () => {
+  const button = document.querySelector("#payment-modal-button");
+  button.click();
+}
+
+const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
+
+function postFetch(url, body, callback) {
+ // The same as getFetch for POST requests
+ return fetch(url, {
+   method: 'POST',
+   headers: {
+     'Accept': 'application/json',
+     'Content-Type': 'application/json',
+     'X-CSRF-Token': csrfToken
+   },
+   credentials: 'same-origin',
+   body: JSON.stringify(body)
+ }).then(r => r.json())
+   .then(r => callback(r));
+}
+
 function stripeTokenHandler(token) {
   // Insert the token ID into the form so it gets submitted to the server
   var form = document.getElementById('payment-form');
@@ -56,7 +80,13 @@ function stripeTokenHandler(token) {
   form.appendChild(hiddenInput);
 
   // Submit the form
-  form.submit();
+  const data = new FormData(form);
+  const submissionURL = form.action;
+  const response = postFetch(submissionURL, data, (r) => {
+    clickButton();
+    return r;
+  });
+  console.log(response);
 }
 }
 }

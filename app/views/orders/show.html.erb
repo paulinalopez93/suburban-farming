@@ -1,5 +1,6 @@
 <h1>Order</h1>
 <ul>
+  <br>
   <li>Status: <%= @order.status %></li>
   <li>Item: <%= @order.id %></li>
   <li>Amount: <%= humanized_money_with_symbol(@order.price_cents) %></li>
