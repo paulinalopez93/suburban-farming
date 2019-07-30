@@ -1,6 +1,52 @@
-.profile-container {
-  margin: 12px;
+
+//dashboard navbar
+.dashboard-navbar {
+  padding: $padding-standard-y $padding-standard-x;
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
 }
-h2 {
-  font-size: 72px;
+
+
+//thisweek stats
+
+.thisweek-container {
+  display: flex;
+  justify-content: space-around;
+  padding: $padding-standard-y $padding-standard-x;
+
 }
+.stats-container {
+  text-align: center;
+  border-radius: $border-radius;
+  border: 2px solid $light-gray;
+  padding: 10px 0;
+  width: 240px;
+}
+
+//alltime stats
+.graph-stats {
+  text-align: center;
+}
+.alltime-container {
+  padding: $padding-standard-y $padding-standard-x;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+// orders wrap
+.orders-wrap {
+  padding: $padding-standard-y $padding-standard-x;
+}
+
+
+// orders table
+.orders-title-container {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+.order-card {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+
