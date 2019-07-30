@@ -13,4 +13,3 @@ H1Visible();
 initMapbox();
 initAutocomplete();
 stripeFunction();
-
