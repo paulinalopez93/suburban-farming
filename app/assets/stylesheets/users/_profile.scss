@@ -1,12 +1,36 @@
 
+.dashboard-container {
+
+}
 //dashboard navbar
 .dashboard-navbar {
-  padding: $padding-standard-y $padding-standard-x;
-  padding-top: 100px;
+
+  padding: 100px $padding-standard-x;
+
   display: flex;
   justify-content: space-between;
 }
+.dashboard-navbar-wrapper:after {
+  content: "";
+  display: block;
+  padding-top: 5px;
+  margin: 0 auto;
+  width: 90%;
+  // border-bottom: $border-line;
+}
+.profile-info {
+  display: flex;
+  color: $dark-gray;
+  letter-spacing: 2px;
 
+}
+.avatar {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 10px;
+}
 
 //thisweek stats
 
@@ -26,27 +50,81 @@
 
 //alltime stats
 .graph-stats {
+  margin-bottom: 20px;
   text-align: center;
+  background-color: $primary;
+  color: rgba(255,255,255,0.9) !important;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 100%;
+  border-radius: $border-radius;
+  padding: 8px 8px;
+}
+.graph-number {
+  font-size: 21px;
+}
+.stats-wrap {
+  padding-right: 20px;
 }
 .alltime-container {
-  padding: $padding-standard-y $padding-standard-x;
+  padding: $padding-standard-y 0;
   display: grid;
-  grid-template-columns: 70% 30%;
+  margin: 0 $padding-standard-x;
+  background-color: $light-gray;
+  border-radius: $border-radius;
+  grid-template-columns: 85% 15%;
+
+}
+.graph-wrap {
+  padding-left: 20px;
 }
 
 // orders wrap
 .orders-wrap {
-  padding: $padding-standard-y $padding-standard-x;
+  padding: $padding-standard-y 20px;
+  background-color: $light-gray;
+  border-radius: $border-radius;
+  margin: 0 $padding-standard-x;
+  margin-top: 40px;
+
 }
 
 
 // orders table
 .orders-title-container {
   display: grid;
-  grid-template-columns: 40% 30% 30%;
+  grid-template-columns: 70% 20% 10%;
 }
 .order-card {
   display: grid;
-  grid-template-columns: 40% 30% 30%;
+  grid-template-columns: 70% 20% 10%;
+  background-color: $white;
+  border-radius: $border-radius;
+  padding: 16px 0;
+}
+.line-dashboard {
+  content: "";
+  display: block;
+  padding-top: 3px;
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 1px solid rgb(245,245,245);
+}
+.order-name {
+  display: flex;
+  align-content: center;
+}
+.order-customer {
+  display: flex;
+  align-items: center;
+}
+.order-status {
+  display: flex;
+  align-items: center;
+}
+.order-image-profile {
+  margin-right: 12px;
+  margin-left: 12px;
+  border-radius: 50%;
 }
 

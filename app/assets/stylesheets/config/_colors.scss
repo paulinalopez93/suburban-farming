@@ -3,8 +3,9 @@
 // Colors
 
 $primary: #F6613F;
-$dark-gray: rgba(0,0,0,0.8);
+$dark-gray: rgba(0,0,0,0.7);
 $medium-gray: rgba(0,0,0,0.4);
+$lighter-gray: rgba(0,0,0,0.2);
 $light-gray: rgba(0,0,0,0.05);
 $black: rgba(0,0,0,0.95);
 $white: rgba(256, 256, 256,1);
@@ -17,7 +18,7 @@ $border-radius-lg: 6px;
 $border-radius-sm: 2px;
 
 
-
+$border-line: 1px solid $lighter-gray;
 // Images
 
 $linear-gradient: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0));

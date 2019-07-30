@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
-    @order = Order.find(17)
+    @order = Order.last
   end
 
   def post
     @user = current_user
-    @order = Order.find(3)
+    @order = Order.last
   end
 end
