@@ -2,7 +2,7 @@
 .card-horizontal {
   padding: 16px 0;
   display: flex;
-  width: 400px;
+  // width: 400px;
   background-color: $light-gray;
   border-radius: $border-radius;
 }
@@ -26,7 +26,7 @@
 .product-order-container {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 100%;
 }
 .product-image {
   border-radius: $border-radius;

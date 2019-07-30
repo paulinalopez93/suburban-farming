@@ -16,12 +16,37 @@
 }
 .product_order_container {
   display: flex;
+
 }
 .btn-cart-container {
-  height: 30px;
+  margin-bottom: 10px;
 }
 .cart-info-container {
   display: flex;
   justify-content: space-between;
 }
 
+
+.cart-buttons-container {
+  width: 100%;
+  display: flex;
+  // justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+}
+.cart-quantity-checkout{
+  margin: 0 15px;
+}
+.cart-btn-plusminus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $primary;
+  a{
+    color: white;
+    display: block;
+  }
+}

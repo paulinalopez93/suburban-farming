@@ -11,17 +11,21 @@
                 <div class="product-order-info-container">
                   <div class="product-cart-details">
                     <p class="p-black-bold"><%= product_order.product.name %></p>
-                    <p class="p-black cart-product-price"><%= humanized_money_with_symbol(product_order.product.price) %></p>
+
                   </div>
                   <div class="btn-cart-container">
-                    <p class="p-black cart-product-quantity">Quantity:
-                    <%= product_order.quantity %>
-                  </p>
+                    <p class="p-black cart-product-price">Price: <%= humanized_money_with_symbol(product_order.product.price) %></p>
                   </div>
-                  <div class="btn-cart-container">
-                    <p class="p-black cart-product-quantity">Product total:
-                    <%= humanized_money_with_symbol product_order.total_price %>
-                  </p>
+                  <div class="cart-buttons-container">
+                    <div class="cart-btn-plusminus">
+                      <%= link_to "-", remove_from_cart_path(@order, product_order.product), class: "btn-plusminus-minus", remote: true %>
+                    </div>
+                    <div class="cart-quantity-checkout">
+                      <div><%= product_order.quantity unless product_order.nil? %></div>
+                    </div>
+                    <div class="cart-btn-plusminus">
+                        <%= link_to "+", add_to_cart_path(@order, product_order.product), class: "btn-plusminus-plus link-big-white", remote: true %>
+                    </div>
                   </div>
                 </div>
               </div>
