@@ -1,4 +1,5 @@
 document.getElementById('product-quantity-<%= @product.id %>').innerHTML = "<%= @product_order.quantity %>";
+console.log(document.getElementById('product-quantity-<%= @product.id %>'))
 
 document.getElementById('cart-open-button');
 var refreshCart = (html) => {

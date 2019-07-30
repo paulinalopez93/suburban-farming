@@ -13,23 +13,25 @@
       </div>
       <div class="product-info">
         <div class="product-modal-title">
-          <h3 class="h3-category" >"Alfredo Perez" <br> <%= product.name %> </h3>
+          <h3 class="h3-category" >Alredo Perez's <%= product.name %></h3>
           <div class="product-page-price">
             <h4>Price: €<%= product.price %></h4>
           </div>
+          <div class="btn-plusminus" id="btn-cart-modal">
+            <a class="btn-plusminus-minus link-big-white" data-remote="true" href="/orders/7/remove/376">-</a>
+            <div class="btn-plusminus-amount link-big-white" id="product-quantity-376">0</div>
+            <a class="btn-plusminus-plus link-big-white" data-remote="true" href="/orders/7/add/376">+</a>
+          </div>
+          <div class="nutrients-info">
+            <h6>Nutrients per serving:</h6>
+            <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
+          </div>
         </div>
       </div>
-      <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+      <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
-
 
 
 

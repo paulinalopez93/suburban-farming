@@ -1,19 +1,21 @@
 <% white = false unless local_assigns.has_key? :white %>
 <div class="navbar-container <%= 'navbar-white' if white %>">
   <div class="brand-container">
-    <%= link_to "SUBURBAN", root_path, class: "nav-link link-white" %>
+    <% logo = controller_name == "pages" ? "logowhite.png" : "logoblack.png" %>
+    <%= link_to image_tag(logo, width: 70, height: 70), root_path, class: "nav-link link-white" %>
   </div>
   <div class="links-container">
 
     <% if user_signed_in? %>
 
       <% unless controller_name == "pages" %>
-        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
-        <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-cart_xevyu2") %></button>
+        <%= link_to "PROFILE", profile_path, class:"nav-link link-white link-black" %>
+        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
+        <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-cart_xevyu2", width: 28, height: 28) %></button>
       <% end %>
 
       <% if controller_name == "pages" %>
-       <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
+       <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
       <% else %>
         <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
       <% end %>
@@ -21,18 +23,24 @@
     <% else %>
 
       <% if controller_name == "pages" %>
-        <%= link_to cl_image_tag("shopping-cart_xevyu2", class: "basket-img"), update_cart_path(@order), class: "nav-link link-white link-black", id: "cart-button", remote: true %>
+        <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
+          SIGN IN
+        </button>
+        <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal2">
+        SIGN UP
+        </button>
+
       <% else %>
         <button type="button" class="nav-link link-white link-black" data-toggle="modal" style="opacity:0;" data-target="#ModalCart" id='cart-open-button'></button>
+
+        <button type="button" class="nav-link link-white link-black" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
+          SIGN IN
+        </button>
+        <button type="button" class="nav-link link-white link-black" data-toggle="modal" data-target="#Modal2">
+        SIGN UP
+        </button>
       <% end %>
 
-      <button type="button" class="nav-link link-white <% 'link-black' unless controller_name == "pages" %>" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
-        SIGN IN
-      </button>
-
-      <button type="button" class="nav-link link-white <% "link-black" unless controller_name == "pages" %>" data-toggle="modal" data-target="#Modal2">
-        SIGN UP
-      </button>
 
       <% unless controller_name == "pages" %>
         <%= link_to cl_image_tag("shopping-cart_xevyu2", class: "basket-img", width: 28, height: 28, crop: :fill), update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>

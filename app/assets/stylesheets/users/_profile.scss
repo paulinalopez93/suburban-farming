@@ -1,61 +1,50 @@
-.profile-container {
-  margin: 24px;
-h2 {
-  font-size: 72px;
-  }
-}
-.profile-banner{
-}
-.produce-form {
-  margin-top: 36px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  width: 950px;
-}
-.produce-form-top{
-  margin: 18px;
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
-  width: 900px;
-}
-.produce-details {
-  width: 400px;
-  input[type=text] {
-  border: none;
-  border-bottom: 1px solid gray;
-}
-}
-.produce-image-upload {
-  display: flex;
-  justify-content: flex-end;
-  width: 445px;
-}
-.produce-form-bottom {
-  display: block;
-  justify-content: space-between;
-  margin: 18px;
-  padding: 12px;
-    .card-vertical {
-      margin: 12px;
-    }
-}
-.produce-cards {
+//dashboard navbar
+.dashboard-navbar {
+  padding: $padding-standard-y $padding-standard-x;
+  padding-top: 100px;
   display: flex;
   justify-content: space-between;
 }
-.produce-process {
-  width: 950px;
-  border: 1px solid black;
-  p {
-    padding-left: 30px;
-  }
-}
-.process-step {
+
+
+//thisweek stats
+
+.thisweek-container {
   display: flex;
   justify-content: space-around;
-  p {
-    height: 200px;
-    border: 1px solid black;
-    padding: 24px;
-  }
+  padding: $padding-standard-y $padding-standard-x;
 }
+.stats-container {
+  text-align: center;
+  border-radius: $border-radius;
+  border: 2px solid $light-gray;
+  padding: 10px 0;
+  width: 240px;
+}
+
+//alltime stats
+.graph-stats {
+  text-align: center;
+}
+.alltime-container {
+  padding: $padding-standard-y $padding-standard-x;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+// orders wrap
+.orders-wrap {
+  padding: $padding-standard-y $padding-standard-x;
+}
+
+
+// orders table
+.orders-title-container {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+.order-card {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+

@@ -1,57 +1,83 @@
-<div class="profile-container">
+<div class="dashboard-container">
 
-  <div class="profile-banner">
-    <h2>Find customers for your excess produce.</h2>
-    <button type="btn btn-primary">Let's go!</button>
+  <div class="dashboard-navbar">
+    <p class="p-big-black-bold">Dashboard</p>
+    <div class="profile-info">
+      <p class="p-black">Alfredo</p>
+      <p>img</p>
+    </div>
   </div>
 
-  <div class="produce-form">
-      <div class="produce-form-top">
-        <div class="produce-details">
-          <p>Details</p>
-          <p>Produce Name</p>
-          <input type="text" name="pname">
-          <p>Quantity with units</p>
-          <input type="text" name="pname">
-          <select required>
-            <option value="kg">Kilogram</option>
-            <option value="count">Count</option>
-            <option value="bunch">Bunch</option>
-          </select>
-        </div>
+  <div class="thisweek-container">
+    <div class="stats-container">
+      <p class="p-gray">Saved to favorites</p>
+      <p class="p-big-black">14</p>
+    </div>
+    <div class="stats-container">
+      <p class="p-gray">To deliver</p>
+      <p class="p-big-black">9</p>
+    </div>
+    <div class="stats-container">
+      <p class="p-gray">Delivered</p>
+      <p class="p-big-black">13</p>
+    </div>
+  </div>
 
-        <div class="produce-image-upload">
-        <button>img uploader placeholder</button>
-        </div>
+  <div class="alltime-container">
+    <div class="graph-wrap">
+      <div class="graph-container">
+        <h3 class="h3-category">Your orders</h3>
+        <div>Graph here</div>
       </div>
-        <div class="produce-form-bottom">
-          <div>
-          <p>Category</p>
+    </div>
+    <div class="stats-wrap">
+      <div class="graph-stats">
+        <p class="p-gray">Delivered</p>
+        <p class="p-big-black">56</p>
+      </div>
+      <div class="graph-stats">
+        <p class="p-gray">Average delivery time</p>
+        <p class="p-big-black">1 day</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="h3-category">Your orders</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
           </div>
-
-        <div class="produce-cards">
-          <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('http://res.cloudinary.com/dlj1mjxjd/image/upload/c_fill,h_300,w_400/v1563986909/txo9lmnen1atmyjpfnbm.jpg')"></div>
-          <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('http://res.cloudinary.com/dlj1mjxjd/image/upload/c_fill,h_300,w_400/v1563986915/c4hvgrkc3zlxnlsx0gt6.jpg')"></div>
-          <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('http://res.cloudinary.com/dlj1mjxjd/image/upload/c_fill,h_300,w_400/v1563986917/aulbpui0s3rbqtnhjeii.jpg')"></div>
-          <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('http://res.cloudinary.com/dlj1mjxjd/image/upload/c_fill,h_300,w_400/v1563986898/dmuezlgw0ybdw9eaqgel.jpg')"></div>
-          <div class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('http://res.cloudinary.com/dlj1mjxjd/image/upload/c_fill,h_300,w_400/v1563986919/ir6pfpsgrazwotr4yrkd.jpg')"></div>
-         </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Customer</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Status</p>
+            </div>
+          </div>
         </div>
+        <% @user.orders.each do |order| %>
+        <div class="order-card">
+          <div class="order-name">
+            <p class="p-black">question about that</p>
+          </div>
+          <div class="order-customer">
+            <p class="p-black">order.user</p>
+          </div>
+          <div class="order-status">
+            <p class="p-black">order.status</p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="produce-process">
-    <div>
-    <p>Process</p>
-    </div>
-    <div class="process-step">
-      <p>Post your produce.</p>
-      <p>Deliver to the Hub.</p>
-      <p>We take care of the rest.</p>
-    </div>
-  </div>
 </div>
