@@ -1,15 +1,16 @@
 
 <div class="shop-container">
   <div class="sidebar-container">
+    <h3>Categories</h3>
     <% @categories.each do |category| %>
-    <h2 class="p-big-black"><%= category %></h2>
+    <a href="#<%= category %>"><h4 class="p-big-black"><%= category.capitalize %></h4></a>
     <% end %>
   </div>
 
   <div class="categories-container">
     <% @categories.each do |category| %>
-    <div class="category-container">
-      <h2 class="h3-category"><%= category %></h2>
+    <div class="category-container" id="<%= category %>">
+      <h2 class="h3-category"><%= category.capitalize %></h2>
       <div class="cards-container">
         <% @products.where(category: category).each_with_index do |product| %>
         <div data-toggle="modal" data-target="#info-modal<%= product.name.gsub(" ","") %>" class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
