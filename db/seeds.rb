@@ -6,7 +6,7 @@ User.destroy_all
 
 puts 'Creating products & user...'
 
-simon = User.create!(email:"simon@gmail.com", password:"hola123", id:"132", address: "Calle Juan de Vera 15 Madrid")
+simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", id:"132", address: "Calle Juan de Vera 15 Madrid")
 
 #vegetables
 

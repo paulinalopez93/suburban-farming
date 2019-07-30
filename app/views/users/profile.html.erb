@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <div class="dashboard-container">
@@ -6,6 +7,17 @@
     <div class="profile-info">
       <p class="p-black">Alfredo</p>
       <p>img</p>
+=======
+<div class="dashboard-container">
+  <div class="dashboard-navbar-wrapper">
+    <div class="dashboard-navbar">
+      <p class="p-big-black-bold">Dashboard</p>
+      <div class="profile-info">
+        <p >ALFREDO</p>
+        <%= image_tag("cover", class: "avatar") %>
+
+      </div>
+>>>>>>> name-to-user
     </div>
   </div>
 
@@ -27,25 +39,25 @@
   <div class="alltime-container">
     <div class="graph-wrap">
       <div class="graph-container">
-        <h3 class="h3-category">Your orders</h3>
+        <h3 class="p-big-black">STATS</h3>
         <div>Graph here</div>
       </div>
     </div>
     <div class="stats-wrap">
       <div class="graph-stats">
-        <p class="p-gray">Delivered</p>
-        <p class="p-big-black">56</p>
+        <p >Delivered</p>
+        <p class="graph-number">56</p>
       </div>
       <div class="graph-stats">
-        <p class="p-gray">Average delivery time</p>
-        <p class="p-big-black">1 day</p>
+        <p >Average delivery time</p>
+        <p class="graph-number">1 day</p>
       </div>
     </div>
   </div>
 
   <div class="orders-wrap">
     <div class="orders-container">
-      <h3 class="h3-category">Your orders</h3>
+      <h3 class="p-big-black">YOUR ORDERS</h3>
       <div class="orders-table">
         <div class="orders-title-container">
           <div class="order-title">
@@ -64,18 +76,21 @@
             </div>
           </div>
         </div>
-        <% @user.orders.each do |order| %>
+        <% @user.product_orders.where.not(quantity: 0).each do |product_order| %>
         <div class="order-card">
           <div class="order-name">
-            <p class="p-black">question about that</p>
+            <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product_order.product.name %></p>
           </div>
           <div class="order-customer">
-            <p class="p-black">order.user</p>
+            <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
           </div>
           <div class="order-status">
-            <p class="p-black">order.status</p>
+            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
           </div>
         </div>
+        <div class="line-dashboard"></div>
+
         <% end %>
       </div>
     </div>

@@ -1,3 +1,4 @@
+<% unless controller_name == 'users'  %>
 <% white = false unless local_assigns.has_key? :white %>
 <div class="navbar-container <%= 'navbar-white' if white %>">
   <div class="brand-container">
@@ -49,3 +50,4 @@
     <% end %>
   </div>
 </div>
+<% end %>
