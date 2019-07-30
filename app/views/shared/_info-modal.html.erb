@@ -3,12 +3,11 @@
     <div class="modal-content info-modal">
       <div class="product-producer-info-scroll">
         <div class="product-page-section">
-          <h3><%= product.name %></h3>
+          <!-- <h3 id="product-head"><%= product.name %></h3> -->
           <img src="<%= cl_image_path product.photo %>" alt="">
           <p class="about-producer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, quaerat distinctio. Et dolores adipisci qui placeat sit eligendi veniam facere explicabo non assumenda, necessitatibus nisi aliquid excepturi voluptatibus. Animi, consequatur!</p>
         </div>
 
-   
       </div>
       <div class="product-info">
         <div class="product-modal-title">
@@ -16,19 +15,20 @@
           <div class="product-page-price">
             <h4>Price: €<%= product.price %></h4>
           </div>
+          <!--  <div class="nutrients-info">
+            <h6>Nutrients per serving:</h6>
+            <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
+          </div> -->
           <div class="btn-plusminus" id="btn-cart-modal">
             <a class="btn-plusminus-minus link-big-white" data-remote="true" href="/orders/7/remove/376">-</a>
             <div class="btn-plusminus-amount link-big-white" id="product-quantity-376">0</div>
             <a class="btn-plusminus-plus link-big-white" data-remote="true" href="/orders/7/add/376">+</a>
           </div>
-          <div class="nutrients-info">
-            <h6>Nutrients per serving:</h6>
-            <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
-          </div>
+
         </div>
             <div class="section-map">
         <h3 class="h3-category" id="producer-location">Location</h3>
-        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100%; height: 600px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100px; height: 600px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
     </div>

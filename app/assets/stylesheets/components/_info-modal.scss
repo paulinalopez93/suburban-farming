@@ -14,6 +14,7 @@ display: flex-end;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 72px;
+  padding-top: 50px;
 }
 
 // .about-producer {
@@ -23,11 +24,12 @@ display: flex-end;
 .product-page-section {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  // padding: 15px;
   // width: 50%;
   img {
     height: 200px;
     object-fit: cover;
+    margin-bottom: 30px;
   }
 }
 
@@ -59,7 +61,7 @@ display: flex-end;
 .product-modal-title {
   // display: flex;
   // border-left: 3px solid $primary;
-  padding: 13px;
+  // padding: 13px;
   text-align: center;
   // padding-left: 15px;
   // margin-left: 513px;
@@ -85,4 +87,8 @@ display: flex-end;
 .nutrients-info {
   margin-top: 10px;
   text-align: center;
+}
+
+#product-head {
+  margin-bottom: 20px;
 }
