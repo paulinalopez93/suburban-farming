@@ -9,3 +9,9 @@ class UsersController < ApplicationController
     @order = Order.find(3)
   end
 end
+
+private
+
+def product_params
+  params.require(:product).permit(:price, :details, :photo, :category)
+end

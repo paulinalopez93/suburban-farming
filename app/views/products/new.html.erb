@@ -1,0 +1,43 @@
+<!-- Produce Form -->
+<div class="profile-container">
+  <div class="produce-form">
+      <div class="produce-form-top">
+        <div class="produce-details">
+          <p class="p-gray">Details</p>
+          <%= simple_form_for [@user, @product] do |f| %>
+          <%= f.input :name, label: 'Product Name' %>
+          <%= f.input :details, label: 'Product description' %>
+          <%= f.input :price_cents, as: :currency, label: 'Price' %>
+        </div>
+
+        <div class="produce-image-upload">
+          <div class="photo-uploader" data-controller='photo-uploader'>
+            <%= f.input :photo, label: 'Add Image', input_html: { "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
+            <img class="w-100 photo-uploader-embed" data-target='photo-uploader.embed' />
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+        </div>
+      </div>
+        <div class="produce-form-bottom">
+          <div>
+          <p class="p-gray">Category</p>
+          </div>
+        <div class="produce-categories" data-controller="select">
+            <div data-select-value="vegetables" data-action="click->select#update" data-target="select.button" class="stats-container">Vegetables</div>
+            <div data-select-value="fruits" data-action="click->select#update" data-target="select.button" class="stats-container">Fruits</div>
+            <div data-select-value="eggs" data-action="click->select#update" data-target="select.button" class="stats-container">Eggs</div>
+            <div data-select-value="wine" data-action="click->select#update" data-target="select.button" class="stats-container">Wine</div>
+            <div data-select-value="herbs" data-action="click->select#update" data-target="select.button" class="stats-container">Herbs</div>
+            <%= f.input :category, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
+        </div>
+        <br>
+          <%= f.button :submit, class: "btn btn-secondary" %>
+          <% end %>
+
+        </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('product_price_cents').classList.remove('is-valid');
+</script>

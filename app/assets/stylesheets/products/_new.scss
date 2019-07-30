@@ -1,0 +1,111 @@
+
+.profile-container {
+  margin: 24px;
+flex-wrap: nowrap;
+h2 {
+  font-size: 72px;
+  }
+}
+.profile-banner{
+}
+.produce-form {
+  margin-top: 36px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  width: 800px;
+}
+.produce-form-top{
+  margin: 18px;
+  margin-right: 0px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-around;
+  width: 900px;
+}
+.produce-details {
+  width: 400px;
+  input[type=text] {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+}
+.produce-image-upload {
+  display: flex;
+  justify-content: flex-end;
+  width: 445px;
+}
+.produce-form-bottom {
+  display: block;
+  justify-content: space-between;
+  margin: 18px;
+  padding: 12px;
+    .card-vertical {
+      margin: 12px;
+    }
+}
+.produce-cards {
+  display: flex;
+  justify-content: space-between;
+}
+.produce-process {
+  width: 950px;
+  border: 1px solid black;
+  p {
+    padding-left: 30px;
+  }
+}
+
+.produce-categories {
+  display: flex;
+  justify-content: space-between;
+    .stats-container {
+      width: 145px;
+    }
+    .stats-container {
+      &.selected {
+        border: 1px solid black;
+      }
+    }
+}
+#quantity-form {
+  width: 75px;
+}
+
+.photo-uploader{
+  @extend .custom-file;
+  font-size: 3rem;
+  input{
+    // @extend .custom-file-input;
+    background-color: $dark-gray;
+    font-size: 3rem;
+  }
+  label{
+    @extend .custom-file-label;
+    border: 1px solid #EFEFEF !important;
+    text-align: center;
+    font-size: 3rem;
+    color: $light-gray;
+    &::after{
+      content: '';
+      background-color: transparent;
+      border: none;
+      display: none;
+    }
+  }
+}
+
+.form-control-file, .form-control-range {
+    display: block;
+    width: 346px;
+}
+.photo-uploader label {
+    border: 1px solid #EFEFEF !important;
+    text-align: center;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.05);
+    width: 348px;
+}
+.photo-uploader input {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+    width: 346px;
+  }
