@@ -11,6 +11,9 @@
 }
 .sidebar-container {
   padding-top: 5px;
+  position: sticky;
+  top: 100px;
+  height: 100vh;
 }
 .cards-container {
   display: grid;
