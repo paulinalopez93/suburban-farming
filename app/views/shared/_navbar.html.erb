@@ -9,6 +9,7 @@
     <% if user_signed_in? %>
 
       <% unless controller_name == "pages" %>
+        <%= link_to "PROFILE", profile_path, class:"nav-link link-white link-black" %>
         <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
         <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-cart_xevyu2", width: 28, height: 28) %></button>
       <% end %>
