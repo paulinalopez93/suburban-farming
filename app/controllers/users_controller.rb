@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
-    @order = Order.find(3)
+    @order = Order.find(17)
   end
 
   def post
