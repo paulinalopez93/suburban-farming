@@ -35,4 +35,13 @@
   padding-left: $padding-standard-x;
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
+}
+#arrow-link {
+  content: '';
+  display:block;
+  position: relative;
+  width: 46px;
+  height: 28px;
+  margin-bottom: 15px;
 }
