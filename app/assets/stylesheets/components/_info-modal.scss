@@ -10,9 +10,10 @@ display: flex-end;
 }
 
 .info-modal {
-  margin-left: 50px;
+  // margin-left: 50px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 72px;
 }
 
 // .about-producer {
@@ -23,7 +24,11 @@ display: flex-end;
   display: flex;
   flex-direction: column;
   padding: 15px;
-  width: 50%;
+  // width: 50%;
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
 }
 
 #producer-name {
@@ -33,6 +38,7 @@ display: flex-end;
 .info-modal-img {
   padding: 15px;
   height: 250px;
+
 }
 
 .producer-info {
@@ -52,8 +58,9 @@ display: flex-end;
 
 .product-modal-title {
   // display: flex;
-  border-left: 3px solid $primary;
+  // border-left: 3px solid $primary;
   padding: 13px;
+  text-align: center;
   // padding-left: 15px;
   // margin-left: 513px;
 }
@@ -65,10 +72,10 @@ display: flex-end;
   // flex-direction: center;
 }
 
-.section-map {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
+.mapboxgl-canvas {
+  position: fixed;
+  width: 300px;
+  height: 300px;
 }
 
 #btn-cart-modal {
