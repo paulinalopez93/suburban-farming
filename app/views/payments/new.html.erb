@@ -1,7 +1,7 @@
 <br>
 <br>
 <br>
-<div class="payment-page">
+<div class="payment-page" id="payment-page" data-order-id="<%= @order.id %>">
  <div class='payment-card'>
     <h1>Checkout</h1>
     <div class='checkout-form'>
@@ -37,6 +37,10 @@
   <button class="btn-pay" style="margin-bottom: 10px;">PAY</button>
 </form>
 </div>
+
+<%= render "shared/payment_modal", order: @order %>
+
+<button class="d-none" data-toggle="modal" data-target="#PaymentModal" id="payment-modal-button">Open Payment Modal</button>
 <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
   // This identifies your website in the createToken call below

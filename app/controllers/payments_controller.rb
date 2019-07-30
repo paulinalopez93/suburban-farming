@@ -25,7 +25,11 @@ class PaymentsController < ApplicationController
       flash[:alert] = e.message
       redirect_to order_path(@order)
 
-    redirect_to order_path(@order)
+    respond_to do |format|
+      format.html { redirect_to order_path(@order) }
+      format.json { render json: {status: 200} }
+      format.js
+    end
   end
 
   private
