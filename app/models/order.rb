@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   monetize :price_cents
 
   #ORDER CAN ONLY HAVE TWO OR THEE STATES VALIDATION
-  validates :status, inclusion: { in: ["pending", "paid", "refused"] }
+  validates :status, inclusion: { in: ["pending", "paid", "refused", "delivered"] }
 
   def delivery_price
     return Money.new(400, price.currency)
