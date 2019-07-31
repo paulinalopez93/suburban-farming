@@ -5,13 +5,13 @@
         <div class="product-page-section">
           <!-- <h3 id="product-head"><%= product.name %></h3> -->
           <img src="<%= cl_image_path product.photo %>" alt="">
-          <p class="about-producer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, quaerat distinctio. Et dolores adipisci qui placeat sit eligendi veniam facere explicabo non assumenda, necessitatibus nisi aliquid excepturi voluptatibus. Animi, consequatur!</p>
+          <p class="about-producer"><%= product.details  %></p>
         </div>
 
       </div>
       <div class="product-info">
         <div class="product-modal-title">
-          <h3 class="h3-category" >Alredo Perez's <%= product.name %></h3>
+          <h3 class="h3-category" ><%= product.user.name %>'s <%= product.name %></h3>
           <div class="product-page-price">
             <h4>Price: €<%= product.price %></h4>
           </div>
