@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_073934) do
+ActiveRecord::Schema.define(version: 2019_07_31_140429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hubs", force: :cascade do |t|
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.date "date"
@@ -84,7 +92,9 @@ ActiveRecord::Schema.define(version: 2019_07_31_073934) do
     t.float "longitude"
     t.string "name"
     t.text "about"
+    t.bigint "hub_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["hub_id"], name: "index_users_on_hub_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -94,4 +104,5 @@ ActiveRecord::Schema.define(version: 2019_07_31_073934) do
   add_foreign_key "products", "users"
   add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
+  add_foreign_key "users", "hubs"
 end
