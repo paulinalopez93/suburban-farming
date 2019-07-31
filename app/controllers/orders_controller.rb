@@ -71,6 +71,9 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update_status
+  end
+
 
   # def checkout
   #   @order = Order.find(params[:id])

@@ -1,6 +1,6 @@
 <!-- Produce Form -->
 <div class="profile-container">
-  <h2>Getting rid of your excess produce.</h2>
+  <h2>Post your produce</h2>
       <div class="produce-steps-header">
       <h3>In just 3 easy steps.</h3>
     </div>
@@ -46,11 +46,11 @@
   <div class="produce-form">
       <div class="produce-form-top">
         <div class="produce-details">
-          <p class="p-gray">Details</p>
+          <p class="p-black">Details</p>
           <%= simple_form_for [@user, @product] do |f| %>
-          <%= f.input :name, label: 'Product Name' %>
-          <%= f.input :details, label: 'Product description' %>
-          <%= f.input :price_cents, as: :currency, label: 'Price', input_html: { value: number_with_precision(f.object.price, precision: 2) } %>
+          <%= f.input :name, label: 'PRODUCT NAME', class: 'post-input' %>
+          <%= f.input :details, label: 'PRODUCT DESCRIPTION', class: 'post-input' %>
+          <%= f.input :price_cents, as: :currency, label: 'PRICE', input_html: { value: number_with_precision(f.object.price, precision: 2) }, class: 'post-input' %>
         </div>
 
         <div class="produce-image-upload">
@@ -58,7 +58,7 @@
       </div>
         <div class="produce-form-bottom">
           <div>
-          <p class="p-gray">Category</p>
+          <p class="p-black">Category</p>
           </div>
         <div class="produce-categories" data-controller="select">
             <div data-select-value="vegetables" data-action="click->select#update" data-target="select.button" class="stats-container">Vegetables</div>
