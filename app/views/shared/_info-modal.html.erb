@@ -15,15 +15,17 @@
           <div class="product-page-price">
             <h4>Price: €<%= product.price %></h4>
           </div>
+            <div class="btn-plusminus" id="btn-cart-modal">
+                <%= link_to "-", remove_from_cart_path(@order, product), class: "btn-plusminus-minus link-big-white", remote: true %>
+                <% product_order = @order.product_orders.find_by(product_id: product.id) %>
+                <div class="btn-plusminus-amount link-big-white" id="product-quantity2-<%= product.id %>"><%= product_order.quantity unless product_order.nil? %></div>
+                <%= link_to "+", add_to_cart_path(@order, product), class: "btn-plusminus-plus link-big-white", remote: true %>
+              </div>
           <!--  <div class="nutrients-info">
             <h6>Nutrients per serving:</h6>
             <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
           </div> -->
-          <div class="btn-plusminus" id="btn-cart-modal">
-            <a class="btn-plusminus-minus link-big-white" data-remote="true" href="/orders/7/remove/376">-</a>
-            <div class="btn-plusminus-amount link-big-white" id="product-quantity-376">0</div>
-            <a class="btn-plusminus-plus link-big-white" data-remote="true" href="/orders/7/add/376">+</a>
-          </div>
+
 
         </div>
             <div class="section-map">
