@@ -15,7 +15,7 @@ h2 {
   margin-top: 36px;
   display: block;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  width: 800px;
+  width: 750px;
 }
 .produce-form-top{
   margin: 18px;
@@ -35,7 +35,8 @@ h2 {
 .produce-image-upload {
   display: flex;
   justify-content: flex-end;
-  width: 445px;
+  width: 506px;
+  padding-left: 22px;
 }
 .produce-form-bottom {
   display: block;
@@ -62,7 +63,7 @@ h2 {
   display: flex;
   justify-content: space-between;
     .stats-container {
-      width: 145px;
+      width: 120px;
     }
     .stats-container {
       &.selected {
@@ -76,7 +77,11 @@ h2 {
 
 .photo-uploader {
   @extend .custom-file;
-  font-size: 2rem;
+  // font-size: 2rem;
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  height: auto !important;
   input{
     // @extend .custom-file-input;
     background-color: $dark-gray;
@@ -88,6 +93,8 @@ h2 {
     text-align: center;
     font-size: 2rem;
     color: $light-gray;
+    height: 150px;
+    display: block;
     &::after{
       content: '';
       background-color: transparent;
@@ -99,19 +106,24 @@ h2 {
 
 .form-control-file, .form-control-range {
     display: block;
-    width: 346px;
+    width: 150px;
 }
 .photo-uploader label {
     border: 1px solid #EFEFEF !important;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgba(0, 0, 0, 0.05);
-    width: 348px;
+    width: 150px;
+    &:focus, &:active{
+      border: 1px solid $primary !important;
+    }
 }
 .photo-uploader input {
     background-color: rgba(0, 0, 0, 0.8);
-    font-size: 3rem;
-    width: 346px;
+    font-size: 2rem;
+    width: 150px;
+    height: 150px;
+    visibility: hidden;
   }
   .produce-steps {
     display: flex;
@@ -130,10 +142,11 @@ h2 {
   display: block;
   justify-content: center;
   align-items: center;
-    margin-bottom: 64px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    padding: 32px !important;
+  margin-bottom: 64px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding: 32px !important;
+  border-radius: 10px;
 }
 
 .produce-steps-number{
@@ -172,4 +185,14 @@ h2 {
 #submit-button-form {
   background-color: #F6613F;
   border: none;
+  margin-top: -25px;
+}
+
+.photo-uploader-embed-container{
+  width: 100px;
+  height: auto;
+}
+
+.photo-uploader-embed {
+  width: 100%;
 }

@@ -51,11 +51,6 @@
         </div>
 
         <div class="produce-image-upload">
-          <div class="photo-uploader" data-controller='photo-uploader'>
-            <%= f.input :photo, label: 'Add Image', input_html: { "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
-            <img class="w-100 photo-uploader-embed" data-target='photo-uploader.embed' />
-            <%= f.input :photo_cache, as: :hidden %>
-          </div>
         </div>
       </div>
         <div class="produce-form-bottom">
@@ -70,6 +65,15 @@
             <div data-select-value="herbs" data-action="click->select#update" data-target="select.button" class="stats-container">Herbs</div>
             <%= f.input :category, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
         </div>
+
+        <div class="photo-uploader" data-controller='photo-uploader'>
+            <%= f.input :photo, label: 'Add Image', input_html: { "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
+
+            <div class="photo-uploader-embed-container">
+              <img class="w-100 photo-uploader-embed" data-target='photo-uploader.embed' />
+            </div>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
         <br>
           <%= f.button :submit, class: "btn btn-secondary", id: "submit-button-form" %>
           <% end %>
