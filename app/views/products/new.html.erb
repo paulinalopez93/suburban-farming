@@ -50,7 +50,7 @@
           <%= simple_form_for [@user, @product] do |f| %>
           <%= f.input :name, label: 'Product Name' %>
           <%= f.input :details, label: 'Product description' %>
-          <%= f.input :price_cents, as: :currency, label: 'Price' %>
+          <%= f.input :price_cents, as: :currency, label: 'Price', input_html: { value: number_with_precision(f.object.price, precision: 2) } %>
         </div>
 
         <div class="produce-image-upload">

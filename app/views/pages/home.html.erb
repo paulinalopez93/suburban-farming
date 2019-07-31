@@ -3,8 +3,10 @@
 <%= render 'shared/navbar', white: true %>
 <% end %>
 <!-- autoplay: :autoplay, -->
-<div class="video-overlay"></div>
-<%= video_tag "suburbanfarm.mp4", class: "banner-video", poster: "cover_hero.png", loop: :loop, autoplay: :autoplay, muted: :muted, playsinline: :playsinline %>
+<div class="video-container">
+  <div class="video-overlay"></div>
+  <%= video_tag "suburbanfarm.mp4", class: "banner-video", poster: "cover_hero.png", loop: :loop, autoplay: :autoplay, muted: :muted, playsinline: :playsinline %>
+</div>
 <div class="hero-container">
   <div class="w-100 text-center">
     <h1 class="display-3">Healthy dinners. No food waste</h1>
@@ -70,14 +72,14 @@
 
     </div>
     <div class="steps-image-container">
-      <%= cl_image_tag("picking-food_wjiwo1") %>
+      <%= cl_image_tag("food-waste_gu0fkm") %>
     </div>
   </div>
 
 
   <div class="steps-container">
     <div class="stAt retail level, large quantities of food are wasted due to quality standards that over-emphasize appearance.eps-image-container">
-      <%= cl_image_tag("produce-delivered_gys860") %>
+      <%= cl_image_tag("food-delivery-wine_g9mrqw") %>
     </div>
     <div class="step-text-container">
 
@@ -93,10 +95,6 @@
 
     </div>
   </div>
-  <div class="footer-links">
-
-  </div>
-</div>
 </div>
 
 <% if params[:signed_in] == 'false' %>
