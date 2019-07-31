@@ -15,7 +15,7 @@
       <div class="cards-container">
         <% @products.where(category: category).each_with_index do |product| %>
         <div data-toggle="modal" data-target="#info-modal-<%= product.id %>" class="card-vertical" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)),
-         url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
+         url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fit, gravity: :center; %>')">
           <div class="modal-info-btn">
           </div>
           <div class="product-info-container">
