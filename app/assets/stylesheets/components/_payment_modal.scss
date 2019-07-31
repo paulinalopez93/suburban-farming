@@ -7,15 +7,15 @@
 }
 
 .fred-master {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 3px solid white;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  background-color: rgba(200, 200, 200, 0.8);
   padding: 40px 10px;
 }
 
 
-.confirmation-image {
-  width: 80px;
-  height: 80px;
-}
+
+

@@ -10,64 +10,64 @@ simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123",
 
 #vegetables
 
-Product.create!(name: "Tomato", price: 3, details: "A delicious red tomato", category: "vegetables", user_id:simon.id, remote_photo_url: "https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+Product.create!(name: "Tomato", price: 3, details: "Summer time means tomato time! They are complex in flavor. A marriage between sweet and acidic while at the same time fruity. The best way to serve these juicy tomatoes is to slice and serve them with fresh mozzarella, basil, extra virgin olive oil and some red pepper flakes to add a kick to the classic Caprese Salad.", category: "vegetables", user_id:simon.id, remote_photo_url: "https://images.unsplash.com/photo-1546470427-227e2f27f02c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80")
 
-Product.create!(name: "Broccoli", price: 5, details: "A delicious piece of broccoli", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=818&q=80")
+Product.create!(name: "Broccoli", price: 5, details: "Broccoli is in season year around and its harvested by hand with a crisp texture and full flavor. Broccoli can be used in many dishes such as whole grain pasta primavera, casseroles such as brown rice and broccoli casserole, or roasted with a little oil and seasonings.", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1553175005-a1129d5c188c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80")
 
-Product.create!(name: "Corn", price: 2, details: "Yummy corn", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1511817354854-e361703ac368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80")
+Product.create!(name: "Corn", price: 2, details: "Corn is carefully grown to be tender and bursting with flavor. We carefully select different varieties to be grown so that they are sweet and juicy.", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1554402100-8d1d9f3dff80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80")
 
-Product.create!(name: "Mushrooms", price: 2, details: "Fun mushrooms", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1512595765784-5ebad80772a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Mushrooms", price: 2, details: "Mushrooms are very versatile and equally tasty, fresh or cooked. Use raw in salads, sautéed, breaded or as an ingredient to enrich sauces, soups, stuffing or entrées.", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1504545102780-26774c1bb073?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=730&q=80")
 
-Product.create!(name: "Carrots", price: 1, details: "A delicious orange carrot", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1551193270-975ab3ad07e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80")
+Product.create!(name: "Carrots", price: 1, details: "A delicious orange carrot", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1550081699-79c1c2e48a77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80")
 
-Product.create!(name: "Peas", price: 4, details: "Delicious tiny peas", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1563289469-f4b5ccd72e48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Peas", price: 4, details: "Peas are mildly flavored and can be served raw or cooked. Prepare traditionally as part of a stir-fry or blanch and serve cold.", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1553460165-3628ccff14d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80")
 
-Product.create!(name: "Brussels sprouts", price: 5, details: "A delicious brussel sprout", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Brussels sprouts", price: 5, details: "A delicious brussel sprout", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Cauliflower", price: 3, details: "A delicious cauliflower", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Cauliflower", price: 3, details: "Cauliflower has gained some popularity do to its versatility. Fresh cauliflower is perfect for tasty soups, au gratins, or a simple side entree. Wrap them in foil and throw them on the grill and call it a day. ", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
 
-Product.create!(name: "Asparagus", price: 2, details: "Yummy Asparagus", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1526678114169-b276d04ee180?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Asparagus", price: 2, details: "A beautiful bunch of asparagus harvested straight from our garden. This perennial vegetable can live for as long as 20 years and produce abundantly year after year. We harvest them by hand and make sure we pick them at their most sweet and tender stage. Roast for 6 to 8 minutes and serve with your favorite protein or on top of salads and even drizzle it with your favorite sauce!", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1515471209610-dae1c92d8777?ixlib=rb-1.2.1&auto=format&fit=crop&w=766&q=80")
 
-Product.create!(name: "Green beans", price: 1, details: "Tiny green beans", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1424593463432-4104fa2c015a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Green beans", price: 1, details: "Green beans are low in calories and a good source of both fiber and vitamin C. They’re a seasonal favorite and can be steamed or sautéed or blanched and served in a cold salad. Our family favorite is turning them into a tasty, healthy Asian style salad!", category: "vegetables", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/uploads/141143339879512fe9b0d/f72e2c85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80")
 
 #fruits
 
-Product.create!(name: "Bananas", price: 4, details: "A delicious yellow banana", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1543218024-57a70143c369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Bananas", price: 4, details: "Bananas are rich in fibre, potassium and other vitamins and minerals.We responsibly grow our bananas and we hand pick them gently in order to keep their sweet flavor and not to bruise the bananas. They are great in smoothies, desserts, perfect with yogurt, honey and chia seeds for breakfast…the possibilities are endless.", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1557760560-170fec41d767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
 
-Product.create!(name: "Apples", price: 3, details: "A delicious red apple", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1514894884401-c4be521f04ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Apples", price: 3, details: "Apples offer a mildly sweet flavor and flora aroma. They’re great for snacking on as they are low in calories, have a high water content and offers a fair amount of vitamins A, B and C. They are perfect for us in a fruit, green or chopped salad. Add diced apples to fruit salsas and chutneys. Slice and add to burgers, paninis and crostinis. ", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1474564862106-1f23d10b9d72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1668&q=80")
 
-Product.create!(name: "Grapes", price: 2, details: "Tiny green grapes", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Grapes", price: 2, details: "Tiny green grapes", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1515779122185-2390ccdf060b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Strawberries", price: 2, details: "Strawberries full of flavor", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1498663634537-fe747289b8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Strawberries", price: 2, details: "Strawberries full of flavor", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80")
 
-Product.create!(name: "Oranges", price: 6, details: "A delicious orange orange", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1549888834-3ec93abae044?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Oranges", price: 6, details: "Our oranges are juicy and sweet which makes them the perfect snack and adding a special tang for many recipes or simply having freshly squeezed orange juice for breakfast, lunch and dinner!", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1512578000375-660f001ef96d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Watermelon", price: 7, details: "A refreshing watermelon", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1515023115689-589c33041d3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Watermelon", price: 7, details: "Nothing screams summer like watermelon. Cut in half whichever way you like, then scoop out the seeds and slice into wedges. It’s also great for juicing.", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1504406438164-c0e042535100?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Lemons", price: 1, details: "Yummy Lemons", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1432457990754-c8b5f21448de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Lemons", price: 1, details: "Yummy Lemons", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1501621178796-25b923c8b5de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Blueberries", price: 5, details: "The best berries! Blueberries!", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1470072768013-bf9532016c10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Blueberries", price: 5, details: "The best berries! Blueberries!", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Peaches", price: 3, details: "A delicious peach", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1549571448-a8a53adbbbac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Peaches", price: 3, details: "A delicious peach", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1521243495304-138a02be58e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Pineapple", price: 2, details: "A delicious pineapple", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1553505349-badf7108ec49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Pineapple", price: 2, details: "A delicious pineapple", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1478005344131-44da2ded3415?ixlib=rb-1.2.1&auto=format&fit=crop&w=2848&q=80")
 
 #eggs
-Product.create!(name: "Brown eggs", price: 3, details: "Brown eggs from chickens", category: "eggs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1529570634977-ec042420117b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Brown eggs", price: 3, details: "Brown eggs from chickens", category: "eggs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80")
 
-Product.create!(name: "White eggs", price: 3, details: "White eggs from chickens", category: "eggs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1525671661040-b38bb04d4968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
+Product.create!(name: "White eggs", price: 3, details: "White eggs from chickens", category: "eggs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1489726933853-010eb1484d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80")
 
 #wine
-Product.create!(name: "White wine", price: 8, details: "Deliciuos white wine", category: "wine", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1508471608746-b7f6b8a5b0b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "White wine", price: 8, details: "Deliciuos white wine", category: "wine", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1561916542-c981c30f0cdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=738&q=80")
 
-Product.create!(name: "Red wine", price: 13, details: "Deliciuos red wine", category: "wine", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1544776527-68e63addedf7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Red wine", price: 13, details: "Our red wine has a signature style that is dark in color, with rich fruit and ripe, velvety tannins – as approachable in youth as in maturity. We farm Cabernet grapes in eight of Napa’s 16 sub-appellations, with diversification enabling us to make the best possible wine in a given year. Our Cabernet offers layered, lush aromas and flavors, including cocoa, cassis and ripe dark berries.", category: "wine", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1546944517-4f38480ff03c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80")
 
 #herbs
-Product.create!(name: "Parsley", price: 3, details: "Deliciuos parsley", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1528796940112-4979b4a98424?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Parsley", price: 3, details: "Deliciuos parsley", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1553217420-e8f8dde808f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1627&q=80")
 
-Product.create!(name: "Mint", price: 5, details: "Minty mint", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1517135399940-2855f5be7c4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Mint", price: 5, details: "Mint so refreshing that you won't know what hit you", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1509727841791-40d09ad9b7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Basil", price: 6, details: "Perfect basil", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1536777206078-5e694d16c678?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+Product.create!(name: "Basil", price: 6, details: "Perfect basil", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1527964105263-1ac6265a569f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 
 
