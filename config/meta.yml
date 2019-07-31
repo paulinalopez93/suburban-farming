@@ -1,5 +1,5 @@
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
+meta_product_name: "Suburban Farm"
+meta_title: "Suburban Farm Healthy dinners. No food waste."
+meta_description: "A web app for suburban farmers to connect with urban consumers that want to reduce their food waste and support their local community."
 meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: "@suburbanfarm1"   # required for Twitter Cards
