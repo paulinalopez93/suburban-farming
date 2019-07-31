@@ -6,6 +6,12 @@ class Product < ApplicationRecord
   enum category: %i[vegetables fruits eggs wine herbs]
   monetize :price_cents
 
+  validates :photo, presence: true
+  validates :price_cents, presence: true
+  validates :details, presence: true
+  validates :name, presence: true
+  validates :category, presence: true
+
   def marker
     return {
       lat: user.latitude,

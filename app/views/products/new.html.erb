@@ -1,5 +1,45 @@
 <!-- Produce Form -->
 <div class="profile-container">
+  <h2>Getting rid of your excess produce.</h2>
+      <div class="produce-steps-header">
+      <h3>In just 3 easy steps.</h3>
+    </div>
+  <div class="produce-steps">
+    <div class="produce-steps-box">
+      <div class="produce-steps-number">1</div>
+      <div class="produce-steps-content">
+      <p>Post your produce</p>
+      </div>
+      <div class="produce-steps-text">
+        Post your produce on Suburban Farm to find local customers eager to buy your goods.
+      </div>
+    </div>
+
+    <div class="produce-steps-box">
+      <div class="produce-steps-number">2</div>
+      <div class="produce-steps-content">
+        <p>Deliver to the Hub</p>
+      </div>
+      <div class="produce-steps-text">
+        All you have to do is take your packaged produce to our delivery hub in the city centre.
+      </div>
+    </div>
+
+    <div class="produce-steps-box">
+      <div class="produce-steps-number">
+        3
+      </div>
+
+      <div class="produce-steps-content">
+        <p>We get it delivered</p>
+      </div>
+
+      <div class="produce-steps-text">
+        Suburban Farm takes care of delivering it to your customer in an efficient and effective manner.
+      </div>
+    </div>
+
+  </div>
   <div class="produce-form">
       <div class="produce-form-top">
         <div class="produce-details">
@@ -11,11 +51,6 @@
         </div>
 
         <div class="produce-image-upload">
-          <div class="photo-uploader" data-controller='photo-uploader'>
-            <%= f.input :photo, label: 'Add Image', input_html: { "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
-            <img class="w-100 photo-uploader-embed" data-target='photo-uploader.embed' />
-            <%= f.input :photo_cache, as: :hidden %>
-          </div>
         </div>
       </div>
         <div class="produce-form-bottom">
@@ -30,12 +65,22 @@
             <div data-select-value="herbs" data-action="click->select#update" data-target="select.button" class="stats-container">Herbs</div>
             <%= f.input :category, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
         </div>
+
+        <div class="photo-uploader" data-controller='photo-uploader'>
+            <%= f.input :photo, label: 'Add Image', input_html: { "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
+
+            <div class="photo-uploader-embed-container">
+              <img class="w-100 photo-uploader-embed" data-target='photo-uploader.embed' />
+            </div>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
         <br>
-          <%= f.button :submit, class: "btn btn-secondary" %>
+          <%= f.button :submit, class: "btn btn-secondary", id: "submit-button-form" %>
           <% end %>
 
         </div>
   </div>
+
 </div>
 
 <script>

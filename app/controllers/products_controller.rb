@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      redirect_to root_path(flash: "Product made")
+      redirect_to profile_path(flash: "Product made")
     else
       render :new
   end
@@ -48,7 +48,7 @@ end
   end
 
   def product_params
-    params.require(:product).permit(:user_id, :price, :details, :photo, :category)
+    params.require(:product).permit(:name, :user_id, :price, :details, :photo, :category)
   end
 
   def set_product
