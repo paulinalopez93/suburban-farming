@@ -15,6 +15,7 @@
 
     </div>
   </div>
+<%= line_chart Order.group_by_day(:created_at).count %>
 
   <div class="thisweek-container">
     <div class="stats-container">
@@ -113,7 +114,7 @@
             </div>
           </div>
         </div>
-        <% @user.orders.where(status: ["paid", "delivered"]).each do |order| %>
+        <% @user.orders.where(status: ["pending", "paid", "delivered"]).each do |order| %>
         <% order.product_orders.each do |product_order| %>
         <div class="order-card">
           <div class="order-name">
