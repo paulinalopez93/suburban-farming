@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 2019_07_31_144014) do
     t.float "latitude"
     t.float "longitude"
     t.string "name"
-    t.string "photo"
     t.bigint "hub_id"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["hub_id"], name: "index_users_on_hub_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
