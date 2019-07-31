@@ -1,7 +1,6 @@
 
 <div class="shop-container">
   <div class="sidebar-container">
-    <h3>Categories</h3>
     <% @categories.each do |category| %>
     <a href="#<%= category %>"><h4 class="p-big-black"><%= category.capitalize %></h4></a>
     <% end %>
@@ -21,8 +20,8 @@
           </div>
           <div class="product-info-container">
             <div class="product-description">
-              <p class="p-white"><%= product.name %></p>
-              <div class="product-info-price p-white"><%= humanized_money_with_symbol(product.price) %>
+              <p ><%= product.name %></p>
+              <div class="product-info-price"><%= humanized_money_with_symbol(product.price) %>
               </div>
             </div>
             <div class="product-info-btn">
