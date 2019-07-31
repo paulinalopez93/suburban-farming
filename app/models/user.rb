@@ -9,5 +9,6 @@ class User < ApplicationRecord
   belongs_to :hub, required: false
   geocoded_by :address
   has_many :product_orders, through: :products
+  mount_uploader :photo, PhotoUploader
   after_validation :geocode, if: :will_save_change_to_address?
 end

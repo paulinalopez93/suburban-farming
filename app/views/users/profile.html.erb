@@ -1,8 +1,4 @@
 
-
-
-
-
 <div class="dashboard-container">
   <div class="dashboard-navbar-wrapper">
     <div class="dashboard-navbar">
@@ -72,6 +68,7 @@
             </div>
           </div>
         </div>
+
         <% @user.product_orders.where.not(quantity: 0).each do |product_order| %>
         <% if product_order.order.status == 'paid' || product_order.order.status == 'delivered' %>
         <div class="order-card">
