@@ -6,21 +6,30 @@
 //   align-items: center;
 //   overflow: hidden;
 // }
+.video-container{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
 .video-overlay{
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   z-index: 1;
   background: $linear-gradient;
   opacity: 1;
-  position: fixed;
+  position: absolute;
   top: 0;
 }
 .banner-video {
-  min-width: 100vw;
-  min-height: 100vh;
-  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
   top: 0;
   z-index: 0;
+  position: absolute;
+  top: 0;
 }
 .hero-container {
   position: absolute;
