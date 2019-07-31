@@ -5,4 +5,10 @@ class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
   enum category: %i[vegetables fruits eggs wine herbs]
   monetize :price_cents
+
+  validates :photo, presence: true
+  validates :price_cents, presence: true
+  validates :details, presence: true
+  validates :name, presence: true
+  validates :category, presence: true
 end

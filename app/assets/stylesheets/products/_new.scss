@@ -1,15 +1,19 @@
 
 .profile-container {
   margin: 24px;
-flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+
 h2 {
-  font-size: 72px;
+  font-size: 60px;
   }
 }
 .profile-banner{
 }
+
 .produce-form {
   margin-top: 36px;
+  display: block;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   width: 800px;
 }
@@ -70,19 +74,19 @@ h2 {
   width: 75px;
 }
 
-.photo-uploader{
+.photo-uploader {
   @extend .custom-file;
-  font-size: 3rem;
+  font-size: 2rem;
   input{
     // @extend .custom-file-input;
     background-color: $dark-gray;
-    font-size: 3rem;
+    font-size: 2rem;
   }
   label{
     @extend .custom-file-label;
     border: 1px solid #EFEFEF !important;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: $light-gray;
     &::after{
       content: '';
@@ -109,3 +113,57 @@ h2 {
     font-size: 3rem;
     width: 346px;
   }
+  .produce-steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 36px;
+  }
+  .produce-steps-header {
+    font: $headers-font;
+  }
+
+.produce-steps-box {
+  background-color: $light-gray;
+  height: 327px;
+  width: 328px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+    margin-bottom: 64px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding: 32px !important;
+}
+
+.produce-steps-number{
+    width: 40px !important;
+    height: 40px !important;
+    position: relative !important;
+    line-height: 37px !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border-radius: 50% !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: rgb(0, 0, 0) !important;
+    border-image: initial !important;
+}
+.produce-steps-content {
+  overflow-wrap: break-word !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    line-height: 1.25em !important;
+    color: rgb(72, 72, 72) !important;
+    margin: 0px !important;
+}
+.produce-steps-text {
+    overflow-wrap: break-word !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.375em !important;
+    color: rgb(72, 72, 72) !important;
+    margin: 0px !important;
+}
