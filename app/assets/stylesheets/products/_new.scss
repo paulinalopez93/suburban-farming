@@ -66,7 +66,7 @@ h2 {
     }
     .stats-container {
       &.selected {
-        border: 1px solid black;
+        border: 1px solid #F6613F;
       }
     }
 }
@@ -120,6 +120,7 @@ h2 {
   }
   .produce-steps-header {
     font: $headers-font;
+    padding-left: 33px;
   }
 
 .produce-steps-box {
@@ -146,8 +147,9 @@ h2 {
     border-radius: 50% !important;
     border-width: 2px !important;
     border-style: solid !important;
-    border-color: rgb(0, 0, 0) !important;
+    border-color: #F6613F !important;
     border-image: initial !important;
+    color: #F6613F;
 }
 .produce-steps-content {
   overflow-wrap: break-word !important;
@@ -166,4 +168,8 @@ h2 {
     line-height: 1.375em !important;
     color: rgb(72, 72, 72) !important;
     margin: 0px !important;
+}
+#submit-button-form {
+  background-color: #F6613F;
+  border: none;
 }

@@ -11,4 +11,11 @@ class Product < ApplicationRecord
   validates :details, presence: true
   validates :name, presence: true
   validates :category, presence: true
+
+  def marker
+    return {
+      lat: user.latitude,
+      lng: user.longitude
+    }
+  end
 end
