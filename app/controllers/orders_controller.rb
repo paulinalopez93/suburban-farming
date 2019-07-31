@@ -63,6 +63,8 @@ class OrdersController < ApplicationController
 
   def cart
     @order = Order.find(params[:order_id])
+    @order.user = current_user
+    @order.save!
     respond_to do |format|
       format.html { redirect_to browse_path(@order) }
       format.js
