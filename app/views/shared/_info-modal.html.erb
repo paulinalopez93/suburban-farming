@@ -28,7 +28,7 @@
         </div>
             <div class="section-map">
         <h3 class="h3-category" id="producer-location">Location</h3>
-        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100px; height: 600px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100%; min-height: 400px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-marker="<%= product.marker.to_json %>"></div>
         </div>
       </div>
     </div>
