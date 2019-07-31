@@ -48,7 +48,7 @@ end
   end
 
   def product_params
-    params.require(:product).permit(:name, :user_id, :price, :details, :photo, :category)
+    params.require(:product).permit(:name, :user_id, :price, :details, :photo, :category, :price_cents)
   end
 
   def set_product

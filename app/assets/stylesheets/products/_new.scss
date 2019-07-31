@@ -133,7 +133,8 @@ h2 {
   }
   .produce-steps-header {
     font: $headers-font;
-    padding-left: 33px;
+    padding-left: $padding-standard-x;
+
   }
 
 .produce-steps-box {
@@ -173,6 +174,9 @@ h2 {
     line-height: 1.25em !important;
     color: rgb(72, 72, 72) !important;
     margin: 0px !important;
+    p {
+      margin-top: 25px;
+    }
 }
 .produce-steps-text {
     overflow-wrap: break-word !important;
