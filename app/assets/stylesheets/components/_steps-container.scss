@@ -25,6 +25,7 @@
   padding-bottom: 9px;
 }
 .step-info-container .p-big-black {
+  font-family: 'Avenir Heavy';
   padding-bottom: 9px;
 }
 .step-info-container .btn-small-cta {
@@ -32,7 +33,8 @@
 }
 
 .step-text-container {
-  padding-left: $padding-standard-x;
+  padding-left: $padding-standard-y;
+  padding-right: $padding-standard-y;
   display: flex;
   align-items: center;
   margin-bottom: 50px;
