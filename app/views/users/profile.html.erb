@@ -15,38 +15,44 @@
 
     </div>
   </div>
-<%= line_chart Order.group_by_day(:created_at).count %>
 
-  <div class="thisweek-container">
-    <div class="stats-container">
-      <p class="p-gray">Saved to favorites</p>
-      <p class="p-big-black">14</p>
-    </div>
-    <div class="stats-container">
-      <p class="p-gray">To deliver</p>
-      <p class="p-big-black">9</p>
-    </div>
-    <div class="stats-container">
-      <p class="p-gray">Delivered</p>
-      <p class="p-big-black">13</p>
-    </div>
-  </div>
+    <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="p-big-black">YOUR POSTINGS</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Price</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Category</p>
+            </div>
+          </div>
+        </div>
+        <% @user.products.each do |product| %>
 
-  <div class="alltime-container">
-    <div class="graph-wrap">
-      <div class="graph-container">
-        <h3 class="p-big-black">STATS</h3>
-        <div>Graph here</div>
-      </div>
-    </div>
-    <div class="stats-wrap">
-      <div class="graph-stats">
-        <p >Delivered</p>
-        <p class="graph-number">56</p>
-      </div>
-      <div class="graph-stats">
-        <p >Average delivery time</p>
-        <p class="graph-number">1 day</p>
+        <div class="order-card">
+          <div class="order-name">
+            <%= cl_image_tag(product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product.name %></p>
+          </div>
+          <div class="order-customer">
+            <p class="p-darkgray"><%=  humanized_money_with_symbol(product.price) %></p>
+          </div>
+          <div class="order-status">
+            <p class="p-darkgray"><%= product.category.capitalize %></p>
+          </div>
+        </div>
+        <div class="line-dashboard"></div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -92,6 +98,86 @@
       </div>
     </div>
   </div>
+
+  <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="p-big-black">YOU ORDERED</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Supplier</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Status</p>
+            </div>
+          </div>
+        </div>
+        <% @user.orders.where(status: ["pending", "paid", "delivered"]).each do |order| %>
+        <% order.product_orders.each do |product_order| %>
+        <div class="order-card">
+          <div class="order-name">
+            <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product_order.product.name %></p>
+          </div>
+          <div class="order-customer">
+            <p class="p-darkgray"><%=  product_order.product.user.name.present? ? product_order.product.user.name : "Unknown" %></p>
+          </div>
+          <div class="order-status">
+            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
+          </div>
+        </div>
+        <div class="line-dashboard"></div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<%= line_chart Order.group_by_day(:created_at).count %>
+
+  <div class="thisweek-container">
+    <div class="stats-container">
+      <p class="p-gray">Saved to favorites</p>
+      <p class="p-big-black">14</p>
+    </div>
+    <div class="stats-container">
+      <p class="p-gray">To deliver</p>
+      <p class="p-big-black">9</p>
+    </div>
+    <div class="stats-container">
+      <p class="p-gray">Delivered</p>
+      <p class="p-big-black">13</p>
+    </div>
+  </div>
+
+  <div class="alltime-container">
+    <div class="graph-wrap">
+      <div class="graph-container">
+        <h3 class="p-big-black">STATS</h3>
+        <div>Graph here</div>
+      </div>
+    </div>
+    <div class="stats-wrap">
+      <div class="graph-stats">
+        <p >Delivered</p>
+        <p class="graph-number">56</p>
+      </div>
+      <div class="graph-stats">
+        <p >Average delivery time</p>
+        <p class="graph-number">1 day</p>
+      </div>
+    </div>
+  </div>
+
+
 
   <div class="orders-wrap">
     <div class="orders-container">
