@@ -2,11 +2,16 @@
   <div class=" modal-dialog modal-lg ">
     <div class="modal-content" id="payment-container">
       <div class="fred-master">
-       <h1>Order Confirmed </h1>
-       <p>Your fresh products are on their way!</p>
-       <%= image_tag ("logowhite.png"), class: "confirmation-image" %>
+        <div>
+         <h1>Order Confirmed </h1>
+         <p>Your fresh products are on their way!</p>
+        </div>
+        <div>
+          <%= link_to image_tag("logoorange.png", width: 80, height: 80), root_path, class: "nav-link link-white" %>
+        </div>
       </div>
     </div>
+
   </div>
 
 </div>
