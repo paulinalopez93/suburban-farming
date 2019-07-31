@@ -32,7 +32,8 @@
 }
 
 .step-text-container {
-  padding-left: $padding-standard-x;
+  padding-left: $padding-standard-y;
+  padding-right: $padding-standard-y;
   display: flex;
   align-items: center;
   margin-bottom: 50px;
