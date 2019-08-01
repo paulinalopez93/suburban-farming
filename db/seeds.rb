@@ -8,7 +8,7 @@ Hub.destroy_all
 puts 'Creating products & user...'
 
 simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", address: "Calle Juan de Vera 15 Madrid", created_at: "2019-07-23 09:07:56")
-simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564587293/userSimon_fgsjgw.jpg"
+simon.remote_photo_url = "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/VGqRaYUogil0szy2p/portrait-of-black-man-on-white-background_bjceb86ve_thumbnail-full07.png"
 simon.save!
 
 alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle Castello 8 Madrid")
@@ -16,24 +16,32 @@ alex.remote_photo_url = "https://i.pinimg.com/originals/0c/62/ed/0c62ed5d8b79077
 alex.save!
 
 adam = User.create!(name: "Adam", email:"adam@gmail.com", password:"hola123", address: "Calle de Lagasca 56 Madrid")
-adam.remote_photo_url = "https://cdn-ep19.pressidium.com/wp-content/uploads/2018/07/25-famous-photographers-richardavedon.jpg"
+adam.remote_photo_url = "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/VWWAFy05eikrfulkr/videoblocks-portrait-of-different-gender-people-morphing-into-other-different-appearance-of-man-and-woman-isolated-over-white-background-facemorph-concept_bdxdo-vkf_thumbnail-full01.png"
 adam.save!
 
 adel= User.create!(name: "Adel", email:"adel@gmail.com", password:"hola123", address: "Calle de Hortaleza 100 Madrid")
+adel.remote_photo_url = "https://ak0.picdn.net/shutterstock/videos/29117140/thumb/1.jpg"
+adel.save!
 
 paulina = User.create!(name: "Paulina", email:"paulina@gmail.com", password:"hola123", address: "Calle de Manuela Malasana 10 Madrid")
-paulina.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643984/IMG_3858_mgjvky.jpg"
+paulina.remote_photo_url = "https://media.istockphoto.com/videos/portrait-of-young-woman-against-white-background-video-id1057552666?s=640x640"
 paulina.save!
 
 alfredo = User.create!(name: "Alfredo", email:"alfredo@gmail.com", password:"hola123", address: "Calle de Benigno Soto 9 Madrid" )
-alfredo.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643851/userAlf_oqv0io.jpg"
+alfredo.remote_photo_url = "https://image.freepik.com/free-photo/portrait-handsome-man-isolated-white-background_38019-394.jpg"
 alfredo.save!
 
 sofia = User.create!(name: "Sofia", email:"sofia@gmail.com", password:"hola123", address: "Calle de Ponzano 11 Madrid")
+sofia.remote_photo_url = "https://ak8.picdn.net/shutterstock/videos/24954458/thumb/7.jpg"
+sofia.save!
 
 cristina = User.create!(name: "Cristina", email:"cristina@gmail.com", password:"hola123", address: "Calle Juan de Mariana 15 Madrid")
+cristina.remote_photo_url = "https://backgrounddownload.com/wp-content/uploads/2018/09/white-background-portraits-6.jpg"
+cristina.save!
 
 mariana = User.create!(name: "Mariana", email:"mariana@gmail.com", password:"hola123", address: "Calle del Marques de Casa Riera 4 Madrid")
+mariana.remote_photo_url = "https://image.shutterstock.com/image-photo/portrait-mature-business-woman-smile-260nw-255741205.jpg"
+mariana.save!
 
 jorge = User.create!(name: "Jorge", email:"jorge@gmail.com", password:"hola123", address: "Calle de Velarde 18 Madrid")
 jorge.remote_photo_url = "http://guessthelighting.com/wp-content/uploads/2012/02/steve_jobs_albert-watson.jpg"
