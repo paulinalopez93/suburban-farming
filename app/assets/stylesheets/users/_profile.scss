@@ -122,3 +122,21 @@
   margin-left: 12px;
   border-radius: 50%;
 }
+.status-container-pending {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: $white;
+  margin-right: 20px;
+  background-color: $primary;
+  border-radius: $border-radius;
+}
+.status-container-delivered {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: $white;
+  margin-right: 20px;
+  background-color: green;
+  border-radius: $border-radius;
+}

@@ -4,7 +4,7 @@
     <div class="dashboard-navbar">
       <p class="p-big-black-bold">Dashboard</p>
       <div class="profile-info">
-        <p >ALFREDO</p>
+        <p ><%= @user.name.upcase %></p>
         <%= image_tag("cover", class: "avatar") %>
 
       </div>
@@ -85,8 +85,8 @@
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
           </div>
-          <div class="order-status">
-            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
+          <div class="order-status <%= product_order.order.status == "pending" ? "status-container-pending" : "status-container-delivered" %>">
+            <%= link_to product_order.order.status.upcase, update_status_path(product_order), class: "link-white", remote: true %>
           </div>
         </div>
         <div class="line-dashboard"></div>
@@ -138,7 +138,7 @@
     </div>
   </div>
 
-<%= line_chart Order.group_by_day(:created_at).count %>
+<%= line_chart @user.product_orders.group_by_day(:created_at).count %>
 
   <div class="thisweek-container">
     <div class="stats-container">
