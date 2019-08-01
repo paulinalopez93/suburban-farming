@@ -13,6 +13,9 @@
       </div>
       <div class="product-info">
         <div class="product-modal-title">
+          <% if product.user.photo.present? %>
+            <%= cl_image_tag product.user.photo, height: 60, width: 60, crop: :fill, gravity: :face, style: "border-radius: 50%;" %>
+          <% end %>
           <h3 class="h3-category" ><%= product.user.name %>'s <%= product.name %></h3>
           <div class="product-page-price">
             <h4>Price: €<%= product.price %></h4>

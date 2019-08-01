@@ -1,3 +1,4 @@
+
 puts 'Cleaning database...'
 ProductOrder.destroy_all
 Product.destroy_all
@@ -35,8 +36,6 @@ jorge = User.create!(name: "Jorge", email:"jorge@gmail.com", password:"hola123",
 Hub.create!(address: "Calle Juan de Mariana 15 Madrid")
 Hub.create!(address: "Calle de Ruiz de Alarcon 23 Madrid")
 Hub.create!(address: "Calle Serrano 100 Madrid")
-
-
 
 
 
