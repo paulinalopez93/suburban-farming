@@ -7,6 +7,7 @@ export default class extends Controller {
     this.buttonTargets.forEach((buttonTarget) => {
       if (buttonTarget.dataset.selectValue === this.inputTarget.value) {
         buttonTarget.classList.add('selected');
+        console.log(buttonTarget)
       }
     });
   }

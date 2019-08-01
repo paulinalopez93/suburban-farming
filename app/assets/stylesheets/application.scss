@@ -58,12 +58,17 @@ html {
   font-size: 25px;
   color: $dark-gray;
   font-family: 'Avenir-Light';
+  &.selected {
+    color: #F6613F;
+  }
+
 }
 .p-big-black-bold {
   font-size: 25px;
   color: $black;
   font-family: 'Avenir-Light';
   font-weight: bold;
+
 }
 .p-black {
   font-size: 16px;
@@ -138,3 +143,4 @@ a {
 form {
   margin-bottom: 30px;
 }
+

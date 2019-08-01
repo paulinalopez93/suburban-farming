@@ -1,8 +1,8 @@
 
 <div class="shop-container">
-  <div class="sidebar-container">
+  <div class="sidebar-container" data-controller='select'>
     <% @categories.each do |category| %>
-    <a href="#<%= category %>"><h4 class="p-big-black"><%= category.capitalize %></h4></a>
+    <a href="#<%= category %>"><div data-select-value="vegetables" data-action="click->select#update" data-target="select.button" class="p-big-black " id="side-bar-style " ><%= category.capitalize %></div></a>
     <% end %>
   </div>
 
