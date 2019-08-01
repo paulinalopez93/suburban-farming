@@ -17,8 +17,12 @@ adam = User.create!(name: "Adam", email:"adam@gmail.com", password:"hola123", ad
 adel= User.create!(name: "Adel", email:"adel@gmail.com", password:"hola123", address: "Calle de Hortaleza 100 Madrid")
 
 paulina = User.create!(name: "Paulina", email:"paulina@gmail.com", password:"hola123", address: "Calle de Manuela Malasana 10 Madrid")
+paulina.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643984/IMG_3858_mgjvky.jpg"
+paulina.save!
 
 alfredo = User.create!(name: "Alfredo", email:"alfredo@gmail.com", password:"hola123", address: "Calle de Benigno Soto 9 Madrid" )
+alfredo.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643851/userAlf_oqv0io.jpg"
+alfredo.save!
 
 sofia = User.create!(name: "Sofia", email:"sofia@gmail.com", password:"hola123", address: "Calle de Ponzano 11 Madrid")
 
