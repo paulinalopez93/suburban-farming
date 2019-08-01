@@ -1,8 +1,4 @@
 
-
-
-
-
 <div class="dashboard-container">
   <div class="dashboard-navbar-wrapper">
     <div class="dashboard-navbar">
@@ -78,9 +74,9 @@
             </div>
           </div>
         </div>
+
         <% @user.products.each do |product| %>
          <% product.product_orders.where.not(quantity: 0).each do |product_order| %>
-
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>

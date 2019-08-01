@@ -6,7 +6,9 @@ Hub.destroy_all
 
 puts 'Creating products & user...'
 
-simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", address: "Calle Juan de Vera 15 Madrid", photo: "userSimon.jpg")
+simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", address: "Calle Juan de Vera 15 Madrid")
+simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564587293/userSimon_fgsjgw.jpg"
+simon.save!
 
 alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle Castello 8 Madrid")
 
@@ -16,7 +18,7 @@ adel= User.create!(name: "Adel", email:"adel@gmail.com", password:"hola123", add
 
 paulina = User.create!(name: "Paulina", email:"paulina@gmail.com", password:"hola123", address: "Calle de Manuela Malasana 10 Madrid")
 
-alfredo = User.create!(name: "Alfredo", email:"alfredo@gmail.com", password:"hola123", address: "Calle de Benigno Soto 9 Madrid", photo: "userSimon.jpg")
+alfredo = User.create!(name: "Alfredo", email:"alfredo@gmail.com", password:"hola123", address: "Calle de Benigno Soto 9 Madrid" )
 
 sofia = User.create!(name: "Sofia", email:"sofia@gmail.com", password:"hola123", address: "Calle de Ponzano 11 Madrid")
 
