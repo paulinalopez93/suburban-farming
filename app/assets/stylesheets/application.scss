@@ -71,18 +71,18 @@ html {
 
 }
 .p-black {
-  font-size: 16px;
+  font-size: 21px;
   color: $black;
   font-family: 'Avenir-Light';
 }
 .p-black-bold {
-  font-size: 16px;
+  font-size: 21px;
   color: $black;
   font-family: 'Avenir-Light';
   font-weight: bold;
 }
 .p-white {
-  font-size: 16px;
+  font-size: 21px;
   color: $white;
   font-family: 'Avenir-Light';
   font-style: italic;
@@ -90,19 +90,19 @@ html {
 
 
 .link-big-black {
-  font-size: 18px;
+  font-size: 25px;
   color: $dark-gray;
   font-family: 'Avenir-Light';
   text-decoration: none;
 }
 .link-black {
-  font-size: 16px;
+  font-size: 21px;
   color: $black;
   font-family: 'Avenir-Light';
   text-decoration: none;
 }
 .link-black-bold {
-  font-size: 16px;
+  font-size: 21px;
   color: $black;
   font-family: 'Avenir-Light';
   font-weight: bold;
@@ -115,7 +115,7 @@ html {
   text-decoration: none;
 }
 .link-white {
-  font-size: 16px;
+  font-size: 21px;
   color: $white;
   font-family: 'Avenir-Light';
   text-decoration: none;
@@ -144,3 +144,6 @@ form {
   margin-bottom: 30px;
 }
 
+.benefit-text-container .p-big-black {
+  font-family: 'Avenir-Heavy';
+}

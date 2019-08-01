@@ -5,7 +5,7 @@
       <p class="p-big-black-bold">Dashboard</p>
       <div class="profile-info">
         <p ><%= @user.name.upcase %></p>
-        <%= image_tag("cover", class: "avatar") %>
+        <%= cl_image_tag(@user.photo, class: "avatar") %>
 
       </div>
 
@@ -38,7 +38,7 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  humanized_money_with_symbol(product.price) %></p>
@@ -80,13 +80,14 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product_order.product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product_order.product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
           </div>
-          <div class="order-status <%= product_order.order.status == "pending" ? "status-container-pending" : "status-container-delivered" %>">
-            <%= link_to product_order.order.status.upcase, update_status_path(product_order), class: "link-white", remote: true %>
+          <div class="order-status <%= "paid-container" if product_order.order.status == "paid" %> <%= "pending-container" if product_order.order.status == "pending" %>
+            <%= "delivered-container" if product_order.order.status == "delivered" %>">
+            <p class="p-darkgray"><%= product_order.order.status.capitalize %></p>
           </div>
         </div>
         <div class="line-dashboard"></div>
@@ -122,7 +123,7 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product_order.product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product_order.product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.product.user.name.present? ? product_order.product.user.name : "Unknown" %></p>

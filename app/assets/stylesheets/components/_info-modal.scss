@@ -113,12 +113,15 @@ display: flex-end;
   box-shadow: 1px 2px $light-gray;
 }
 
-.card-horizontal {
+.info-cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 50%;
+  background-color: rgb(240, 240, 240);
+  padding: 10px 0;
+  border-radius: 3px;
   h6 {
     font-size: 15px;
     line-height: 15px;
@@ -177,6 +180,21 @@ display: flex-end;
   margin-top: 0.2rem;
   border-bottom: 1px #ccc solid;
   padding-bottom: 1rem;
+}
+
+.close-modal {
+  width: 50px;
+  background-color: white !important;
+  border-radius: 3px;
+  border: 2px solid white;
+  font-size: 30px;
+}
+
+.close-info-modal {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  background-color: white;
 }
 
 

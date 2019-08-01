@@ -3,6 +3,9 @@
 <div id="info-modal-<%= product.id %>" class="modal fade right bd-example-modal-lg" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
   <div class="modal-dialog modal-dialog modal-lg" role="document">
     <div class="modal-content info-modal">
+    <div class="close-info-modal">
+      <button data-dismiss="modal" class="close-modal">×</button>
+    </div>
      <div class="product-page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)), url('<%= cl_image_path product.photo %>');">
       <% if product.user.photo.present? %>
       <%= cl_image_tag product.user.photo, height: 50, width: 50, crop: :fill, gravity: :face, class: "product-avatar" %>
@@ -20,7 +23,7 @@
           <p class="product-description-modal"><%= product.details  %></p>
         </div>
       </div>
-        <div class="card-horizontal">
+        <div class="info-cart">
           <h6 class="add-cart-modal">Add to cart</h6>
           <h6 class="price-cart-modal">€<%= product.price %></h6>
           <div class="cart-buttons-container">

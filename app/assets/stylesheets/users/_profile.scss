@@ -137,3 +137,12 @@
   margin-left: 12px;
   border-radius: 50%;
 }
+.paid-container {
+  font-weight: bold;
+  border: 1px solid #60a5b7;
+ color: #60a5b7;
+ border-radius: $border-radius;
+ margin-left: -20px;
+ justify-content: center;
+ margin-right: 32px;
+}
