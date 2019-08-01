@@ -5,7 +5,7 @@
       <p class="p-big-black-bold">Dashboard</p>
       <div class="profile-info">
         <p ><%= @user.name.upcase %></p>
-        <%= image_tag("cover", class: "avatar") %>
+        <%= cl_image_tag(@user.photo) %>
 
       </div>
 
@@ -85,8 +85,9 @@
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
           </div>
-          <div class="order-status <%= product_order.order.status == "pending" ? "status-container-pending" : "status-container-delivered" %>">
-            <%= link_to product_order.order.status.upcase, update_status_path(product_order), class: "link-white", remote: true %>
+          <div class="order-status <%= "paid-container" if product_order.order.status == "paid" %> <%= "pending-container" if product_order.order.status == "pending" %>
+            <%= "delivered-container" if product_order.order.status == "delivered" %>">
+            <%= product_order.order.status.capitalize %>
           </div>
         </div>
         <div class="line-dashboard"></div>
