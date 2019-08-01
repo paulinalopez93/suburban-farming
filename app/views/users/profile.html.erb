@@ -38,7 +38,7 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  humanized_money_with_symbol(product.price) %></p>
@@ -80,7 +80,7 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product_order.product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product_order.product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
@@ -123,7 +123,7 @@
         <div class="order-card">
           <div class="order-name">
             <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product_order.product.name %></p>
+            <p class="p-darkgray" style="font-size: 18px; font-weight: bold;"><%= product_order.product.name %></p>
           </div>
           <div class="order-customer">
             <p class="p-darkgray"><%=  product_order.product.user.name.present? ? product_order.product.user.name : "Unknown" %></p>
