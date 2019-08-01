@@ -16,6 +16,8 @@ alex.remote_photo_url = "https://i.pinimg.com/originals/0c/62/ed/0c62ed5d8b79077
 alex.save!
 
 adam = User.create!(name: "Adam", email:"adam@gmail.com", password:"hola123", address: "Calle de Lagasca 56 Madrid")
+adam.remote_photo_url = "https://cdn-ep19.pressidium.com/wp-content/uploads/2018/07/25-famous-photographers-richardavedon.jpg"
+adam.save!
 
 adel= User.create!(name: "Adel", email:"adel@gmail.com", password:"hola123", address: "Calle de Hortaleza 100 Madrid")
 
@@ -34,6 +36,8 @@ cristina = User.create!(name: "Cristina", email:"cristina@gmail.com", password:"
 mariana = User.create!(name: "Mariana", email:"mariana@gmail.com", password:"hola123", address: "Calle del Marques de Casa Riera 4 Madrid")
 
 jorge = User.create!(name: "Jorge", email:"jorge@gmail.com", password:"hola123", address: "Calle de Velarde 18 Madrid")
+jorge.remote_photo_url = "http://guessthelighting.com/wp-content/uploads/2012/02/steve_jobs_albert-watson.jpg"
+jorge.save!
 
 Hub.create!(address: "Calle Juan de Mariana 15 Madrid")
 Hub.create!(address: "Calle de Ruiz de Alarcon 23 Madrid")
