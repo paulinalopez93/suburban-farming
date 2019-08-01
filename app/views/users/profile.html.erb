@@ -128,7 +128,7 @@
             <p class="p-darkgray"><%=  product_order.product.user.name.present? ? product_order.product.user.name : "Unknown" %></p>
           </div>
           <div class="order-status">
-            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
+            <p class="p-darkgray"><%= product_order.order.status.capitalize %></p>
           </div>
         </div>
         <div class="line-dashboard"></div>
@@ -141,7 +141,7 @@
 
 <div class="orders-wrap">
   <div class="orders-container">
-    <h3 class="p-big-black">HUBS</h3>
+    <h3 class="p-big-black">DROP OFF HUBS</h3>
     <%= simple_form_for current_user do |f| %>
       <div class="produce-categories" data-controller="select">
         <% @hubs.each do |hub| %>
@@ -183,13 +183,13 @@
     <div class="graph-stats-grouper">
       <div class="graph-wrap">
         <div class="graph-container">
-          <div class="graph-content graph-grow"><%= line_chart User.all.group_by_day(:created_at).count, colors: ['#89BBFE', '#F6613F', '#000000'] %></div>
+          <div class="graph-content graph-grow"><%= line_chart({1.day.ago => 50, 2.day.ago => 20, 3.day.ago => 22, 4.day.ago => 18, 5.day.ago => 12, 6.day.ago => 25, 7.day.ago => 28, 8.day.ago => 20}, title: "Earnings", colors: ['#60A5B7', '#777777', '#FFFFFF', '#89BBFE', '#F6613F', '#000000'] )%></div>
         </div>
       </div>
       <div class="stats-wrap">
         <div class="graph-stats">
           <p >Earned</p>
-          <p class="graph-number">120 euros</p>
+          <p class="graph-number"><%= currency_symbol %> 220</p>
         </div>
         <div class="graph-stats">
           <p >Customers</p>
@@ -197,17 +197,20 @@
         </div>
       </div>
     </div>
+
+    <%#= pie_chart({"Football" => 10, "Basketball" => 5}) %>
+<%#= pie_chart [["Football", 10], ["Basketball", 5]] %>
     <div class="graph-stats-grouper">
       <div class="graph-wrap">
-        <div class="graph-container">
-          <div class="graph-content"><%= pie_chart @user.products.group(:category).count, colors: [ '#89BBFE', '#FFDB99', '#777777', '#b7e488', '#F6613F'] %></div>
-          <div class="graph-content graph-grow"><%= bar_chart @user.product_orders.group(:product_id).count, label: "product", colors: [  '#FFDB99', '#777777', '#b7e488', '#F6613F'] %></div>
+        <div class="graph-container graph-pie">
+          <div class="graph-content"><%= pie_chart @user.products.group(:category).count, colors: [ '#60A5B7', '#777777', '#FFFFFF', '#89BBFE', '#FFDB99', '#777777', '#b7e488', '#F6613F'], title: "Products by categories", legend: 'bottom' %></div>
+          <div class="graph-content graph-grow"><%= bar_chart( {'Tomato': 12, 'Banana': 9, 'Eggs': 5}, label: "product", colors: [  '#60A5B7', '#777777', '#FFFFFF', '#F6613F'], title: 'Reorders by products') %></div>
         </div>
       </div>
       <div class="stats-wrap">
         <div class="graph-stats">
           <p >Most popular product</p>
-          <p class="graph-number">Cabbage</p>
+          <p class="graph-number"><%= @user.products.first.name.capitalize %></p>
         </div>
         <div class="graph-stats">
           <p >Average delivery time</p>

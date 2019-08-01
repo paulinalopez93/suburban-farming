@@ -78,14 +78,17 @@
 .graph-stats-grouper {
   display: grid;
   margin: $padding-standard-y 0;
-
+  margin-bottom: 70px;
+  grid-gap: 21px;
   grid-template-columns: 85% 15%;
 
 }
 .graph-wrap {
   padding-left: 20px;
 }
-
+.graph-pie {
+  margin-right: 32px;
+}
 // orders wrap
 .orders-wrap {
   padding: $padding-standard-y 20px;

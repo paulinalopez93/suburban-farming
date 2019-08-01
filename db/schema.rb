@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_093358) do
     t.float "latitude"
     t.float "longitude"
     t.string "name"
+    t.text "about"
     t.bigint "hub_id"
     t.string "photo"
     t.bigint "hub_id"
