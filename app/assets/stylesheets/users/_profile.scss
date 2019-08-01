@@ -58,15 +58,27 @@
 .graph-number {
   font-size: 21px;
 }
+.graph-container {
+  margin-right: 50px;
+  display: flex;
+}
+.graph-grow {
+  display: flex;
+  flex-grow: 1;
+}
 .stats-wrap {
   padding-right: 20px;
 }
 .alltime-container {
-  padding: $padding-standard-y 0;
-  display: grid;
+  padding: $padding-standard-y $padding-standard-x;
   margin: 0 $padding-standard-x;
   background-color: $light-gray;
   border-radius: $border-radius;
+}
+.graph-stats-grouper {
+  display: grid;
+  margin: $padding-standard-y 0;
+
   grid-template-columns: 85% 15%;
 
 }
