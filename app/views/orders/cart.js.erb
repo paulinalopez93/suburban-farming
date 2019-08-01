@@ -4,4 +4,6 @@ var refreshCart = (html) => {
   content.innerHTML = html;
 }
 
+console.log(<%= @order.user %>)
+
 refreshCart("<%= j render "shared/cart_content", order: @order %>")
