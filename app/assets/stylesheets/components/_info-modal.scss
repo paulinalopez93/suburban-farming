@@ -113,12 +113,15 @@ display: flex-end;
   box-shadow: 1px 2px $light-gray;
 }
 
-.card-horizontal .info-cart {
+.info-cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 50%;
+  background-color: rgb(240, 240, 240);
+  padding: 10px 0;
+  border-radius: 3px;
   h6 {
     font-size: 15px;
     line-height: 15px;
