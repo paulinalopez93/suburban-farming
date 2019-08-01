@@ -5,7 +5,7 @@
       <p class="p-big-black-bold">Dashboard</p>
       <div class="profile-info">
         <p ><%= @user.name.upcase %></p>
-        <%= cl_image_tag(@user.photo) %>
+        <%= cl_image_tag(@user.photo, class: "avatar") %>
 
       </div>
 
