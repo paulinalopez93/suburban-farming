@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @categories = Product.categories.keys
-
     unless @order.user_id
       @products.each do |product|
         unless @order.product_orders.where(product_id: product.id).any?
