@@ -6,7 +6,7 @@ Hub.destroy_all
 
 puts 'Creating products & user...'
 
-simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", address: "Calle Juan de Vera 15 Madrid")
+simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123", address: "Calle Juan de Vera 15 Madrid", created_at: "2019-07-23 09:07:56")
 simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564587293/userSimon_fgsjgw.jpg"
 simon.save!
 
@@ -40,7 +40,11 @@ Hub.create!(address: "Calle Serrano 100 Madrid", name: "Center Hub")
 
 #vegetables
 
+<<<<<<< HEAD
 Product.create!(name: "Tomato", price_cents: 3, details: "Summer time means tomato time! They are complex in flavor. A marriage between sweet and acidic while at the same time fruity. The best way to serve these juicy tomatoes is to slice and serve them with fresh mozzarella, basil, extra virgin olive oil and some red pepper flakes to add a kick to the classic Caprese Salad.", category: "vegetables", user_id:simon.id, remote_photo_url: "https://images.unsplash.com/photo-1546470427-227e2f27f02c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80")
+=======
+Product.create!(name: "Tomato", price: 3, details: "Summer time means tomato time! They are complex in flavor. A marriage between sweet and acidic while at the same time fruity. The best way to serve these juicy tomatoes is to slice and serve them with fresh mozzarella, basil, extra virgin olive oil and some red pepper flakes to add a kick to the classic Caprese Salad.", category: "vegetables", user_id:simon.id , created_at: "2019-07-29 09:07:56",  remote_photo_url: "https://images.unsplash.com/photo-1546470427-227e2f27f02c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80")
+>>>>>>> graphs-in-profile
 
 Product.create!(name: "Broccoli", price_cents: 5, details: "Broccoli is in season year around and its harvested by hand with a crisp texture and full flavor. Broccoli can be used in many dishes such as whole grain pasta primavera, casseroles such as brown rice and broccoli casserole, or roasted with a little oil and seasonings.", category: "vegetables", user_id:alex.id, remote_photo_url:"https://images.unsplash.com/photo-1553175005-a1129d5c188c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80")
 
@@ -62,7 +66,11 @@ Product.create!(name: "Green beans", price_cents: 1, details: "Green beans are l
 
 #fruits
 
+<<<<<<< HEAD
 Product.create!(name: "Bananas", price_cents: 4, details: "Bananas are rich in fibre, potassium and other vitamins and minerals.We responsibly grow our bananas and we hand pick them gently in order to keep their sweet flavor and not to bruise the bananas. They are great in smoothies, desserts, perfect with yogurt, honey and chia seeds for breakfast…the possibilities are endless.", category: "fruits", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1557760560-170fec41d767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+=======
+Product.create!(name: "Bananas", price: 4, details: "Bananas are rich in fibre, potassium and other vitamins and minerals.We responsibly grow our bananas and we hand pick them gently in order to keep their sweet flavor and not to bruise the bananas. They are great in smoothies, desserts, perfect with yogurt, honey and chia seeds for breakfast…the possibilities are endless.", category: "fruits", user_id:simon.id, created_at: "2019-07-25 09:07:56", remote_photo_url:"https://images.unsplash.com/photo-1557760560-170fec41d767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+>>>>>>> graphs-in-profile
 
 Product.create!(name: "Apples", price_cents: 3, details: "Apples offer a mildly sweet flavor and flora aroma. They’re great for snacking on as they are low in calories, have a high water content and offers a fair amount of vitamins A, B and C. They are perfect for us in a fruit, green or chopped salad. Add diced apples to fruit salsas and chutneys. Slice and add to burgers, paninis and crostinis. ", category: "fruits", user_id:alex.id, remote_photo_url:"https://images.unsplash.com/photo-1474564862106-1f23d10b9d72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1668&q=80")
 
@@ -83,7 +91,11 @@ Product.create!(name: "Peaches", price_cents: 3, details: "A delicious peach", c
 Product.create!(name: "Pineapple", price_cents: 2, details: "A delicious pineapple", category: "fruits", user_id:jorge.id, remote_photo_url:"https://images.unsplash.com/photo-1478005344131-44da2ded3415?ixlib=rb-1.2.1&auto=format&fit=crop&w=2848&q=80")
 
 #eggs
+<<<<<<< HEAD
 Product.create!(name: "Brown eggs", price_cents: 3, details: "Brown eggs from chickens", category: "eggs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80")
+=======
+Product.create!(name: "Brown eggs", price: 3, details: "Brown eggs from chickens", category: "eggs", created_at: "2019-07-30 09:07:56", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80")
+>>>>>>> graphs-in-profile
 
 Product.create!(name: "White eggs", price_cents: 3, details: "White eggs from chickens", category: "eggs", user_id:alfredo.id, remote_photo_url:"https://images.unsplash.com/photo-1489726933853-010eb1484d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80")
 
