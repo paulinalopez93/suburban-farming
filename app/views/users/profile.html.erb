@@ -87,7 +87,7 @@
           </div>
           <div class="order-status <%= "paid-container" if product_order.order.status == "paid" %> <%= "pending-container" if product_order.order.status == "pending" %>
             <%= "delivered-container" if product_order.order.status == "delivered" %>">
-            <%= product_order.order.status.capitalize %>
+            <p class="p-darkgray"><%= product_order.order.status.capitalize %></p>
           </div>
         </div>
         <div class="line-dashboard"></div>
