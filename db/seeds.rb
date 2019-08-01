@@ -1,3 +1,4 @@
+
 puts 'Cleaning database...'
 ProductOrder.destroy_all
 Product.destroy_all
@@ -11,14 +12,22 @@ simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v156
 simon.save!
 
 alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle Castello 8 Madrid")
+alex.remote_photo_url = "https://i.pinimg.com/originals/0c/62/ed/0c62ed5d8b790774a54c390a34da0b2e.jpg"
+alex.save!
 
 adam = User.create!(name: "Adam", email:"adam@gmail.com", password:"hola123", address: "Calle de Lagasca 56 Madrid")
+adam.remote_photo_url = "https://cdn-ep19.pressidium.com/wp-content/uploads/2018/07/25-famous-photographers-richardavedon.jpg"
+adam.save!
 
 adel= User.create!(name: "Adel", email:"adel@gmail.com", password:"hola123", address: "Calle de Hortaleza 100 Madrid")
 
 paulina = User.create!(name: "Paulina", email:"paulina@gmail.com", password:"hola123", address: "Calle de Manuela Malasana 10 Madrid")
+paulina.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643984/IMG_3858_mgjvky.jpg"
+paulina.save!
 
 alfredo = User.create!(name: "Alfredo", email:"alfredo@gmail.com", password:"hola123", address: "Calle de Benigno Soto 9 Madrid" )
+alfredo.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564643851/userAlf_oqv0io.jpg"
+alfredo.save!
 
 sofia = User.create!(name: "Sofia", email:"sofia@gmail.com", password:"hola123", address: "Calle de Ponzano 11 Madrid")
 
@@ -27,14 +36,14 @@ cristina = User.create!(name: "Cristina", email:"cristina@gmail.com", password:"
 mariana = User.create!(name: "Mariana", email:"mariana@gmail.com", password:"hola123", address: "Calle del Marques de Casa Riera 4 Madrid")
 
 jorge = User.create!(name: "Jorge", email:"jorge@gmail.com", password:"hola123", address: "Calle de Velarde 18 Madrid")
+jorge.remote_photo_url = "http://guessthelighting.com/wp-content/uploads/2012/02/steve_jobs_albert-watson.jpg"
+jorge.save!
 
 Hub.create!(address: "Calle Juan de Mariana 15 Madrid", name: "South Hub")
 
 Hub.create!(address: "Calle de Ruiz de Alarcon 23 Madrid", name: "North Hub")
 
 Hub.create!(address: "Calle Serrano 100 Madrid", name: "Center Hub")
-
-
 
 
 

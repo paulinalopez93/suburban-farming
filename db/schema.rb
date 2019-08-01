@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_093358) do
     t.string "name"
     t.bigint "hub_id"
     t.string "photo"
+    t.bigint "hub_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["hub_id"], name: "index_users_on_hub_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
