@@ -4,14 +4,141 @@
     <div class="dashboard-navbar">
       <p class="p-big-black-bold">Dashboard</p>
       <div class="profile-info">
-        <p >ALFREDO</p>
+        <p ><%= @user.name.upcase %></p>
         <%= image_tag("cover", class: "avatar") %>
 
       </div>
 
     </div>
   </div>
-<%= line_chart Order.group_by_day(:created_at).count %>
+
+    <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="p-big-black">YOUR POSTINGS</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Price</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Category</p>
+            </div>
+          </div>
+        </div>
+        <% @user.products.each do |product| %>
+
+        <div class="order-card">
+          <div class="order-name">
+            <%= cl_image_tag(product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product.name %></p>
+          </div>
+          <div class="order-customer">
+            <p class="p-darkgray"><%=  humanized_money_with_symbol(product.price) %></p>
+          </div>
+          <div class="order-status">
+            <p class="p-darkgray"><%= product.category.capitalize %></p>
+          </div>
+        </div>
+        <div class="line-dashboard"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="p-big-black">ORDERED FROM YOU</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Customer</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Status</p>
+            </div>
+          </div>
+        </div>
+
+        <% @user.products.each do |product| %>
+         <% product.product_orders.where.not(quantity: 0).each do |product_order| %>
+        <div class="order-card">
+          <div class="order-name">
+            <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product_order.product.name %></p>
+          </div>
+          <div class="order-customer">
+            <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
+          </div>
+          <div class="order-status <%= product_order.order.status == "pending" ? "status-container-pending" : "status-container-delivered" %>">
+            <%= link_to product_order.order.status.upcase, update_status_path(product_order), class: "link-white", remote: true %>
+          </div>
+        </div>
+        <div class="line-dashboard"></div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-wrap">
+    <div class="orders-container">
+      <h3 class="p-big-black">YOU ORDERED</h3>
+      <div class="orders-table">
+        <div class="orders-title-container">
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Name</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Supplier</p>
+            </div>
+          </div>
+          <div class="order-title">
+            <div class="order-title-text">
+              <p class="p-gray">Status</p>
+            </div>
+          </div>
+        </div>
+        <% @user.orders.where(status: ["pending", "paid", "delivered"]).each do |order| %>
+        <% order.product_orders.each do |product_order| %>
+        <div class="order-card">
+          <div class="order-name">
+            <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
+            <p class="p-darkgray"><%= product_order.product.name %></p>
+          </div>
+          <div class="order-customer">
+            <p class="p-darkgray"><%=  product_order.product.user.name.present? ? product_order.product.user.name : "Unknown" %></p>
+          </div>
+          <div class="order-status">
+            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
+          </div>
+        </div>
+        <div class="line-dashboard"></div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<%= line_chart @user.product_orders.group_by_day(:created_at).count %>
 
   <div class="thisweek-container">
     <div class="stats-container">
@@ -47,48 +174,7 @@
     </div>
   </div>
 
-  <div class="orders-wrap">
-    <div class="orders-container">
-      <h3 class="p-big-black">ORDERED FROM YOU</h3>
-      <div class="orders-table">
-        <div class="orders-title-container">
-          <div class="order-title">
-            <div class="order-title-text">
-              <p class="p-gray">Name</p>
-            </div>
-          </div>
-          <div class="order-title">
-            <div class="order-title-text">
-              <p class="p-gray">Customer</p>
-            </div>
-          </div>
-          <div class="order-title">
-            <div class="order-title-text">
-              <p class="p-gray">Status</p>
-            </div>
-          </div>
-        </div>
 
-        <% @user.product_orders.where.not(quantity: 0).each do |product_order| %>
-        <% if product_order.order.status == 'paid' || product_order.order.status == 'delivered' %>
-        <div class="order-card">
-          <div class="order-name">
-            <%= cl_image_tag(product_order.product.photo, width: 40, height: 40, class: "order-image-profile") %>
-            <p class="p-darkgray"><%= product_order.product.name %></p>
-          </div>
-          <div class="order-customer">
-            <p class="p-darkgray"><%=  product_order.order.user.present? ? product_order.order.user.name : "Unknown" %></p>
-          </div>
-          <div class="order-status">
-            <p class="p-darkgray"><%= product_order.order.status.capitalize! %></p>
-          </div>
-        </div>
-        <div class="line-dashboard"></div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
   <div class="orders-wrap">
     <div class="orders-container">

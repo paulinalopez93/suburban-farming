@@ -1,20 +1,24 @@
 
 .profile-container {
-  margin: 24px;
+
   display: flex;
   flex-direction: column;
 
 h2 {
-  font-size: 60px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  font-size: 32px;
+  margin-left: $padding-standard-x;
   }
 }
 
 .produce-form {
   margin-top: 8px;
   display: block;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  background-color: $light-gray;
   width: 750px;
   margin-left: $padding-standard-x;
+  margin-bottom: 48px;
 }
 .produce-form-top{
   margin: 18px;
@@ -28,7 +32,6 @@ h2 {
   width: 400px;
   input[type=text] {
   border: none;
-  border-bottom: 1px solid gray;
 }
 }
 .produce-image-upload {
@@ -61,18 +64,26 @@ h2 {
 .produce-categories {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
     .stats-container {
       width: 120px;
     }
     .stats-container {
       &.selected {
-        border: 1px solid #F6613F;
+        background-color: $white;
+        color: $dark-gray;
       }
     }
 }
 #quantity-form {
   width: 75px;
 }
+label {
+  color: $dark-gray;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
 
 .photo-uploader {
   @extend .custom-file;
@@ -108,10 +119,12 @@ h2 {
     width: 150px;
 }
 .photo-uploader label {
+
     border: 1px solid #EFEFEF !important;
     text-align: center;
-    font-size: 2rem;
-    color: rgba(0, 0, 0, 0.05);
+    margin: auto 0;
+    font-size: 16px;
+    color: $lighter-gray;
     width: 150px;
     &:focus, &:active{
       border: 1px solid $primary !important;
@@ -188,7 +201,7 @@ h2 {
     margin: 0px !important;
 }
 #submit-button-form {
-  background-color: #F6613F;
+  background-color: $primary;
   border: none;
   margin-top: -25px;
 }
@@ -203,4 +216,8 @@ h2 {
 }
 .produce-form-title {
   padding-left: $padding-standard-x;
+}
+.post-input {
+  border: none;
+
 }

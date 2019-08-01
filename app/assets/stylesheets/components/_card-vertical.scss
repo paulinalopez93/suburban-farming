@@ -35,11 +35,12 @@
   width: 100%;
   flex-grow: 1;
   justify-content: center;
-  font-family: 'Avenir-Heavy' !important;
-  font-size: 21px !important;
+  font-family:'Avenir-Light' !important;
+  font-size: 20px !important;
   letter-spacing: 2px !important;
   font-style: normal !important;
   color: $white;
+  line-height: 9px;
 
 }
 
@@ -49,6 +50,11 @@
   padding: 10px 0px;
   display: flex;
   justify-content: center;
+}
+
+.product-info-price {
+  font-family: 'Avenir-Light';
+  font-size: 15px;
 }
 
 

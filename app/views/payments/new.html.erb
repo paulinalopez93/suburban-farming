@@ -3,15 +3,18 @@
 <br>
 <div class="payment-page" id="payment-page" data-order-id="<%= @order.id %>">
  <div class='payment-card'>
-    <h1>Checkout</h1>
+    <p class= "h3-category">Checkout</p>
     <div class='checkout-form'>
       <form action="/action_page.php">
-        BILLING ADDRESS <br> <input type="text" name="fname" id="search_query">
+        <label>
+        BILLING ADDRESS </label> <br> <input type="text" name="fname" id="search_query">
       </form>
     </div>
     <div class='checkout-form'>
       <form action="/action_page.php">
-      SHIPPING ADDRESS <br> <input type="text" name="fname" id="shipping_query">
+        <label>
+      SHIPPING ADDRESS
+      </label> <br> <input type="text" name="fname" id="shipping_query">
       </form>
     </div>
 </div>
@@ -23,7 +26,7 @@
 
 
     <label for="card-element">
-      Payment
+      PAYMENT
     </label>
     <div id="card-element">
       <!-- A Stripe Element will be inserted here. -->

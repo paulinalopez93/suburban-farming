@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   get "products/:order_id", to: "products#index", as: "browse"
   get "products/:order_id/cart", to: "orders#cart", as: "update_cart"
+  get 'update_order/:id', to: "orders#update_status", as: "update_status"
 end
