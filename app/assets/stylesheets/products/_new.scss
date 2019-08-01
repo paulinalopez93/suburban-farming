@@ -5,6 +5,7 @@
   flex-direction: column;
 
 h2 {
+  font-family: 'Avenir-Medium';
   margin-top: 48px;
   margin-bottom: 32px;
   font-size: 32px;
@@ -181,7 +182,7 @@ label {
 }
 .produce-steps-content {
   overflow-wrap: break-word !important;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-family: 'Avenir-Light';
     font-size: 24px !important;
     font-weight: 800 !important;
     line-height: 1.25em !important;
@@ -193,7 +194,7 @@ label {
 }
 .produce-steps-text {
     overflow-wrap: break-word !important;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-family: 'Avenir-Light' !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 1.375em !important;
