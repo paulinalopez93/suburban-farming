@@ -1,63 +1,64 @@
 .discover-h2 {
-  font-size: 32px;
-  font-family: 'Avenir-Heavy';
-  font-weight: regular;
+  font-size: 42px;
+  font-family: 'Avenir-Medium';
+  font-weight: bold;
 }
 
 .h2-tagline {
   font-size: 50px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Medium';
 }
 .h3-steps {
   font-size: 37px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-weight: bold;
 }
 .h3-category {
   font-size: 28px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
 }
 
 
 .p-big-black {
-  font-size: 21px;
+  font-size: 25px;
   color: $dark-gray;
-  font-family: 'Avenir-Heavy';
+  font-family: 'Avenir-Light';
+  font-weight: light;
 }
 .p-big-black-bold {
   font-size: 21px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-weight: bold;
 }
 .p-black {
   font-size: 16px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
 }
 .p-gray {
   font-size: 16px;
   color: $medium-gray;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
 }
 .p-darkgray {
   font-size: 16px;
   color: $dark-gray;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
 }
 .p-black-bold {
   font-size: 16px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-weight: bold;
 }
 .p-white {
   font-size: 16px;
   color: $white;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-style: italic;
 }
 
@@ -65,32 +66,32 @@
 .link-big-black {
   font-size: 21px;
   color: $dark-gray;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   text-decoration: none;
 }
 .link-black {
   font-size: 16px;
   color: $black !important;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   text-decoration: none;
 }
 .link-black-bold {
   font-size: 16px;
   color: $black;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-weight: bold;
   text-decoration: none;
 }
 .link-big-white {
   font-size: 18px;
   color: $white;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   text-decoration: none;
 }
 .link-white {
   font-size: 16px;
   color: $white;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   text-decoration: none;
 }
 
@@ -98,12 +99,12 @@
 .label {
   font-size: 16px;
   color: $dark-gray;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
 }
 .placeholder {
   font-size: 21px;
   color: $light-gray;
-  font-family: $body-font;
+  font-family: 'Avenir-Light';
   font-weight: bold;
 }
 a {
