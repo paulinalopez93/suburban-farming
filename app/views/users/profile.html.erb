@@ -138,6 +138,28 @@
     </div>
   </div>
 
+<div class="orders-wrap">
+  <div class="orders-container">
+    <h3 class="p-big-black">HUBS</h3>
+    <%= simple_form_for current_user do |f| %>
+      <div class="produce-categories" data-controller="select">
+        <% @hubs.each do |hub| %>
+          <div id="hub-button-<%= hub.id %>" data-select-value="<%= hub.id %>" data-action="click->select#update" data-target="select.button" class="stats-container"><%= hub.name %></div>
+        <% end %>
+        <%= f.input :hub_id, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
+      </div>
+      <%= f.button :submit, class: "btn btn-secondary", id: "submit-button-form" %>
+      <% end %>
+      <div
+        id="hub-map"
+        style="width: 100%;
+        height: 200px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+  </div>
+</div>
+
 <%= line_chart @user.product_orders.group_by_day(:created_at).count %>
 
   <div class="thisweek-container">

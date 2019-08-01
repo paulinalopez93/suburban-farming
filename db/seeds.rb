@@ -28,9 +28,11 @@ mariana = User.create!(name: "Mariana", email:"mariana@gmail.com", password:"hol
 
 jorge = User.create!(name: "Jorge", email:"jorge@gmail.com", password:"hola123", address: "Calle de Velarde 18 Madrid")
 
-Hub.create!(address: "Calle Juan de Mariana 15 Madrid")
-Hub.create!(address: "Calle de Ruiz de Alarcon 23 Madrid")
-Hub.create!(address: "Calle Serrano 100 Madrid")
+Hub.create!(address: "Calle Juan de Mariana 15 Madrid", name: "South Hub")
+
+Hub.create!(address: "Calle de Ruiz de Alarcon 23 Madrid", name: "North Hub")
+
+Hub.create!(address: "Calle Serrano 100 Madrid", name: "Center Hub")
 
 
 
