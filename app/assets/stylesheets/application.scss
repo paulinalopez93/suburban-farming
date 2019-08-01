@@ -22,6 +22,10 @@
 
 // Application General
 
+html {
+  scroll-behavior: smooth;
+}
+
 .browser-container {
   z-index: 6;
   background: $white;
