@@ -11,7 +11,7 @@ simon = User.create!(name: "Simon", email:"simon@gmail.com", password:"hola123",
 simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v1564587293/userSimon_fgsjgw.jpg"
 simon.save!
 
-alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle Castello 8 Madrid")
+alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle de Alcala 125 Madrid")
 alex.remote_photo_url = "https://i.pinimg.com/originals/0c/62/ed/0c62ed5d8b790774a54c390a34da0b2e.jpg"
 alex.save!
 
@@ -59,11 +59,11 @@ Product.create!(name: "Corn", price_cents: 2, details: "Corn is carefully grown 
 
 Product.create!(name: "Mushrooms", price_cents: 2, details: "Mushrooms are very versatile and equally tasty, fresh or cooked. Use raw in salads, sautéed, breaded or as an ingredient to enrich sauces, soups, stuffing or entrées.", category: "vegetables", user_id:adel.id, remote_photo_url:"https://images.unsplash.com/photo-1504545102780-26774c1bb073?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=730&q=80")
 
-Product.create!(name: "Carrots", price_cents: 1, details: "A delicious orange carrot", category: "vegetables", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1550081699-79c1c2e48a77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80")
+Product.create!(name: "Carrots", price_cents: 1, details: "These tasty, ready-to-eat carrots are perfect for a warm pot of chicken noodle soup or served as a side dish to a steamy entrée. Rich in antioxidants and flavor, our carrots are an excellent on-the-go snack that’s as nutritious as it is delicious.", category: "vegetables", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1550081699-79c1c2e48a77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80")
 
 Product.create!(name: "Peas", price_cents: 4, details: "Peas are mildly flavored and can be served raw or cooked. Prepare traditionally as part of a stir-fry or blanch and serve cold.", category: "vegetables", user_id:alfredo.id, remote_photo_url:"https://images.unsplash.com/photo-1553460165-3628ccff14d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80")
 
-Product.create!(name: "Brussels sprouts", price_cents: 5, details: "A delicious brussel sprout", category: "vegetables", user_id:sofia.id, remote_photo_url:"https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+Product.create!(name: "Brussel sprouts", price_cents: 5, details: "A delicious brussel sprout", category: "vegetables", user_id:sofia.id, remote_photo_url:"https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 Product.create!(name: "Cauliflower", price_cents: 3, details: "Cauliflower has gained some popularity do to its versatility. Fresh cauliflower is perfect for tasty soups, au gratins, or a simple side entree. Wrap them in foil and throw them on the grill and call it a day. ", category: "vegetables", user_id:cristina.id, remote_photo_url:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
 
@@ -102,16 +102,17 @@ Product.create!(name: "Brown eggs", price_cents: 3, details: "Brown eggs from ch
 Product.create!(name: "White eggs", price_cents: 3, details: "White eggs from chickens", category: "eggs", user_id:alfredo.id, remote_photo_url:"https://images.unsplash.com/photo-1489726933853-010eb1484d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80")
 
 #wine
-Product.create!(name: "White wine", price_cents: 8, details: "Deliciuos white wine", category: "wine", user_id:adel.id, remote_photo_url:"https://images.unsplash.com/photo-1561916542-c981c30f0cdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=738&q=80")
+Product.create!(name: "White wine", price_cents: 8, details: "This bright and aromatic wine offers enticing layers of lemon and lime zest, as well as lovely notes of honeydew and nectarine. On the palate, refreshing acidity mingles with a subtle undercurrent of sweet fruit that carries through to a refreshing, vibrant finish.", category: "wine", user_id:adel.id, remote_photo_url:"https://images.unsplash.com/photo-1561916542-c981c30f0cdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=738&q=80")
 
 Product.create!(name: "Red wine", price_cents: 13, details: "Our red wine has a signature style that is dark in color, with rich fruit and ripe, velvety tannins – as approachable in youth as in maturity. We farm Cabernet grapes in eight of Napa’s 16 sub-appellations, with diversification enabling us to make the best possible wine in a given year. Our Cabernet offers layered, lush aromas and flavors, including cocoa, cassis and ripe dark berries.", category: "wine", user_id:alex.id, remote_photo_url:"https://images.unsplash.com/photo-1546944517-4f38480ff03c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80")
 
 #herbs
-Product.create!(name: "Parsley", price_cents: 3, details: "Deliciuos parsley", category: "herbs", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1553217420-e8f8dde808f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1627&q=80")
+Product.create!(name: "Parsley", price_cents: 3, details: "Parsley has a vibrant, aromatic flavour. Parsley is typically added toward the end of cooking as heat can destory its flavor. Parsley can be added to dishes with garlic to help soften the dish and alleviate any issues that may occur with bad breath.", category: "herbs", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1553217420-e8f8dde808f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1627&q=80")
 
 Product.create!(name: "Mint", price_cents: 5, details: "Mint so refreshing that you won't know what hit you", category: "herbs", user_id:cristina.id, remote_photo_url:"https://images.unsplash.com/photo-1509727841791-40d09ad9b7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Basil", price_cents: 6, details: "Perfect basil", category: "herbs", user_id:sofia.id, remote_photo_url:"https://images.unsplash.com/photo-1527964105263-1ac6265a569f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+Product.create!(name: "Basil", price_cents: 6, details: "Fresh basil has an initial subtle peppery flavour. The taste then evolves into a slightly sweet, aromatic flavour.
+When cooking with basil it should be added at the end of cooking. Heat removes the flavour and if cooked for too long can result in bitterness. Basil pairs exquisitely with lemon, tomato and garlic", category: "herbs", user_id:sofia.id, remote_photo_url:"https://images.unsplash.com/photo-1527964105263-1ac6265a569f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 
 
