@@ -12,6 +12,8 @@ simon.remote_photo_url = "https://res.cloudinary.com/dlj1mjxjd/image/upload/v156
 simon.save!
 
 alex = User.create!(name: "Alex", email:"alex@gmail.com", password:"hola123", address: "Calle Castello 8 Madrid")
+alex.remote_photo_url = "https://i.pinimg.com/originals/0c/62/ed/0c62ed5d8b790774a54c390a34da0b2e.jpg"
+alex.save!
 
 adam = User.create!(name: "Adam", email:"adam@gmail.com", password:"hola123", address: "Calle de Lagasca 56 Madrid")
 

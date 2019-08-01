@@ -9,13 +9,6 @@ display: flex-end;
   padding: 10px;
 }
 
-.info-modal {
-  // margin-left: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 72px;
-  padding-top: 50px;
-}
 
 .about-producer {
   font-family: 'Avenir-Light';
@@ -23,8 +16,8 @@ display: flex-end;
 }
 
 .product-page-section {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   // padding: 15px;
   // width: 50%;
   img {
@@ -93,3 +86,97 @@ display: flex-end;
 #product-head {
   margin-bottom: 20px;
 }
+
+.product-page-banner{
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  h3{
+    color: white;
+    text-shadow: 1px 2px $light-gray;
+  }
+}
+
+.product-avatar{
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  box-shadow: 1px 2px $light-gray;
+}
+
+.card-horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  h6 {
+    font-size: 15px;
+    line-height: 15px;
+  }
+}
+
+.about-producer {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  opacity: 0.4;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.info-modal {
+  padding-top: 50px;
+}
+
+.product-producer-info-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-description-modal {
+  color: rgb(100, 100, 100);
+  padding: 0 20px;
+}
+
+.product-description-container {
+  width: 80;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px rgba(0,0,0,0.1) solid;
+  margin-bottom: 2rem;
+}
+
+.add-cart-modal {
+  text-transform: uppercase;
+  opacity: 0.4;
+  letter-spacing: 3px;
+  font-size: 0.65rem;
+}
+
+.price-cart-modal {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 1rem;
+}
+
+

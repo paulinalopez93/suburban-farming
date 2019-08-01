@@ -3,45 +3,45 @@
 <div id="info-modal-<%= product.id %>" class="modal fade right bd-example-modal-lg" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
   <div class="modal-dialog modal-dialog modal-lg" role="document">
     <div class="modal-content info-modal">
-      <div class="product-producer-info-scroll">
-        <div class="product-page-section">
-          <!-- <h3 id="product-head"><%= product.name %></h3> -->
-          <img src="<%= cl_image_path product.photo %>" alt="">
-          <p class="about-producer"><%= product.details  %></p>
-        </div>
+     <div class="product-page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0)), url('<%= cl_image_path product.photo %>');">
+      <% if product.user.photo.present? %>
+      <%= cl_image_tag product.user.photo, height: 50, width: 50, crop: :fill, gravity: :face, class: "product-avatar" %>
+      <% end %>
+      <h3 class="h3-category" ><%= product.user.name %>'s <%= product.name %></h3>
+    </div>
+    <div class="product-producer-info-scroll">
 
-      </div>
+
+
+
       <div class="product-info">
-        <div class="product-modal-title">
-          <% if product.user.photo.present? %>
-            <%= cl_image_tag product.user.photo, height: 60, width: 60, crop: :fill, gravity: :face, style: "border-radius: 50%;" %>
-          <% end %>
-          <h3 class="h3-category" ><%= product.user.name %>'s <%= product.name %></h3>
-          <div class="product-page-price">
-            <h4>€<%= product.price %></h4>
+        <h5 class="about-producer">Description:</h5>
+        <div class="product-description-container">
+          <p class="product-description-modal"><%= product.details  %></p>
+        </div>
+      </div>
+        <div class="card-horizontal">
+          <h6 class="add-cart-modal">Add to cart</h6>
+          <h6 class="price-cart-modal">€<%= product.price %></h6>
+          <div class="cart-buttons-container">
+            <div class="cart-btn-plusminus">
+              <%= link_to "-", remove_from_cart_path(@order, product), class: "btn-plusminus-minus", remote: true %>
+            </div>
+            <div class="cart-quantity-checkout" id="product-quantity2-<%= product.id %>">
+              <% product_order = @order.product_orders.find_by(product_id: product.id) %>
+              <div><%= product_order.quantity unless product_order.nil? %></div>
+            </div>
+            <div class="cart-btn-plusminus">
+              <%= link_to "+", add_to_cart_path(@order, product), class: "btn-plusminus-plus link-big-white", remote: true %>
+            </div>
           </div>
-            <div class="btn-plusminus" id="btn-cart-modal">
-                <%= link_to "-", remove_from_cart_path(@order, product), class: "btn-plusminus-minus link-big-white", remote: true %>
-                <% product_order = @order.product_orders.find_by(product_id: product.id) %>
-                <div class="btn-plusminus-amount link-big-white" id="product-quantity2-<%= product.id %>"><%= product_order.quantity unless product_order.nil? %></div>
-                <%= link_to "+", add_to_cart_path(@order, product), class: "btn-plusminus-plus link-big-white", remote: true %>
-              </div>
-          <!--  <div class="nutrients-info">
-            <h6>Nutrients per serving:</h6>
-            <h6>Fat:  0 / g <br>Calories: 25 / kcal <br>Carbohydrates:  0 / g</h6>
-          </div> -->
-
-
         </div>
-            <div class="section-map">
-        <!-- <h3 class="h3-category" id="producer-location">Location</h3> -->
-        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100%; min-height: 400px; overflow: visible;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-marker="<%= product.marker.to_json %>"></div>
-        </div>
+
+        <div id="map-<%= product.id %>" class="map" data-id="<%= product.id %>" style="width: 100%; min-height: 250px; overflow: visible; margin-top: 3rem;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-marker="<%= product.marker.to_json %>"></div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
