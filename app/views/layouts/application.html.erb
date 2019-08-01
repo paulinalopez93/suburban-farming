@@ -35,9 +35,8 @@
   </head>
   <body>
     <div class="browser-container">
-    <p class="alert"><%= alert %></p>
     <%= content_for?(:navbar) ? yield(:navbar) : render('shared/navbar') %>
-    <%= render 'shared/flashes' %>
+    <%#= render 'shared/flashes' %>
     <%= render 'shared/access'  %>
     <% unless controller_name == "users" %>
       <%= render 'shared/cart-modal' %>
