@@ -179,4 +179,19 @@ display: flex-end;
   padding-bottom: 1rem;
 }
 
+.close-modal {
+  width: 50px;
+  background-color: white !important;
+  border-radius: 3px;
+  border: 2px solid white;
+  font-size: 30px;
+}
+
+.close-info-modal {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
 
