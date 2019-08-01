@@ -1,4 +1,4 @@
-<% unless controller_name == "pages" %>
+<% unless controller_name == 'users'  %>
 <% white = false unless local_assigns.has_key? :white %>
 <div class="navbar-container <%= 'navbar-white' if white %>">
   <div class="brand-container">
@@ -7,39 +7,24 @@
   </div>
   <div class="links-container">
 
-    <% unless controller_name == "payments" %>
-
     <% if user_signed_in? %>
-    <% unless controller_name == "users" %>
-    <%= link_to "POST PRODUCE", new_product_path, class:"nav-link link-white link-black" %>
-    <%= link_to "PROFILE", profile_path, class:"nav-link link-white link-black" %>
-    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
-    <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-cart_xevyu2", width: 28, height: 28) %></button>
+
+      <% unless controller_name == "pages" %>
+      <%= link_to "POST PRODUCE", new_product_path, class:"nav-link link-white link-black" %>
+        <%= link_to "PROFILE", profile_path, class:"nav-link link-white link-black" %>
+        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
+        <button type="button" class="nav-link link-white" data-toggle="modal" style="" data-target="#ModalCart" id='cart-open-button'><%= cl_image_tag("shopping-cart_xevyu2", width: 28, height: 28) %></button>
+      <% end %>
+
+      <% if controller_name == "pages" %>
+       <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white" %>
+      <% elsif controller_name != "products" %>
+        <%= link_to "CART", update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
+      <% end %>
+
     <% else %>
-    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:"nav-link link-white link-black" %>
-    <%= link_to "POST PRODUCE", new_product_path, class:"nav-link link-white link-black" %>
-    <% end %>
-    <% end %>
 
-
-    <% unless user_signed_in? %>
-
-    <button type="button" class="nav-link" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
-      SIGN IN
-    </button>
-    <button type="button" class="nav-link" data-toggle="modal" data-target="#Modal2">
-      SIGN UP
-    </button>
-    <%= link_to cl_image_tag("shopping-cart_xevyu2", class: "basket-img", width: 28, height: 28, crop: :fill), update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
-    <% end %>
-
-
-
-    <% end %>
-  </div>
-</div>
-<% end %>
-<!--       <#% if controller_name == "pages" %>
+      <% if controller_name == "pages" %>
         <button type="button" class="nav-link link-white" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
           SIGN IN
         </button>
@@ -47,7 +32,7 @@
         SIGN UP
         </button>
 
-      <#% else %>
+      <% else %>
         <button type="button" class="nav-link link-white link-black" data-toggle="modal" style="opacity:0;" data-target="#ModalCart" id='cart-open-button'></button>
 
         <button type="button" class="nav-link link-white link-black" data-toggle="modal" data-target="#Modal1" id='sign-in-button'>
@@ -56,13 +41,14 @@
         <button type="button" class="nav-link link-white link-black" data-toggle="modal" data-target="#Modal2">
         SIGN UP
         </button>
+      <% end %>
 
 
+      <% unless controller_name == "pages" %>
+        <%= link_to cl_image_tag("shopping-cart_xevyu2", class: "basket-img", width: 28, height: 28, crop: :fill), update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
+      <% end %>
 
-      <#% unless controller_name == "pages" %>
-        <#%= link_to cl_image_tag("shopping-cart_xevyu2", class: "basket-img", width: 28, height: 28, crop: :fill), update_cart_path(@order), class: "nav-link link-white", id: "cart-button", remote: true %>
-      <#% end %>
-    <#% end %>
+    <% end %>
   </div>
 </div>
-<#% end %>
+<% end %>
