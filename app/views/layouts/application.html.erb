@@ -12,6 +12,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <%= javascript_include_tag 'application' %>
 
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
@@ -39,7 +40,7 @@
     <%= content_for?(:navbar) ? yield(:navbar) : render('shared/navbar') %>
     <%= render 'shared/flashes' %>
     <%= render 'shared/access'  %>
-    <% unless controller_name == "users" %>
+    <% if controller_name == "products" %>
       <%= render 'shared/cart-modal' %>
     <% end %>
 
@@ -50,7 +51,7 @@
     <% end %>
 
     </div>
-    <%= javascript_include_tag 'application' %>
+    <%#= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
