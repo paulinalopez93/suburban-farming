@@ -58,7 +58,7 @@ Hub.create!(address: "Calle Serrano 100 Madrid", name: "Center Hub")
 #vegetables
 
 
-Product.create!(name: "Tomato", price_cents: 3, details: "Summer time means tomato time! They are complex in flavor. A marriage between sweet and acidic while at the same time fruity. The best way to serve these juicy tomatoes is to slice and serve them with fresh mozzarella, basil, extra virgin olive oil and some red pepper flakes to add a kick to the classic Caprese Salad.", category: "vegetables", user_id:simon.id , created_at: "2019-07-29 09:07:56",  remote_photo_url: "https://images.unsplash.com/photo-1546470427-227e2f27f02c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80")
+Product.create!(name: "Tomato", price_cents: 3, details: "Summer time means tomato time! They are complex in flavor. A marriage between sweet and acidic while at the same time fruity. The best way to serve these juicy tomatoes is to slice and serve them with fresh mozzarella, basil, extra virgin olive oil and some red pepper flakes to add a kick to the classic Caprese Salad.", category: "vegetables", user_id:paulina.id , created_at: "2019-07-29 09:07:56",  remote_photo_url: "https://images.unsplash.com/photo-1546470427-227e2f27f02c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80")
 
 
 Product.create!(name: "Broccoli", price_cents: 5, details: "Broccoli is in season year around and its harvested by hand with a crisp texture and full flavor. Broccoli can be used in many dishes such as whole grain pasta primavera, casseroles such as brown rice and broccoli casserole, or roasted with a little oil and seasonings.", category: "vegetables", user_id:alex.id, remote_photo_url:"https://images.unsplash.com/photo-1553175005-a1129d5c188c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80")
@@ -89,7 +89,7 @@ Product.create!(name: "Apples", price_cents: 3, details: "Apples offer a mildly 
 
 Product.create!(name: "Grapes", price_cents: 2, details: "Tiny green grapes", category: "fruits", user_id:adam.id, remote_photo_url:"https://images.unsplash.com/photo-1515779122185-2390ccdf060b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
-Product.create!(name: "Strawberries", price_cents: 2, details: "Strawberries full of flavor", category: "fruits", user_id:adel.id, remote_photo_url:"https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80")
+Product.create!(name: "Strawberries", price_cents: 2, details: "Strawberries full of flavor", category: "fruits", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80")
 
 Product.create!(name: "Oranges", price_cents: 6, details: "Our oranges are juicy and sweet which makes them the perfect snack and adding a special tang for many recipes or simply having freshly squeezed orange juice for breakfast, lunch and dinner!", category: "fruits", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1512578000375-660f001ef96d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
@@ -115,12 +115,12 @@ Product.create!(name: "White wine", price_cents: 8, details: "This bright and ar
 Product.create!(name: "Red wine", price_cents: 13, details: "Our red wine has a signature style that is dark in color, with rich fruit and ripe, velvety tannins – as approachable in youth as in maturity. We farm Cabernet grapes in eight of Napa’s 16 sub-appellations, with diversification enabling us to make the best possible wine in a given year. Our Cabernet offers layered, lush aromas and flavors, including cocoa, cassis and ripe dark berries.", category: "wine", user_id:alex.id, remote_photo_url:"https://images.unsplash.com/photo-1546944517-4f38480ff03c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80")
 
 #herbs
-Product.create!(name: "Parsley", price_cents: 3, details: "Parsley has a vibrant, aromatic flavour. Parsley is typically added toward the end of cooking as heat can destory its flavor. Parsley can be added to dishes with garlic to help soften the dish and alleviate any issues that may occur with bad breath.", category: "herbs", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1553217420-e8f8dde808f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1627&q=80")
+Product.create!(name: "Parsley", price_cents: 3, details: "Parsley has a vibrant, aromatic flavour. Parsley is typically added toward the end of cooking as heat can destory its flavor. Parsley can be added to dishes with garlic to help soften the dish and alleviate any issues that may occur with bad breath.", category: "herbs", user_id:simon.id, remote_photo_url:"https://images.unsplash.com/photo-1553217420-e8f8dde808f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1627&q=80")
 
 Product.create!(name: "Mint", price_cents: 5, details: "Mint so refreshing that you won't know what hit you", category: "herbs", user_id:cristina.id, remote_photo_url:"https://images.unsplash.com/photo-1509727841791-40d09ad9b7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 Product.create!(name: "Basil", price_cents: 6, details: "Fresh basil has an initial subtle peppery flavour. The taste then evolves into a slightly sweet, aromatic flavour.
-When cooking with basil it should be added at the end of cooking. Heat removes the flavour and if cooked for too long can result in bitterness. Basil pairs exquisitely with lemon, tomato and garlic", category: "herbs", user_id:sofia.id, remote_photo_url:"https://images.unsplash.com/photo-1527964105263-1ac6265a569f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+When cooking with basil it should be added at the end of cooking. Heat removes the flavour and if cooked for too long can result in bitterness. Basil pairs exquisitely with lemon, tomato and garlic", category: "herbs", user_id:paulina.id, remote_photo_url:"https://images.unsplash.com/photo-1527964105263-1ac6265a569f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 
 
 
