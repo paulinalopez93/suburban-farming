@@ -205,13 +205,13 @@
       <div class="graph-wrap">
         <div class="graph-container graph-pie">
           <div class="graph-content"><%= pie_chart @user.products.group(:category).count, colors: [ '#60A5B7', '#777777', '#FFFFFF', '#89BBFE', '#FFDB99', '#777777', '#b7e488', '#F6613F'], title: "Products by categories", legend: 'bottom' %></div>
-          <div class="graph-content graph-grow"><%= bar_chart( {'Tomato': 12, 'Banana': 9, 'Eggs': 5}, label: "product", colors: [  '#60A5B7', '#777777', '#FFFFFF', '#F6613F'], title: 'Reorders by products') %></div>
+          <div class="graph-content graph-grow"><%= bar_chart( {'Strawberry': 12, 'Banana': 9, 'Eggs': 5}, label: "product", colors: [  '#60A5B7', '#777777', '#FFFFFF', '#F6613F'], title: 'Reorders by products') %></div>
         </div>
       </div>
       <div class="stats-wrap">
         <div class="graph-stats">
           <p >Most popular product</p>
-          <p class="graph-number"><%= @user.products.first.name.capitalize %></p>
+          <p class="graph-number">Strawberry</p>
         </div>
         <div class="graph-stats">
           <p >Average delivery time</p>
