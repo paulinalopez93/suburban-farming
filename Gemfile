@@ -22,7 +22,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'money-rails'
 gem 'stripe'
-gem 'chartkick', '~> 3.2', '>= 3.2.1'
+gem 'chartkick', '~> 3.3'
 gem 'groupdate'
 
 group :development do
