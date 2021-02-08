@@ -19,7 +19,7 @@ gem 'geocoder'
 
 # Added gems
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'money-rails'
 gem 'stripe'
 gem 'chartkick', '~> 3.2', '>= 3.2.1'
